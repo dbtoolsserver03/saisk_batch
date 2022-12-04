@@ -14,3 +14,5 @@ Springmvc1!
 4.启动TOMCAT
 5.输入下面地址
 http://localhost:8080/springmvc_mybatis_db/items/queryItems.action
+
+xxxx
