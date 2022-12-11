@@ -14,6 +14,7 @@ import cn.itcast.ssm.common.str.MyDateUtil;
 import cn.itcast.ssm.po.custom.CustomUser;
 import cn.itcast.ssm.po.original.TUser;
 import cn.itcast.ssm.service.UserService;
+import cn.itcast.ssm.vo.loginbean;
 
 @Controller
 public class LoginController {
@@ -24,19 +25,25 @@ public class LoginController {
 
 	// 登陆
 	@RequestMapping("/login")
-	public String login(Model model, HttpSession session, String username, String password)
+	public String login(Model model, HttpSession session,@ModelAttribute loginbean loginbean)
 			throws Exception {
+		
+		if(loginbean.getWord()==null||loginbean.getWord().length()==0) {
+			model.addAttribute("error", "没有输入验证码");
+			  return "login";
+		}
 
-	    if ((username == null || username.length() == 0)
-	            && (password == null || password.length() == 0)
+	    if ((loginbean.getUsername() == null || loginbean.getUsername().length() == 0)
+	            && (loginbean.getPassword() == null || loginbean.getPassword().length() == 0)
 	            ) {
 	        return "login";
         }
 		// 调用service进行用户身份验证
-		TUser user = userService.findUser(username);
-		if (user == null || !password.equals(user.getPassword())) {
+		TUser user = userService.findUser(loginbean.getUsername());
+		if (user == null || !loginbean.getPassword().equals(user.getPassword())) {
 
-		    model.addAttribute("username", username);
+		    model.addAttribute("username", loginbean.getUsername());
+		    model.addAttribute("password", loginbean.getPassword());
 			model.addAttribute("error", "用户名和密码不一致");
 		     // 清除session
 	        session.invalidate();
@@ -45,7 +52,7 @@ public class LoginController {
 
 
 		// 在session中保存用户身份信息
-		session.setAttribute("username", username);
+		session.setAttribute("username", loginbean.getUsername());
 		// 重定向到商品列表页面
 		return "redirect:/items/initItems.action";
 	}
