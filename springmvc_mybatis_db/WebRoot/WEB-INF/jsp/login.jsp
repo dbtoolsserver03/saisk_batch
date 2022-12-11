@@ -13,7 +13,7 @@
 
 <style>
 .mytext
-{
+{A
 	background-color:#d0e4fe;
 }
 </style>
@@ -42,9 +42,9 @@ function register() {
 
 <!-- style="background-color:#d000fe;" -->
 
-用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${username}" /><br/>
-用户密码 ：<input id="id_password" type="password" name="password" /><br/>
-
+用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usernamexx}" /><br/>
+用户密码 ：<input id="id_password" type="password" name="password" value="${passwordyy}" /><br/>
+验证码:<input id="id_world",type="text",name="world"/><br/>
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
 
@@ -56,6 +56,7 @@ function register() {
 </c:if>
 
 </form>
+${logiinfo.username}
 </body>
 </html>
 

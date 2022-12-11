@@ -24,8 +24,14 @@ public class LoginController {
 
 	// 登陆
 	@RequestMapping("/login")
-	public String login(Model model, HttpSession session, String username, String password)
+	public String login(Model model, HttpSession session, String username, String password,String world)
 			throws Exception {
+		if(world==null||world.length()==0){
+			    model.addAttribute("usernamexx",username);
+			    model.addAttribute("passwordyy",password);
+				model.addAttribute("error", "没有输入验证码");
+				return"login";
+		}
 
 	    if ((username == null || username.length() == 0)
 	            && (password == null || password.length() == 0)
