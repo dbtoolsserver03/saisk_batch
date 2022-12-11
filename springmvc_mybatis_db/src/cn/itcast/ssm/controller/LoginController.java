@@ -14,6 +14,7 @@ import cn.itcast.ssm.common.str.MyDateUtil;
 import cn.itcast.ssm.po.custom.CustomUser;
 import cn.itcast.ssm.po.original.TUser;
 import cn.itcast.ssm.service.UserService;
+import cn.itcast.ssm.vo.LoginBean;
 
 @Controller
 public class LoginController {
@@ -24,9 +25,22 @@ public class LoginController {
 
 	// 登陆
 	@RequestMapping("/login")
-	public String login(Model model, HttpSession session, String username, String password)
+	public String login(Model model, HttpSession session, 
+			@ModelAttribute LoginBean loginBean,
+			String username, String password,String word)
 			throws Exception {
-
+		
+		
+		if(word == null || word.length()==0) {
+			
+			model.addAttribute("usernamexx", username);
+			model.addAttribute("passwordyy", password);
+			model.addAttribute("error", "没有输入验证码");
+			model.addAttribute("loginInfo", loginBean);
+			
+			return "login";
+		}
+		
 	    if ((username == null || username.length() == 0)
 	            && (password == null || password.length() == 0)
 	            ) {
