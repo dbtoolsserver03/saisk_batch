@@ -34,6 +34,10 @@ function register() {
 }
 
 
+
+
+
+
 </script>
 
 
@@ -60,6 +64,9 @@ function register() {
 
 后台传给前台对象时 测试 ： ${loginInfo.username}
 
+<br>
+<a href="${pageContext.request.contextPath }/teacherInit.action">add teacher</a>
+<!-- <input type="button" value="add teacher" onclick="addTeacher()"/> -->
 </body>
 </html>
 

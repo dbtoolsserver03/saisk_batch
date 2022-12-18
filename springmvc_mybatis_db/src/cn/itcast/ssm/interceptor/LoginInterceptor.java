@@ -30,9 +30,16 @@ public class LoginInterceptor implements HandlerInterceptor {
 		String url = request.getRequestURI();
 		//判断url是否是公开 地址（实际使用时将公开 地址配置配置文件中）
 		//这里公开地址是登陆提交的地址
-		if(url.indexOf("login.action")>=0 || url.indexOf("register.action")>=0 || url.indexOf("registSubmit.action")>=0){
+		if(url.indexOf("login.action")>=0
+				|| url.indexOf("register.action")>=0
+				|| url.indexOf("registSubmit.action")>=0
+				|| url.indexOf("teacherInit.action")>=0
+				|| url.indexOf("teacherinsert.action")>=0
+				
+				){
 			//如果进行登陆提交，放行
 			return true;
+			
 		}
 
 

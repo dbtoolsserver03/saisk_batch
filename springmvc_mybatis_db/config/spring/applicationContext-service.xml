@@ -16,4 +16,6 @@
 <bean id="itemService" class="cn.itcast.ssm.service.impl.ItemServiceImpl"/>
 <!-- 用户的service -->
 <bean id="userService" class="cn.itcast.ssm.service.impl.UserServiceImpl"/>
+<bean id="teacherService" class="cn.itcast.ssm.service.impl.TeacherServiceImpl"/>
+
 </beans>
