@@ -322,8 +322,10 @@ public class MyDirectoryUtils {
 				}
 				f.delete();
 			} else {
-				if (f.isFile())
+				if (f.isFile()) {
 					f.delete();
+				}
+		
 			}
 		} catch (Throwable e) {
 			throw e;

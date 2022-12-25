@@ -10,6 +10,8 @@ import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
+import cn.itcast.ssm.common.file.MyDirectoryUtils;
+
 public class GeneratorSqlmapMysql {
 
 	public void generator() throws Exception{
@@ -28,9 +30,17 @@ public class GeneratorSqlmapMysql {
 	} 
 	public static void main(String[] args) throws Exception {
 		try {
+			
+			File directory = new File("");//参数为空
+
+			String courseFile = directory.getCanonicalPath() ;
+
+			MyDirectoryUtils.delFile(courseFile+"/src/cn/itcast/ssm/po/original", "", true);
+			MyDirectoryUtils.delFile(courseFile+"/src/cn/itcast/ssm/mapper/original", "", true);
+
 			GeneratorSqlmapMysql generatorSqlmap = new GeneratorSqlmapMysql();
 			generatorSqlmap.generator();
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			e.printStackTrace();
 		}
 		

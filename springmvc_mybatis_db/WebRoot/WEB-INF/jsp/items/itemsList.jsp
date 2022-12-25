@@ -13,37 +13,7 @@
 <title>查询商品列表</title>
 
 <script type="text/javascript" src="../js/item/itemsList.js"></script>
-<!-- <script type="text/javascript"> -->
-<!-- // 	function editItemsAll() { -->
-<!-- // 		//提交form -->
-<%-- // 		document.itemsForm.action = "${pageContext.request.contextPath }/items/editItemsAll.action"; --%>
-<!-- // 		document.itemsForm.submit(); -->
-<!-- // 	} -->
-<!-- // 	function editItemsMap() { -->
-<!-- // 		//提交form -->
-<%-- // 		document.itemsForm.action = "${pageContext.request.contextPath }/items/editItemsMap.action"; --%>
-<!-- // 		document.itemsForm.submit(); -->
-<!-- // 	} -->
 
-<!-- // 	function queryItems() { -->
-<!-- // 		//提交form -->
-<%-- // 		document.itemsForm.action = "${pageContext.request.contextPath }/items/queryItems.action"; --%>
-<!-- // 		document.itemsForm.submit(); -->
-<!-- // 	} -->
-
-<!-- // 	function addItem() { -->
-<!-- // 		//提交form -->
-<%-- // 		document.itemsForm.action = "${pageContext.request.contextPath }/items/addItem.action"; --%>
-<!-- // 		document.itemsForm.submit(); -->
-<!-- // 	} -->
-
-<!-- // 	function deleteItems() { -->
-<!-- // 		//提交form -->
-<%-- // 		document.itemsForm.action = "${pageContext.request.contextPath }/items/deleteItems.action"; --%>
-<!-- // 		document.itemsForm.submit(); -->
-<!-- // 	} -->
-
-<!-- </script> -->
 </head>
 <body>
 
@@ -53,7 +23,7 @@
 				<c:if test="${username!=null }">
 					<td><a href="${pageContext.request.contextPath }/logout.action">退出</a></td>
 				</c:if>
-				<td align="right"><a href="${pageContext.request.contextPath }/initUserLst.action">用户一览</a></td>
+				
 			</tr>
 		</table>
 
@@ -79,9 +49,6 @@
 				    	</c:choose>
 					</c:forEach>
 				</select>
-
-
-
 
 
 				</td>
@@ -110,24 +77,22 @@
 							value="${item.itemId}"></td>
 						<td>${item.itemName }</td>
 						<td>${item.itemPrice }</td>
-						<td><fmt:formatDate value="${item.itemProductDate}"
-								pattern="yyyy-MM-dd HH:mm:ss" /></td>
+						<td><fmt:formatDate value="${item.itemProductDate}"	pattern="yyyy-MM-dd HH:mm:ss" /></td>
 						<td>${item.itemDetail }</td>
-						<td><a
-							href="${pageContext.request.contextPath }/items/editItem.action?id=${item.itemId}">修改</a></td>
+						<td><a href="${pageContext.request.contextPath }/items/editItem.action?id=${item.itemId}">修改</a></td>
 					</tr>
-					<!-- 				<tr> -->
-					<!-- 					<td></td> -->
-					<%-- 					<td><input name="itemLst[${status.index}].itemName" --%>
-					<%-- 						value="${item.itemName }" /></td> --%>
-					<%-- 					<td><input name="itemLst[${status.index}].itemPrice" --%>
-					<%-- 						value="${item.price }" /></td> --%>
-					<%-- 					<td><input name="itemLst[${status.index}].itemProductDate" --%>
-					<%-- 						value="<fmt:formatDate value="${item.createtime}" pattern="yyyy-MM-dd HH:mm:ss"/>" /></td> --%>
-					<%-- 					<td><input name="itemLst[${status.index}].itemDetail" --%>
-					<%-- 						value="${item.detail }" /></td> --%>
-					<!-- 					<td></td> -->
-					<!-- 				</tr> -->
+<!-- 									<tr> -->
+<!-- 										<td></td> -->
+<%-- 										<td><input name="itemLst[${status.index}].itemName" --%>
+<%-- 											value="${item.itemName }" /></td> --%>
+<%-- 										<td><input name="itemLst[${status.index}].itemPrice" --%>
+<%-- 											value="${item.itemPrice }" /></td> --%>
+<%-- 										<td><input name="itemLst[${status.index}].itemProductDate" --%>
+<%-- 											value="<fmt:formatDate value="${item.itemProductDate}" pattern="yyyy-MM-dd HH:mm:ss"/>" /></td> --%>
+<%-- 										<td><input name="itemLst[${status.index}].itemDetail" --%>
+<%-- 											value="${item.itemDetail }" /></td> --%>
+<!-- 										<td></td> -->
+<!-- 									</tr> -->
 				</c:forEach>
 			</table>
 		</c:if>

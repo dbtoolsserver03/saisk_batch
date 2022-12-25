@@ -60,8 +60,9 @@ public class LoginController {
 
 		// 在session中保存用户身份信息
 		session.setAttribute("username", username);
-		// 重定向到商品列表页面
-		return "redirect:/items/initItems.action";
+		// 定向到菜单页面
+		return "menu/menuInit";
+		//return "redirect:/items/initItems.action";
 	}
 
 

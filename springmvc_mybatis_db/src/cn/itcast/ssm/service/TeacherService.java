@@ -1,5 +1,7 @@
 package cn.itcast.ssm.service;
 
+import java.util.List;
+
 import cn.itcast.ssm.po.original.TeacherTable;
 
 /**
@@ -14,5 +16,13 @@ import cn.itcast.ssm.po.original.TeacherTable;
 public interface TeacherService {
 
 	public int inserTeacher(TeacherTable teacher) throws Exception;
+
+	public List<TeacherTable> findTeacherList(TeacherTable teacher);
+
+	public int updateTeacher(TeacherTable teacher);
+
+	public TeacherTable findTeacherByID(String teacherId);
+
+	public int deleteItems(String[] teacherIds);
 
 }
