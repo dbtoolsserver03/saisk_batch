@@ -55,6 +55,10 @@
 		<table tableName="T_ORDER" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<table tableName="TEACHER_TABLE" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
 		<!-- <table schema="" tableName="sys_user"></table> <table schema="" tableName="sys_role"></table>
 			<table schema="" tableName="sys_permission"></table> <table schema="" tableName="sys_user_role"></table>
 			<table schema="" tableName="sys_role_permission"></table> -->

@@ -150,7 +150,8 @@ $(document).ready(function(){
 			</tr>
 			<tr>
 				<td>商品生产日期</td>
-				<td><input type="text" name="itemProductDate" value="<fmt:formatDate value="${voItem.itemProductDate}" pattern="yyyy/MM/dd"/>" />
+				<td><input type="text" name="itemProductDate"
+					value="<fmt:formatDate value="${voItem.itemProductDate}" pattern="yyyy/MM/dd"/>" />
 					<div class="item-datapicker">
 					<img id="id_picker_productDate" alt="..." src="${pageContext.request.contextPath}/img/calendar_icon.gif"/>
 					<img id="id_delete_productDate" alt="..." src="${pageContext.request.contextPath}/img/delete_icon.gif" />

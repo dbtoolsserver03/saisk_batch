@@ -59,3 +59,11 @@ create table `t_user` (
 `update_time` datetime null comment '更新日時',
 `update_user_id` varchar(20) null comment '更新者',
 primary key (`id`)) comment='ユーザ';
+
+CREATE TABLE `teacher_table` (
+  `teacher_id` varchar(10) NOT NULL COMMENT '先生ID',
+  `teacher_name` varchar(32) NOT NULL COMMENT '先生姓名',
+  `teacher_sex` char(1) NOT NULL COMMENT '性別',
+  `teacher_age` date NOT NULL COMMENT '生日',
+  PRIMARY KEY (`teacher_id`)
+)

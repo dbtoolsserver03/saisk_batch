@@ -32,6 +32,7 @@ public class DiffFile {
 	
 	public static void main(String[] args) {
 
+		
 //		args = new String[4];
 //		args[0]="C:\\printsystem\\workspace\\printsystem";
 //		args[1]="C:\\printsystem\\workspace";
