@@ -13,4 +13,4 @@ Springmvc1!
 3.数据库不是postgre的话，更改db.properties的数据库连接信息
 4.启动TOMCAT
 5.输入下面地址
-http://localhost:8080/springmvc_mybatis_db/items/queryItems.action
+http://localhost:8080/springmvc_mybatis_db/login.action
