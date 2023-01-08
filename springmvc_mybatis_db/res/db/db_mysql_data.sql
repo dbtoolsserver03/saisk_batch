@@ -26,3 +26,8 @@ delete from `t_user` where 1=1 and `id` = 'suzuki';
 insert into `t_user` (`id`, `username`, `birthday`, `sex`, `address`, `password`, `tel`, `mail`, `delete_flg`, `create_time`, `create_user_id`, `update_time`, `update_user_id`) values ('suzuki','鈴木','2001/08/13','1','大連','123456','08082245608','2@gmail.com','0','2019/08/13','system','2019/08/13','system');
 delete from `t_user` where 1=1 and `id` = 'sakawa';
 insert into `t_user` (`id`, `username`, `birthday`, `sex`, `address`, `password`, `tel`, `mail`, `delete_flg`, `create_time`, `create_user_id`, `update_time`, `update_user_id`) values ('sakawa','佐川',null,'2','上海','123456',null,'3@gmail.com','0','2019/08/13','system','2019/08/13','system');
+delete from `teacher_table`;
+delete from `teacher_table` where 1=1 AND `teacher_id` = 't001';
+insert into `teacher_table` (`teacher_id`, `teacher_name`, `teacher_sex`, `teacher_age`) values ('t001','安部','1', STR_TO_DATE('1978/07/06','%Y/%m/%d'));
+delete from `teacher_table` where 1=1 AND `teacher_id` = 't002';
+insert into `teacher_table` (`teacher_id`, `teacher_name`, `teacher_sex`, `teacher_age`) values ('t002','小林','0', STR_TO_DATE('1988/12/13','%Y/%m/%d'));
