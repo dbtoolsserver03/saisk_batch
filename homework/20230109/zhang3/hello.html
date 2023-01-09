@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<!--
+字符编码
+UTF-8 可以存放各种语言和字符
+SHIFT-JIS/SJIS  用来存放日文的
+GBK  用来存放中文的
+https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81
+-->
+		<meta charset="UTF-8">
+		<title>hello test</title>
+
+<!--
+	打开YAHOO，右键，选检证，进入开发者模式（F12），
+	选Elements标签
+	找到ICON所在代码，复制粘贴
+	 
+	静态画面尽量把资源文件下载到本地
+		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">
+-->
+<!--
+相对路径 ./pic/favicon.ico  的意思是 当前文件所在的文件夹下面的pic文件夹下面的favicon.ico
+绝对路径  C:\Users\tech\git122902\saisk\homework\20230109\zhang3\pic\favicon.ico
+
+要使用相对路径，这样文件夹放到哪里都可以相对的访问到对应的文件了。
+
+-->
+		<link rel="icon" href="./pic/favicon.ico">
+	</head>
+
+	<body>
+
+	<!-- tablbe 不仅可以用来做表格，也可以用来做画面布局 -->
+	<table>
+		<tr><td>user:</td><td><input type="text"></td></tr>
+		<tr><td>password:</td><td><input type="password"></td></tr>
+	</table>
+
+		
+		<br>
+		<input type="button" value="登録">
+		
+		<hr>
+		
+		性別: <input name="sex" type="radio" id="id_man"> <label for="id_man"> man</label>
+			 <label><input name="sex" type="radio">woman</label>
+		<br>
+		ageArea: <label><input name="ageArea" type="radio">＜60 </label>
+				 <label><input name="ageArea" type="radio">>=60</label>
+		<br>
+		language: <label><input name="lan" type="checkbox">japan </label>
+				  <label><input name="lan" type="checkbox">english </label>
+		          <label><input name="lan" type="checkbox">china </label>
+		<br>
+		hobby: <label><input name="hob" type="checkbox">football </label>
+				  <label><input name="hob" type="checkbox">sing </label>
+		          <label><input name="hob" type="checkbox">run </label>
+		 <br>
+		 birthday <input name="birth" type="date">
+		 <br>
+		 blood<select name="blood">
+				    <option value="">--Please choose an option--</option>
+				    <option value="a">A型</option>
+				    <option value="b">B型</option>
+				    <option value="o">O型</option>
+				</select>
+		<br>
+		<a href="https://www.yahoo.co.jp/" target="aaa1">homepage</a>
+		<br>
+		<a href="https://www.baidu.com/" target="aaa1">
+		  baidu<input type="image" height="80" width="80"src="./pic/animal.jpg">
+		 </a>
+		 
+		 <br>
+		<a href="./to.html" >next html</a>
+		<br>
+
+		自己紹介
+		<textarea rows="5" cols="10"></textarea>
+		
+<!--
+	打开YAHOO，右键，选检证，进入开发者模式（F12），
+	选Elements标签
+	找到ICON所在代码，复制粘贴
+
+	静态画面尽量把资源文件下载到本地
+		<link rel="icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">
+-->
+		<hr>
+		
+	<!-- ctrl+space 智能联想	-->
+	<!-- ctrl+shift+f 整形	-->
+	
+		<table border="1" width="100%">
+			<tr><!-- table row	-->
+				<th>NO.</th><!-- table head	-->
+				<th>name</th>
+				<th>birthday</th>
+				<th>salary</th>
+			</tr>
+			<tr>
+				<td>1</td><!-- table data	-->
+				<td>zhang3</td>
+				<td align="center">1987/05/01</td>
+				<td align="right">20,0000</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><input type="text" value="li4"></td>
+				<td align="center">1987/02/17</td>
+				<td align="right">30,0000</td>
+			</tr>
+		</table>
+
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
