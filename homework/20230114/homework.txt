@@ -1,6 +1,6 @@
 HTML02
 
-熟悉CSS的三种写法
+1.熟悉CSS的三种写法
 .abc {background-color: rgb(0, 128, 255);}
 
 label {background-color: rgb(255, 255, 128);}
@@ -9,8 +9,19 @@ input[type="button"] {background-color: rgb(0, 0, 255);}
 #id_area {background-color: rgb(128, 128, 192);}
 
 
-
-
-学习CSS网站
+2.学习CSS网站
 https://www.runoob.com/css/css-tutorial.html
+
+3.看BILIBILI 找CSS 视频
+
+
+JAVA01
+
+1。上课的代码，自己手敲一遍
+2。放在路径下 
+ jp.co.yahoo.hw.ym202301.saisk.test
+ 
+※　saisk　名前
+
+
 
