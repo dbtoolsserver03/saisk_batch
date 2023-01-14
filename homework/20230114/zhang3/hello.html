@@ -26,31 +26,34 @@ https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81
 要使用相对路径，这样文件夹放到哪里都可以相对的访问到对应的文件了。
 
 -->
-		<link rel="icon" href="./pic/favicon.ico">
-		
+<link rel="icon" href="./pic/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./css/xxx.css">
 <style>
-.test {background-color: rgb(255, 255, 0);}
-.abc {background-color: rgb(0, 128, 255);}
 
-label {background-color: rgb(255, 255, 128);}
-
-#id_area {background-color: rgb(128, 128, 192);}
-
+/* */
 </style>
+
+<script type="text/javascript">
+
+function fun1() {
+	alert(1);
+}
+
+</script>
 		
 	</head>
 
-	<body>
+	<body onload="alert(222)">
 
 <div style="background-color: antiquewhite;">
 
 	<!-- tablbe 不仅可以用来做表格，也可以用来做画面布局 -->
 	<table>
-		<tr><td>user:</td><td><input type="text" style="background-color: aquamarine;"></td></tr>
+		<tr><td>user:</td><td><input type="text" class="test" style="background-color: aquamarine;"></td></tr>
 		<tr><td>password:</td><td><input type="password" style="background-color: darkorange;"></td></tr>
 	</table>
 		<br>
-		<input type="button" value="登録">
+		<input type="button" value="登録" onclick="fun1()">
 </div>
 		
 <div style="background-color: rgb(192, 192, 192);">		
