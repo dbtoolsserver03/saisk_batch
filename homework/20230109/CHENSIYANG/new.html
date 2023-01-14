@@ -4,6 +4,44 @@
 <meta charset="UTF-8">
 <title>人事情報新規</title>
 
+</head>
+
+
+
+<body>
+
+<table>
+	<tr><td>姓:</td><td><input type="text"></td></tr> <tr><td>名:</td><td><input type="text"></td></tr>
+	<tr><td>電話番号:</td><td><input type="text"></td></tr> <tr><td>住所:</td><td><input type="text"></td></tr>
+</table>
+
+<br>
+性別：<input name="sex" type="radio" id="id_man"> <label for="id_man"> man</label>
+			 <label><input name="sex" type="radio">woman</label>
+			  <br>
+         birthday<input name="birth" type="date">
+         <br>
+         職別:<label><input name=" 職別" type="radio"> PG</label>
+	            <label><input name=" 職別" type="radio">SE</label>
+	             <label><input name=" 職別" type="radio">PN</label>
+	             <br>
+	              <br>
+         language:<label> <input name="lan" type="checkbox"> English</label> 
+         language:<label> <input name="lan" type="checkbox"> Japanese</label> 
+         language:<label> <input name="lan" type="checkbox"> Chinese</label> 
+          <br>
+         技術スキル:<label> <input name="技術スキル" type="checkbox"> JAVA</label> 
+        技術スキル:<label> <input name="技術スキル" type="checkbox"> C</label> 
+        技術スキル:<label> <input name="技術スキル" type="checkbox"> C++</label> 
+        <br>
+        年収<select name="money">
+			 <option value="">--Please choose an option--</option>
+			 <option value="0-100">0-100</option>
+			 <option value="100-500">100-500</option>
+			 <option value="500-502">500-502</option>
+			 <option value="502-1000">502-1000</option>
+			 <br>
+			 <input type="button" value="戻る"><input type="button" value="クリア"><input type="button" value="確定">
 
 </body>
 </html>
