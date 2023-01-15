@@ -75,7 +75,7 @@ public class Basic02IfElse {
 		// 后自加
 		int xa=1;
 		
-		// ay=ax;ax=ax+1;
+		// ya=xa;xa=xa+1;
 		int ya=xa++;
 		System.out.println("xa="+xa);
 		System.out.println("ya="+ya);
