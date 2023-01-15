@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script src="./js/plug-in/jquery-3.6.3.slim.js"></script>
+	
+	<script>
+
+		$(document).ready(function(){
+			
+		 // document.getElementById("id_user");
+		 // $("#id_user")
+		 
+		  $("#id_test").click(function(){
+		    fun1();
+		  });
+		  $("#id_pwd").mouseover(function(){
+		    fun1();
+		  });
+		  
+		});
+
+		function fun1() {
+			alert(123);
+		}
+	</script>
+
+</head>
+
+<body>
+	user:<input type="text" id="id_user" value="aaaa">
+	<br>
+	password:<input id="id_pwd" type="password"style="background-color: grey;">
+	<br>
+
+
+	sex: <label><input type="radio" name="nsex" value="1">man</label>
+	<label><input type="radio" name="nsex" value="0">woman</label>
+
+	<br>
+
+	<input id="id_test" type="button" value="test">
+
+
+	<div id="id_view">
+		vvvvv
+	</div>
+
+</body>
+
+</html>
