@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+function fun1(){
+	
+	// 同一个HTML文件里，id是唯一
+	// 从当前HTML文件里，寻找指定id的标签
+	var tag = document.getElementById("id_user");  
+	
+	alert(tag.value);
+}
+
+
+</script>
+
+</head>
+<body>
+
+user:<input type="text" id="id_user" value="aaaa">
+<br>
+password:<input type="password" style="background-color: grey;">
+
+<br>
+
+<input type="button" value="test" onclick="fun1()">
+
+
+</body>
+</html>
