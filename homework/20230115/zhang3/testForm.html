@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>testForm</title>
+</head>
+<body>
+
+<!-- 
+	submit按钮提交的是
+	1。这个按钮所在的表单
+	2。表单里面的带有name属性的标签
+	3。这个标签不可以是disabled
+ -->
+
+<!-- 
+	get请求  会把表单里面的值传到下个画面的地址栏里，不安全，数据量有限        queryString
+	post请求 会把表单里面的值传到下个画面,不会显示在地址栏里，安全，数据量无限 formData
+ -->
+<form action="./to.html" method="get">
+	user:<input type="text" id="id_user" name="user" value="aaaa">
+	<br>
+
+	password:<input type="password" disabled name="pwd" value="123" style="background-color: grey;">
+	<br>
+
+	sex: <label><input type="radio" name="nsex" value="1" checked>man</label>
+	<label><input type="radio" name="nsex" value="0">woman</label>
+	
+	<br>
+		<input type="submit" value="提交">
+</form>
+
+
+
+</body>
+</html>

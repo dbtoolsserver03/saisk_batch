@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>to html</title>
+
+<script>
+
+function init(){
+	
+         // URLを取得
+            var url = new URL(window.location.href);
+
+            // URLSearchParamsオブジェクトを取得
+            var params = url.searchParams;
+
+            // パラメータから「user」を取得
+            var username = params.get("user");
+
+            // パラメータから「nsex」を取得
+            var nsex = params.get("nsex");
+            
+            
+            // IDを使ってspan要素を取得する
+            var div = document.getElementById("id_view");
+            // 取得した要素に受け取ったパラメータを代入
+            div.innerText = username + "\n"+nsex;
+}
+
+
+</script>
+</head>
+
+
+	
+<body style="background-color: rgb(0, 128, 192);" onload="init()">
+
+<div id="id_view">
+
+xxxx
+</div>
+</body>
+</html>
