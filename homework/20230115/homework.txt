@@ -1,18 +1,13 @@
-HTML02
+HTML03
 
-1.熟悉CSS的三种写法
-.abc {background-color: rgb(0, 128, 255);}
-
-label {background-color: rgb(255, 255, 128);}
-input[type="button"] {background-color: rgb(0, 0, 255);}
-
-#id_area {background-color: rgb(128, 128, 192);}
+1.熟悉javascript
+  1.绑定事件
+  2.实现方法
+  3.通过document取到HTML里面的TAG对象，对TAG对象各种操作。
+  
 
 
-2.学习CSS网站
-https://www.runoob.com/css/css-tutorial.html
-
-3.看BILIBILI 找CSS 视频
+3.看BILIBILI 找javascript 视频
 
 
 JAVA01
