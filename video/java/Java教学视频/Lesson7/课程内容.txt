@@ -1,0 +1,1 @@
+Java I/O操作，字节流InputStream和OutputStream，字符流Reader和Writer，Java I/O库的设计原则，字符集的编码，RandomAccessFile类，管道流，对象的序列化。
