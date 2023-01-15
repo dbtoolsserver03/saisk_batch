@@ -1,5 +1,6 @@
 HTML03
 
+
 1.熟悉javascript 对DOM操作 DOM是Document Object Model文档对象模型的缩写
   1.绑定事件
   2.实现方法
@@ -9,9 +10,13 @@ HTML03
   1。登陆画面
   2。检索画面
   3。新建修正画面
+  参照例子
 
+3。jquery操作DOM里的对象
 
-3.看BILIBILI 找javascript 视频
+4.看BILIBILI 找javascript 视频
+
+5.上课所有例子，自己敲一遍
 
 
 JAVA01
