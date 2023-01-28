@@ -19,13 +19,10 @@ HTML03
 5.上课所有例子，自己敲一遍
 
 
-JAVA01
+JAVA
 
-1。上课的代码，自己手敲一遍
-2。放在路径下 
- jp.co.yahoo.hw.ym202301.saisk.test
- 
-※　saisk　名前
+学习下面的视频，边看边动手
+/saisk/video/java/视频说明.txt
 
 
 
