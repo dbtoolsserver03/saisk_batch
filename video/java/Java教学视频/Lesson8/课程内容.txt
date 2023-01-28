@@ -1,0 +1,1 @@
+Java图形界面编程，AWT、布局管理器、事件模型，JFC、Swing编程。应用JBuilder快速开发图形界面程序。

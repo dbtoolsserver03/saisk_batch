@@ -1,0 +1,12 @@
+【JAVA无难事 孙鑫的java视频课程】
+https://www.bilibili.com/video/BV1qJ411J7jD?vd_source=d61aaed4c5ae394cd008d93ee37e1aaf
+
+下面的章节必须看，其他的章节可不看
+\Java教学视频\Lesson3上
+\Java教学视频\Lesson3下
+
+\Java教学视频\Lesson4上
+\Java教学视频\Lesson4下
+
+\Java教学视频\Lesson6　Lesson6集合类
+\Java教学视频\Lesson7　Lesson7IO
