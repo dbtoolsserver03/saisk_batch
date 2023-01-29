@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hhhhh</title>
+<script>
+
+function init(){
+	
+         
+            var url = new URL(window.location.href);
+
+            
+            var params = url.searchParams;
+
+            var username = params.get("user");
+
+            
+            var nsex = params.get("sex");
+            
+            
+            var div = document.getElementById("id_view");
+            
+            div.innerText = username + "\n"+nsex;
+}
+
+
+</script>
+</head>
+
+
+	
+<body style="background-color: rgb(255, 128, 192);" onload="init()">
+
+<div id="id_view">
+
+xxxx
+</div>
+</body>
+</html>
