@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>登録画面</title>
+	<script src="./js/plug-in/jquery-3.6.3.slim.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+
+			$("#id_test").click(function () {
+				fun1();
+			});
+
+			$("#id_pwd").mouseover(function () {
+				fun1();
+			});
+
+			$('input[name="nsex"]').change(function () {
+				if (this.value == 1) {
+					$("#id_view").css("background-color", "red");
+				} else {
+					$("#id_view").css("background-color", "blue");
+				}
+			});
+
+		});
+
+		function fun1() {
+
+			$("#id_view").text($("#id_user").val() + $("#id_pwd").val() + $("input[name='nsex']:checked").val());
+
+		}
+	</script>
+</head>
+
+<body>
+	<form method="get" action="./information.html" style="background-color: lemonchiffon;">
+
+		<div style="background-color: navajowhite;">
+			<h1>Pethome</h1>
+			<h2>lololololol</h2>
+			<p>abcdefghijklmnopqrstuvwxyz</p>
+		</div>
+		<div style="background-color: lightcyan;">
+
+			user:<input type="text" id="id_name" name="user" value="" style="background-color: yellow">
+			<br>
+			password:<input type="password" id="id_pwd" value="" style="background-color: rebeccapurple;">
+		</div>
+
+		sex:<label><input name="sex" type="radio" value="0">man</label>
+		<label><input name="sex" type="radio" value="1">woman</label>
+		<select name="pets" id="pet-select">
+			<option value="">--Please choose an option--</option>
+			<option value="dog">Dog</option>
+			<option value="cat">Cat</option>
+			<br>
+			<input id="id_test" type="button" value="test">
+		</select>
+		<br>
+
+		<input type="submit" value="提交">
+		<input type="reset" value="戻る">
+		<div id="id_view">
+			123455
+		</div>
+	</form>
+
+</body>
+
+
+</html>

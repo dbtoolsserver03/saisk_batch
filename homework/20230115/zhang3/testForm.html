@@ -6,7 +6,12 @@
 </head>
 <body>
 
+
 <!-- 
+	提交表单给下一个画面
+	1。有FORM表单 （ACTION属性里，填写下个画面的URL）
+	2。有SUBMIT按钮
+	
 	submit按钮提交的是
 	1。这个按钮所在的表单
 	2。表单里面的带有name属性的标签
@@ -27,6 +32,9 @@
 	sex: <label><input type="radio" name="nsex" value="1" checked>man</label>
 	<label><input type="radio" name="nsex" value="0">woman</label>
 	
+	
+	<!-- 隐藏变量 当前画面不显示，表单提交时，还可以传递给下个画面 -->
+	<input type="hidden"  name="salary" value="100000">
 	<br>
 		<input type="submit" value="提交">
 </form>

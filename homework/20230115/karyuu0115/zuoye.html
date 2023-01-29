@@ -4,11 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>人事登録</title>
-	<link rel="icon" href="./chajian/favicon (1).ico">
+	<link rel="icon" href="./chajian/favicon.ico">
 
+<script>
+
+function funLink() {
+	
+	document.forms.form1.submit();
+
+}
+
+</script>
 </head>
 
 <body>
+
+<form action="https://www.yahoo.co.jp/" name="form2">
+
+</form>
+
+<form action="./tiaozhuan.html" name="form1">
 
 	<table>
 
@@ -75,7 +90,11 @@
 		baidu<input type="image" height="120" width="160" src="./chajian/11.jpg"></a>
 
 	<br><!-- <b>是表示里面内容提醒注意  -->
-	<a href="./tiaozhuan.html"><b>tiaozhuan</b></a>
+	
+	<!--<a href="./tiaozhuan.html"><b>tiaozhuan</b></a>-->
+	<!-- <button type="submit"> <a href="./tiaozhuan.html"><b>tiaozhuan</b></a></button>-->
+
+	 <a href="#" onclick="funLink()"><b>tiaozhuan</b></a>
 	<br>
 	<!--  textarea文本域    rows 行       cols列   -->
 	自己紹介<textarea rows="10" cols="10"></textarea>
@@ -112,6 +131,8 @@
 			<td align="right">12000</td>
 		</tr>
 	</table>
+	
+	</form>
 </body>
 
 </html>
