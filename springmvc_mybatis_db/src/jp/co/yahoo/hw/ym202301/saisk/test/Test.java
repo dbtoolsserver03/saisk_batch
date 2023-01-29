@@ -1,6 +1,6 @@
 package jp.co.yahoo.hw.ym202301.saisk.test;
 
-public class Test {
+public class StringTest {
 
 //	求一个方法isSymmetry(String str)
 //	如果是abccba  返回true
@@ -10,7 +10,10 @@ public class Test {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(add(1,2));
+		String str="abccba";
+		System.out.println(str.contains("abc"));
+		
+		
 		
 //		System.out.println(isSymmetry("abccba"));
 	}

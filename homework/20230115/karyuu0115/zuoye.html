@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>人事登録</title>
+	<link rel="icon" href="./chajian/favicon (1).ico">
+
+</head>
+
+<body>
+
+	<table>
+
+		<!--tr 是行 ·td是内容  input 是输入元素  type是类型 文本 风格样式  背景      颜色 -->
+		<tr>
+			<td>zhanghao;</td>
+		</tr>
+		<tr>
+			<td><input type="text" style="background-color: rgb(0, 255, 128);"></td>
+		</tr>
+		<tr>
+			<td>mima;</td>
+		</tr>
+		<tr>
+			<td><input type="text" style="background-color: rgb(255, 128, 128);"></td>
+		</tr>
+	</table>
+
+	<br> <!--  -->
+
+	<!--输入元素的  类型是 按钮 他的值是 denglu-->
+	<input type="button" value="denglu">
+
+	<hr>
+	<!--  输入元素的名字是 性别 它的类型是单选按钮 ID属性是男 label是标签的意思 -->
+
+	sex: <input name="sex" type="radio" id="id_man"><label for="id_man"> man</label>
+
+	<label><input name="sex" type="radio">woman</label>
+	<br>
+	<!--        标签 的输入元素 是名字属性 年龄限制  类型是单选按钮 -->
+	ageArea: <label><input name="ageArea" type="radio">1-40 </label>
+	<label><input name="ageArea" type="radio">41-60</label>
+	<label><input name="ageArea" type="radio">61-120</label>
+
+	<br>
+	<!--      标签的输入元素 是 name的属性表达式语言 它的类型是 确认按钮 -->
+	language: <label><input name="lan" type="checkbox">jp </label>
+	<label><input name="lan" type="checkbox">us </label>
+	<label><input name="lan" type="checkbox">cn </label>
+	<br>
+	<!--       標簽的輸入元素是 name的屬性愛好 它的類型是 確認按鈕-->
+	hobby: <label><input name="hob" type="checkbox">pengren </label>
+	<label><input name="hob" type="checkbox">youyong </label>
+	<label><input name="hob" type="checkbox">youxi </label>
+
+	<br> <!--       標簽的輸入元素是生日 類型是 日期date-->
+	birthday: <label> <input name="birth" type="date"></label>
+	<br>
+	<!--血型  选择  name的属性是血型  -->
+	blood<select name="blood">
+		<!-- 选项 的值 =后面接内容-->
+		<option value="">--Please choose an option--</option>
+		<option value="a">A型</option>
+		<option value="b">B型</option>
+		<option value="o">O型</option>
+	</select>
+
+	<br> <!-- url链接 写法 参考资料 是 《a》中的内容应该指明连接的意图     目标      -->
+
+	<a href="https://www.yahoo.co.jp/" target="123">lanqiu</a>
+	<br>
+	<a href="https://www.baidu.com/" target="123">
+		baidu<input type="image" height="120" width="160" src="./chajian/11.jpg"></a>
+
+	<br><!-- <b>是表示里面内容提醒注意  -->
+	<a href="./tiaozhuan.html"><b>tiaozhuan</b></a>
+	<br>
+	<!--  textarea文本域    rows 行       cols列   -->
+	自己紹介<textarea rows="10" cols="10"></textarea>
+
+	<br> <!-- 分割虚线 -->
+	<hr><!-- 表   体     宽度-->
+	<table border="1" width="100%">
+		<tr>
+			<!-- table row	元素定义表格中的行 同一行可同时出现《td》《th》元素-->
+			<th>NO.</th><!-- table head	元素定义表格内的表头单元格，这部分特征是由scope和headers属性准确定义-->
+			<th>name</th>
+			<th>birthday</th>
+			<th>salary</th>
+		</tr>
+		<tr>
+			<td>1</td><!-- table data 元素定义了一个包含数据的表格单元格	-->
+			<td>zhang3</td>
+			<!--  对齐  中央  -->
+			<td align="center">1987/05/01</td>
+			<!--  对齐  右对齐  -->
+			<td align="right">20,0000</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<!--  输入元素类型   表格  的 值 是离li4 -->
+			<td><input type="text" value="li4"></td>
+			<td align="center">1987/02/17</td>
+			<td align="right">30,0000</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><b>wang5</b></td>
+			<td align="center">1999/03/03</td>
+			<td align="right">12000</td>
+		</tr>
+	</table>
+</body>
+
+</html>
