@@ -1,0 +1,28 @@
+HTML03
+
+
+1.熟悉javascript 对DOM操作 DOM是Document Object Model文档对象模型的缩写
+  1.绑定事件
+  2.实现方法
+  3.在方法里面通过document取到HTML里面的TAG对象，对TAG对象各种操作。
+  
+2.做以下三个画面，实现画面跳转，传参数。
+  1。登陆画面
+  2。检索画面
+  3。新建修正画面
+  参照例子
+
+3。jquery操作DOM里的对象
+
+4.看BILIBILI 找javascript 视频
+
+5.上课所有例子，自己敲一遍
+
+
+JAVA
+
+学习下面的视频，边看边动手
+/saisk/video/java/视频说明.txt
+
+
+

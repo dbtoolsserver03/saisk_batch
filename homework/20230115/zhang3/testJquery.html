@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>test Jquery</title>
+	
+	<script src="./js/plug-in/jquery-3.6.3.slim.js"></script>
+	
+	<script>
+
+	    //下面的代码和<body onload>事件里的方法相似，
+	    // 都是当body里面的所有TAG加载完毕时，自动触发的方法
+		$(document).ready(function(){
+			
+		 // $("#id_user")
+		 // 上面的代码等同于下面的写法
+		 // document.getElementById("id_user");
+		  $("#id_test").click(function(){
+		    fun1();
+		  });
+		  
+		  $("#id_pwd").mouseover(function(){
+		    fun1();
+		  });
+		  
+		  $('input[name="nsex"]').change(function(){
+		    if(this.value==1){
+				$("#id_view").css("background-color","red");
+			} else {
+				$("#id_view").css("background-color","blue");
+			}
+		  });
+		  
+		});
+
+		function fun1() {
+			
+			//alert($("#id_user").val()+$("#id_pwd").val());
+			//alert($("input[name='nsex']:checked").val());
+			$("#id_view").text($("#id_user").val()+$("#id_pwd").val()+$("input[name='nsex']:checked").val());
+			
+		}
+	</script>
+
+</head>
+
+<body style="background-color: rgb(0, 255, 255);">
+	user:<input type="text" id="id_user" value="aaaa">
+	<br>
+	password:<input id="id_pwd" type="password"style="background-color: grey;">
+	<br>
+	sex: <label><input type="radio" name="nsex" value="1">man</label>
+	<label><input type="radio" name="nsex" value="0">woman</label>
+	<br>
+	<input id="id_test" type="button" value="test">
+
+	<div id="id_view">
+		vvvvv
+	</div>
+
+</body>
+
+</html>

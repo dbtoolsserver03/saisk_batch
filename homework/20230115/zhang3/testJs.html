@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+<script src="./js/sample1.js"></script>
+
+	<script>
+
+
+	</script>
+
+</head>
+
+<body>
+	user:<input type="text" id="id_user" value="aaaa">
+	<br>
+	<!-- 通过this指针可以把当前的TAG对象作为参数传递给方法 -->
+	password:<input type="password" onmouseover="fun1(this)" style="background-color: grey;">
+	<br>
+
+
+	sex: <label><input type="radio" name="nsex" value="1">man</label>
+	<label><input type="radio" name="nsex" value="0">woman</label>
+
+	<br>
+
+	<label for="pet-select">Choose a pet:</label>
+
+	<select name="pets" id="pet-select">
+		<option value="">--Please choose an option--</option>
+		<option value="dog">Dog</option>
+		<option value="cat">Cat</option>
+		<option value="hamster">Hamster</option>
+		<option value="parrot">Parrot</option>
+		<option value="spider">Spider</option>
+		<option value="goldfish">Goldfish</option>
+	</select>
+
+	<br>
+
+	<input type="button" value="test" onclick="fun1(this)">
+
+
+	<div id="id_view">
+		vvvvv
+	</div>
+
+
+</body>
+
+</html>

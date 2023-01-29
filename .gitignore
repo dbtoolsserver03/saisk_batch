@@ -5,6 +5,5 @@
 build
 .settings
 bin
-.classpath
 .project
 .class
