@@ -6,7 +6,14 @@ public class LoginBean {
 	 private String username; 
 	 private String password;
 	 private String word;
-
+	 private String agree;
+	 
+	public String getAgree() {
+		return agree;
+	}
+	public void setAgree(String agree) {
+		this.agree = agree;
+	}
 	public String getUsername() {
 		return username;
 	}

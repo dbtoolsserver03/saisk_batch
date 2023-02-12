@@ -33,13 +33,7 @@ function register() {
 
 }
 
-
-
-
-
-
 </script>
-
 
 <body background="">
 <form name="loginForm" action="${pageContext.request.contextPath }/login.action" method="post">
@@ -55,6 +49,10 @@ function register() {
 
 <!-- <input id="id_btn_clear" type="button" value="清除"/> -->
 <input id="id_btn_register" type="button" value="注册" onclick="register()"/>
+
+<br>
+
+<label><input type="checkbox" name="agree" value="1" > 同意遵守绿色网络</label>
 <!-- 显示错误信息 -->
 <c:if test="${error!=null}">
 	<br/>${error}
@@ -63,6 +61,7 @@ function register() {
 </form>
 
 <br>
+
 </body>
 </html>
 
