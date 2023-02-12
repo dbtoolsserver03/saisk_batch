@@ -1,0 +1,9 @@
+CREATE TABLE `t_dept` (
+  `deptno` varchar(2) NOT NULL COMMENT '部門番号',
+  `dname` varchar(32) NOT NULL COMMENT '部門名',
+  `loc` varchar(32) NOT NULL COMMENT '部門拠点'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='部門テーブル'
+
+--根据上面的例子，求两张表的建表SQL			
+--根据上面的例子，求插入数据的SQL文，要求更新时间为插入数据库时的时间。							
+alter table t_dept add updatetime date comment'更新時間'

@@ -1,0 +1,46 @@
+create table t_emp (
+empno varchar(10) not null comment'雇員番号',
+first_nm varchar(32) null comment'姓',
+last_nm varchar(32) null comment'名',
+sex char(1) null comment'性别',
+mgr varchar(10) null comment'リーダー',
+hiredate date null comment'入社日',
+sal decimal(10,0) null comment'月給',
+deptno varchar(3) null comment'部門番号',
+update_time datetime null comment'更新時間'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='雇員テーブル'
+
+
+--根据上面的例子，求插入数据的SQL文，要求更新时间为插入数据库时的时间。
+
+insert into 
+t_emp(mgr)
+values
+(20230210);
+
+
+--检索员工名称和该员式所对应的リーダー名
+select
+first_nm,last_nm,mgr
+from
+t_emp
+
+
+
+
+--检索没有リーダー的员工姓名
+select
+first_nm,last_nm
+from
+t_emp
+where
+mgr =0
+
+
+--输出2007年以后入社人的姓名		
+select
+first_nm,last_nm
+from
+t_emp
+where
+hiredate>2007
