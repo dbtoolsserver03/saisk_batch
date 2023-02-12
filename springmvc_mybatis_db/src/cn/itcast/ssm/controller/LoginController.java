@@ -23,12 +23,31 @@ public class LoginController {
 	private UserService userService;
 
 
+/*
+ * 前台后台连动
+ * 前台　JSP  Thymeleaf  DART フロント側
+ * 后台　JAVA .NET       DART バック側     裏側
+ * 
+ * 画面入力的信息，如何传到JAVA端
+ * JAVA端的信息，如何传到到画面端
+ */
+	
 	// 登陆
 	@RequestMapping("/login")
 	public String login(Model model, HttpSession session, 
 			@ModelAttribute LoginBean loginBean,
 			String username, String password,String word)
 			throws Exception {
+		
+		if(loginBean.getAgree() == null || loginBean.getAgree().length()==0) {
+			
+			model.addAttribute("usernamexx", username);
+			model.addAttribute("passwordyy", password);
+			model.addAttribute("error", "请同意");
+			model.addAttribute("loginInfo", loginBean);
+			
+			return "login";
+		}
 		
 		
 		if(word == null || word.length()==0) {

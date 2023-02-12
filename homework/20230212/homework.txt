@@ -1,16 +1,15 @@
 
-
 DB作业
 
 1。DB_LESSON01、DB_LESSON02　SHEET的所有SQL要理解
 2。/saisk/db/MYSQL作业01.xlsx、MYSQL作业02.xlsx
 
 JAVA作业
+/springmvc_mybatis_db/src/jp/co/yahoo/hw/ym20230205/saisk/test/exe/HomeWork0212.java
+/springmvc_mybatis_db/src/jp/co/yahoo/hw/ym20230212/saisk/test/exe/Test021201.java
 
-1。
-/springmvc_mybatis_db/src/jp/co/yahoo/hw/ym20230205/saisk/test/exe/TestA06.java
-/springmvc_mybatis_db/src/jp/co/yahoo/hw/ym20230205/saisk/test/exe/TestA07.java
 
-2。
-/springmvc_mybatis_db/res/readme/環境構築.xlsx
-SHEET  JAVAHOMEWORK
+SPRINGMVC
+/springmvc_mybatis_db/res/readme/springmvc_mybatis_db説明.xlsx
+看下面视频
+https://drive.google.com/drive/folders/1ElBOnTcNutsYw-T886-s91mkL6CE_Vpg?usp=sharing
