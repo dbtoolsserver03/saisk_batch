@@ -1,0 +1,20 @@
+CREATE TABLE `t_dept` (
+  `deptno` varchar(2) NOT NULL COMMENT '部門番号',
+  `dname` varchar(32) NOT NULL COMMENT '部門名',
+  `loc` varchar(32) NOT NULL COMMENT '部門拠点'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='部門テーブル'
+
+
+
+
+create table t_emp (
+empno varchar(10) not null comment'雇員番号',
+first_nm varchar(32) null comment'姓',
+last_nm varchar(32) null comment'名',
+sex char(1) null comment'性别',
+mgr varchar(10) null comment'リーダー',
+hiredate date null comment'入社日',
+sal decimal(10,0) null comment'月給',
+deptno varchar(3) null comment'部門番号',
+update_time datetime null comment'更新時間'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='雇員テーブル'
