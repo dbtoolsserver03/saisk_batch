@@ -76,8 +76,6 @@ public class HomeWork0212 {
 		return retList;
 	}
 	
-	
-	
 	public static void putFileContent(List<String> strLst, String newPath, String newNm, String encode)
 			throws Exception {
 
