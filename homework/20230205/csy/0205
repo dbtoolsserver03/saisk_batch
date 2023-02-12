@@ -1,0 +1,96 @@
+CREATE TABLE `bumon1tabel` ( 			
+    `num` varchar (5) NOT NULL COMMENT '部門番号',			
+     `name` varchar (20) NOT NULL COMMENT '部門名',			
+    `address` varchar (20) NOT NULL COMMENT '部門拠点'	,					
+    PRIMARY KEY (`num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='部門
+CREATE TABLE `employee1table` (
+  `id` varchar(10) NOT NULL COMMENT '雇員番号',
+  `sei` varchar(32) NOT NULL COMMENT '姓',
+  `mei` varchar(32) NOT NULL COMMENT '名',
+  `sex` char(1) DEFAULT NULL COMMENT '性別',
+  `leader` varchar(32) NOT NULL COMMENT 'リーダー',
+  `workday` date DEFAULT NULL COMMENT '入社日',
+  `SALARY` decimal(10,1) DEFAULT NULL COMMENT '月給',
+  `num` varchar(2) NOT NULL COMMENT '部門番号',
+  `UPDATE_TIME` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `DEL_FLG` char(1) NOT NULL DEFAULT '0' COMMENT '削除フラグ',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='雇員テーブル'
+
+select
+    ( 
+        CASE 
+            WHEN (num = '11') 
+                THEN '開発部' 
+            WHEN (num = '12') 
+                THEN '営業部' 
+            WHEN (num = '13') 
+                THEN '統括部' 
+            WHEN (num = '14') 
+                THEN '情報部' 
+            ELSE 'XXX' 
+            END
+    ) as num
+    , count(1) as cnt 
+from
+    employee1table 
+group by
+    num 
+order by
+    cnt desc
+
+
+select
+    sei
+    , mei ,salary,num,workday
+from
+    employee1table bumon1tabel 
+
+  where  employee1table.num = bumon1tabel.num
+  and
+      address like '%新潟県%'
+      and
+       DATE_FORMAT(workday, '%Y') >= '2007'
+       set 
+  SALARY=SALARY+10000
+        
+select
+    sei
+    , mei
+    , name 
+from
+    employee1table
+    , bumon1tabel 
+where
+    employee1table.num = bumon1tabel.num
+select
+    * 
+from
+    employee1table 
+where
+    num not between 11 and 14 
+delete 
+from
+    employee1table 
+where
+    num not between 11 and 14
+
+
+ 
+select
+    sei
+    , mei
+    , leader 
+from
+    employee1table
+
+
+select
+    sei
+    , mei 
+
+  from
+  employee1table
+where
+  leader is null;
