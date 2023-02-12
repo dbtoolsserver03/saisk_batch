@@ -12,4 +12,5 @@ JAVA作业
 SPRINGMVC
 /springmvc_mybatis_db/res/readme/springmvc_mybatis_db説明.xlsx
 看下面视频
+Springmvc+Mybatis由浅入深
 https://drive.google.com/drive/folders/1ElBOnTcNutsYw-T886-s91mkL6CE_Vpg?usp=sharing
