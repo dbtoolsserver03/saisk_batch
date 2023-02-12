@@ -45,15 +45,21 @@ select
     sei
     , mei ,salary,num,workday
 from
-    employee1table bumon1tabel 
+    employee1table e , bumon1tabel b
 
-  where  employee1table.num = bumon1tabel.num
+  where  e.num = b.num
   and
-      address like '%新潟県%'
+      b.address like '%新潟県%'
       and
-       DATE_FORMAT(workday, '%Y') >= '2007'
+       DATE_FORMAT(e.workday, '%Y') >= '2007'
+       
+       
+       
+       
        set 
   SALARY=SALARY+10000
+        
+        
         
 select
     sei
@@ -64,6 +70,8 @@ from
     , bumon1tabel 
 where
     employee1table.num = bumon1tabel.num
+
+    
 select
     * 
 from
@@ -78,6 +86,19 @@ where
 
 
  
+●●●●●●●●●●●●●●●●
+select
+    emp.first_nm
+    , leader.first_nm 
+from
+    t_emp emp 
+    left join t_emp leader 
+        on emp.mgr = leader.empno
+●●●●●●●●●●●●●●●●
+
+
+
+
 select
     sei
     , mei

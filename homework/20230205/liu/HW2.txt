@@ -19,6 +19,14 @@ values
 (20230210);
 
 
+●●●●●●●●●●
+insert into t_emp
+(empno,first_nm,last_nm,sex,mgr,hiredate,sal,deptno,update_time)
+values
+('10001', '田中', '太郎', '1', null, '2008/04/27', 235000, '11', now());
+●●●●●●●●●●
+
+
 --检索员工名称和该员式所对应的リーダー名
 select
 first_nm,last_nm,mgr
@@ -36,6 +44,17 @@ t_emp
 where
 mgr =0
 
+●●●●●●●●●●
+select
+    first_nm
+    , last_nm 
+from
+    t_emp 
+where
+    mgr is null
+●●●●●●●●●●
+
+
 
 --输出2007年以后入社人的姓名		
 select
@@ -44,3 +63,14 @@ from
 t_emp
 where
 hiredate>2007
+
+
+●●●●●●●●●●
+select
+    first_nm
+    , last_nm 
+from
+    t_emp 
+where
+    year(hiredate) > 2007
+●●●●●●●●●●
