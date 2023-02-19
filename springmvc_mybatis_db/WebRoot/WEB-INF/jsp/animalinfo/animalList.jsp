@@ -10,9 +10,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>查询动物列表</title>
+<title>查询ブランドバッグ一覧列表</title>
 
-<script type="text/javascript" src="../${pageContext.request.contextPath}/js/animal/animalList.js"></script>
+<script type="text/javascript" src="../${pageContext.request.contextPath}/js/BrandBag/BrandBagList.js"></script>
 
 </head>
 <body>
@@ -27,11 +27,11 @@
 			</tr>
 		</table>
 
-	<form name="animalForm"
-		action="${pageContext.request.contextPath }/Animal/queryAnimal.action"
+	<form name="BrandBagForm"
+		action="${pageContext.request.contextPath }/BrandBag/queryBrandBag.action"
 		method="post">
 		
-		查询条件： 動物XXXXXXXXXX
+		查询条件： ブランドバッグ一覧
 		
 		<!-- 
 		<table width="100%" border=1>

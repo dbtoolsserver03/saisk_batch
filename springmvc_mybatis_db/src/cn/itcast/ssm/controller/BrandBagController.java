@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import cn.itcast.ssm.service.AnimalService;
 
 @Controller
-public class AnimalController {
+public class BrandBagController {
 
 //	@Autowired
 //	private AnimalService animalService;
 
-	@RequestMapping("animalInit")
-	public String animalInit()
+	@RequestMapping("BrandBagInit")
+	public String BrandBagInit()
 			throws Exception {
-	    return "animalinfo/animalList";
+	    return "BrandBaginfo/BrandBagList";
 	}
 	
 //	
