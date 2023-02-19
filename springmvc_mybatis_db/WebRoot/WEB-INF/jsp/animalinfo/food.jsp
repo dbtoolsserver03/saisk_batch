@@ -10,9 +10,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>查询动物列表</title>
+<title>查询料理列表</title>
 
-<script type="text/javascript" src="../${pageContext.request.contextPath}/js/animal/animalList.js"></script>
+<script type="text/javascript" src="../${pageContext.request.contextPath}/js/food/foodList.js"></script>
 
 </head>
 <body>
@@ -27,53 +27,53 @@
 			</tr>
 		</table>
 
-	<form name="animalForm"
-		action="${pageContext.request.contextPath }/Animal/queryAnimal.action"
+	<form name="foodForm"
+		action="${pageContext.request.contextPath }/Food/queryFood.action"
 		method="post">
 		
-		查询条件： 動物XXXXXXXXXX
+		查询条件： 料理XXXXXXXXXX
 		
 		<!-- 
 		<table width="100%" border=1>
 			<tr>
-				<td>动物名称：
-				<input name="animalName" value="${animal.animalName}" />
+				<td>料理名称：
+				<input name="foodName" value="${food.foodName}" />
 				
 				</td>
 				
 				<td>
-					<input type="button" value="查询" onclick="queryAnimals()" />
-					<input type="button" value="新規" onclick="addAnimal()" />
-					<input type="button" value="批量删除" onclick="deleteAnimals()" />
+					<input type="button" value="查询" onclick="queryFoods()" />
+					<input type="button" value="新規" onclick="addFood()" />
+					<input type="button" value="批量删除" onclick="deleteFoods()" />
 				</td>
 			</tr>
 		</table>
 
-		<c:if test="${animalLst !=null && fn:length(animalLst) > 0}">
-		动物一览：
+		<c:if test="${foodLst !=null && fn:length(foodLst) > 0}">
+		料理一览：
 		<table width="100%" border=1>
 				<tr>
 					<th>选择</th>
-					<th>动物名称</th>
-					<th>动物性别</th>
+					<th>料理名称</th>
+					<th>料理性别</th>
 					<th>出生日</th>
 					<th>操作</th>
 				</tr>
-				<c:forEach items="${animalLst}" var="animal" varStatus="status">
+				<c:forEach items="${foodLst}" var="food" varStatus="status">
 					<tr>
-						<td><input type="checkbox" name="animals_id" currentStatusxx="aa_${status.count}"
-							value="${animal.animalId}"></td>
-						<td>${animal.animalName }</td>
+						<td><input type="checkbox" name="foods_id" currentStatusxx="aa_${status.count}"
+							value="${food.foodId}"></td>
+						<td>${food.foodName }</td>
 						<td>
 						
 						<c:choose>
-						    <c:when test="${animal.animalSex == 0}">女</c:when>
-						    <c:when test="${animal.animalSex == 1}">男</c:when>
+						    <c:when test="${food.foodSex == 0}">女</c:when>
+						    <c:when test="${food.foodSex == 1}">男</c:when>
 					        <c:otherwise>未知</c:otherwise>
 						</c:choose>						
 						</td>
-						<td><fmt:formatDate value="${animal.animalAge}"	pattern="yyyy/MM/dd" /></td>
-						<td><a href="${pageContext.request.contextPath }/editAnimal.action?id=${animal.animalId}">修改</a></td>
+						<td><fmt:formatDate value="${food.foodAge}"	pattern="yyyy/MM/dd" /></td>
+						<td><a href="${pageContext.request.contextPath }/editFood.action?id=${food.foodId}">修改</a></td>
 					</tr>
 				</c:forEach>
 			</table>

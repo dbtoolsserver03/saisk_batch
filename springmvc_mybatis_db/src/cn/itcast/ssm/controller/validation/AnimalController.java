@@ -1,16 +1,16 @@
-package cn.itcast.ssm.controller;
+package cn.itcast.ssm.controller.validation;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//import cn.itcast.ssm.po.original.AnimalTable;
-//import cn.itcast.ssm.service.AnimalService;
+//import cn.itcast.ssm.po.original.FoodTable;
+//import cn.itcast.ssm.service.FoodService;
 
 @Controller
 public class AnimalController {
 
 //	@Autowired
-//	private AnimalService animalService;
+//	private FoodService animalService;
 
 	@RequestMapping("animalInit")
 	public String animalInit()
@@ -19,10 +19,10 @@ public class AnimalController {
 	}
 	
 //	
-//	@RequestMapping(value = "/editAnimal", method = { RequestMethod.POST, RequestMethod.GET })
+//	@RequestMapping(value = "/editFood", method = { RequestMethod.POST, RequestMethod.GET })
 //	public String editItemsSubmit(Model model,  @RequestParam(value = "id", required = true,defaultValue="1") String animalId) throws Exception {
 //		
-//		AnimalTable dbInfo = animalService.findAnimalByID(animalId);
+//		FoodTable dbInfo = animalService.findFoodByID(animalId);
 //
 //		model.addAttribute("animal", dbInfo);
 //		return "animalinfo/animalUpdate";
@@ -38,26 +38,26 @@ public class AnimalController {
 //	
 //	
 //	@RequestMapping("animalupdate")
-//	public String animalupdate(@ModelAttribute AnimalTable animal)
+//	public String animalupdate(@ModelAttribute FoodTable animal)
 //			throws Exception {
-//		animalService.updateAnimal(animal);
-//	    return "redirect:/queryAnimals.action";
+//		animalService.updateFood(animal);
+//	    return "redirect:/queryFoods.action";
 //	}
 //	
 //	@RequestMapping("animalinsert")
-//	public String animalInsert(@ModelAttribute AnimalTable animal)
+//	public String animalInsert(@ModelAttribute FoodTable animal)
 //			throws Exception {
-//		animalService.inserAnimal(animal);
-//	    return "redirect:/queryAnimals.action";
+//		animalService.inserFood(animal);
+//	    return "redirect:/queryFoods.action";
 //	}
 ////
 ////	
-//	@RequestMapping("queryAnimals")
-//	public ModelAndView animalList(@ModelAttribute AnimalTable animal)
+//	@RequestMapping("queryFoods")
+//	public ModelAndView animalList(@ModelAttribute FoodTable animal)
 //			throws Exception {
 //
 ////		// 调用service查找 数据库，查询商品列表
-//		List<AnimalTable> animalLst = animalService.findAnimalList(animal);
+//		List<FoodTable> animalLst = animalService.findFoodList(animal);
 //
 //		// 返回ModelAndView
 //		ModelAndView modelAndView = new ModelAndView();
@@ -68,7 +68,7 @@ public class AnimalController {
 //		// modelAndView.setViewName("/WEB-INF/jsp/items/itemsList.jsp");
 //		// 上边的路径配置可以不在程序中指定jsp路径的前缀和jsp路径的后缀
 //		
-//		//modelAndView.addObject("animalName", animal.getAnimalName());
+//		//modelAndView.addObject("animalName", animal.getFoodName());
 //		
 //		modelAndView.addObject("animal", animal);
 //
@@ -81,8 +81,8 @@ public class AnimalController {
 //	
 //	
 //	// 批量删除 商品信息
-//	@RequestMapping("/deleteAnimals")
-//	public String deleteAnimals(String[] animals_id) throws Exception {
+//	@RequestMapping("/deleteFoods")
+//	public String deleteFoods(String[] animals_id) throws Exception {
 //
 //		// 从JSP传到JAVA程序有三种方法
 //		// 1。传参数（JSP的NAME和参数的名称要一致）
@@ -93,7 +93,7 @@ public class AnimalController {
 //		// 调用service批量删除
 //		 animalService.deleteItems(animalIds);
 //		// 定向到查询列表
-//		return "redirect:/queryAnimals.action";
+//		return "redirect:/queryFoods.action";
 //
 //	}
 //	
