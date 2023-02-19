@@ -1,0 +1,92 @@
+create table t_dept(
+depto varchar(2) not null comment'部門番号',
+dname varchar(32) not null comment'部門名',
+loc varchar(32) not null comment'部門拠点'
+)CHARSET=utf8mb3 COMMENT='部門テーブル'
+ 
+insert into t_emp (depto,dname,loc) 
+values ('11','開発部','京都府'),
+values ('12','営業部','新潟県'),
+values ('13','統括部','三重県'),
+values ('14','情報部','新潟県');
+
+
+
+create table t_emp (
+empno varchar(10) not null comment'雇員番号',
+first_nm varchar(32) null comment'姓',
+last_nm varchar(32) null comment'名',
+sex char(1) null comment'性别',
+mgr varchar(10) null comment'リーダー',
+hiredate date null comment'入社日',
+sal decimal(10,0) null comment'月給',
+deptno varchar(2) null comment'部門番号',
+update_time datetime null comment'更新時間'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='雇員テーブル'
+
+
+--根据上面的例子，求插入数据的SQL文，要求更新时间为插入数据库时的时间。
+insert into t_emp
+(empno,first_nm,last_nm,sex,mgr,hiredate,sal,deptno,update_time)
+values
+('10001', '田中', '太郎', '1', null, '2008/04/27', 235000, '11', now()),
+('10002', '佐藤', '元德', '1', '1001', '2001/8/3', 423000, '14', now()),
+('10003', '中島', '花子', '0', '1002', '2008/12/1', 487000, '14', now()),
+('10004', '田中', '星津', '1', '1002', '2007/4/18', 333000, '12', now()),
+('10005', '木村', '里美', '0', '1002', '2005/7/28', 308000, '16', now());
+
+
+--查询每个部門拠点的人数，并按照人数多少进行降序排序。
+select distinct loc
+from t_emp e
+left join t_dept d
+on e.deptno = d.depto
+order by loc desc;
+
+
+--将新潟地区，2007年以后的入职的员工，工资加10000。***
+select
+    first_nm
+    , last_nm ,loc
+from t_emp e
+left join t_dept d
+on e.deptno = d.depto
+where
+   loc = '新潟県' && year(hiredate) > 2007;
+ 
+
+--检索每个人所在的部门名称。
+select first_nm, last_nm ,dname
+from t_emp e
+left join t_dept d
+on e.deptno = d.depto;
+
+
+--删除没有部门名称的人员记录。****
+ delete from t_emp e left join t_dept d on e.deptno = d.depto
+ where dname is null
+ 
+ 
+ --检索员工名称和该员式所对应的リーダー名
+select
+first_nm,last_nm,mgr
+from
+t_emp
+
+
+--检索没有リーダー的员工姓名
+select
+first_nm,last_nm
+from
+t_emp
+where
+mgr is null
+
+
+--输出2007年以后入社人的姓名		
+select
+first_nm,last_nm
+from
+t_emp
+where
+year(hiredate)>2007
