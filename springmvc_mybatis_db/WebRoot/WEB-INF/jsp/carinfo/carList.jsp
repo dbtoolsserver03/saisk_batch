@@ -12,8 +12,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查询車列表</title>
 
+<!-- 
 <script type="text/javascript" src="../${pageContext.request.contextPath}/js/animal/animalList.js"></script>
-
+ -->
 </head>
 <body>
 
