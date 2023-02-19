@@ -14,6 +14,18 @@
 </head>
 <body>
 
+<a href="${pageContext.request.contextPath }/blandBagInit.action">ブランドバッグ一覧</a>
+<br>
+
+<a href="${pageContext.request.contextPath }/foodInit.action">料理一覧</a>
+<br>
+
+<a href="${pageContext.request.contextPath }/carInit.action">車一覧</a>
+<br>
+
+<a href="${pageContext.request.contextPath }/ballTeamInit.action">ボールチーム一覧</a>
+<br>
+
 <a href="${pageContext.request.contextPath }/animalInit.action">動物一覧</a>
 <br>
 <a href="${pageContext.request.contextPath }/teacherInit.action">老师</a>
