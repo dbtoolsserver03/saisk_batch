@@ -10,10 +10,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>查询ブランドバッグ一覧列表</title>
-
-<script type="text/javascript" src="../${pageContext.request.contextPath}/js/BrandBag/BrandBagList.js"></script>
-
+<title>查询动物列表</title>
+<!-- 
+<script type="text/javascript" src="../${pageContext.request.contextPath}/js/animal/animalList.js"></script>
+ -->
 </head>
 <body>
 
@@ -23,16 +23,16 @@
 				<c:if test="${username!=null }">
 					<td><a href="${pageContext.request.contextPath }/logout.action">退出</a></td>
 				</c:if>
-				
+
 			</tr>
 		</table>
 
-	<form name="BrandBagForm"
-		action="${pageContext.request.contextPath }/BrandBag/queryBrandBag.action"
+	<form name="animalForm"
+		action="${pageContext.request.contextPath }/Animal/queryAnimal.action"
 		method="post">
-		
-		查询条件： ブランドバッグ一覧
-		
+
+		查询条件： 動物XXXXXXXXXX
+
 		<!-- 
 		<table width="100%" border=1>
 			<tr>
@@ -48,7 +48,6 @@
 				</td>
 			</tr>
 		</table>
-
 		<c:if test="${animalLst !=null && fn:length(animalLst) > 0}">
 		动物一览：
 		<table width="100%" border=1>

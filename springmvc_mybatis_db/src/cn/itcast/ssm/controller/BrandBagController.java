@@ -12,10 +12,10 @@ public class BrandBagController {
 //	@Autowired
 //	private AnimalService animalService;
 
-	@RequestMapping("BrandBagInit")
-	public String BrandBagInit()
+	@RequestMapping("blandBagInit")
+	public String blandBagInitxxx()
 			throws Exception {
-	    return "BrandBaginfo/BrandBagList";
+	    return "brandBaginfo/brandBaginfoList";
 	}
 	
 //	
