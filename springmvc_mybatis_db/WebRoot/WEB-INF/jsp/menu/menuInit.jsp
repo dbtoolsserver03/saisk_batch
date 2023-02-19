@@ -14,7 +14,8 @@
 </head>
 <body>
 
-
+<a href="${pageContext.request.contextPath }/animalInit.action">動物一覧</a>
+<br>
 <a href="${pageContext.request.contextPath }/teacherInit.action">老师</a>
 <br>
 <a href="${pageContext.request.contextPath }/items/initItems.action">商品</a>
