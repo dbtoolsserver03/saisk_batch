@@ -22,7 +22,12 @@ public class UserController {
 	private UserService userService;
 
 
-	// 用户检索一览画面的初期化
+	/**
+	 * 用户检索一览画面的初期化
+	 * 
+	 * @return 
+	 * @throws Exception
+	 */
 	@RequestMapping("/initUserLst")
 	public String initUserLst()
 			throws Exception {
