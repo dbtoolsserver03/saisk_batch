@@ -11,9 +11,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查询动物列表</title>
-<!-- 
+
 <script type="text/javascript" src="../${pageContext.request.contextPath}/js/animal/animalList.js"></script>
- -->
+
 </head>
 <body>
 
@@ -31,9 +31,9 @@
 		action="${pageContext.request.contextPath }/Animal/queryAnimal.action"
 		method="post">
 
-		查询条件： 動物XXXXXXXXXX
+		查询条件： 
 
-		<!-- 
+
 		<table width="100%" border=1>
 			<tr>
 				<td>动物名称：
@@ -48,6 +48,8 @@
 				</td>
 			</tr>
 		</table>
+		
+		<!-- 
 		<c:if test="${animalLst !=null && fn:length(animalLst) > 0}">
 		动物一览：
 		<table width="100%" border=1>
