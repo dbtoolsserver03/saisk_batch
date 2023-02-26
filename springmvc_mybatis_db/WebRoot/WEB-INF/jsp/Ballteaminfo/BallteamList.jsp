@@ -31,12 +31,12 @@
 		action="${pageContext.request.contextPath }/BallTeam/queryBallTeam.action"
 		method="post">
 		
-		查询条件： 啊嘎嘎嘎嘎嘎啊嘎嘎
+		查询条件： 
 		
-		<!-- 
+		
 		<table width="100%" border=1>
 			<tr>
-				<td>动物名称：
+				<td>球队名称：
 				<input name="BallTeamName" value="${BallTeam.BallTeamName}" />
 				
 				</td>
@@ -48,7 +48,7 @@
 				</td>
 			</tr>
 		</table>
-
+	<!-- 
 		<c:if test="${BallTeamLst !=null && fn:length(BallTeamLst) > 0}">
 		动物一览：
 		<table width="100%" border=1>

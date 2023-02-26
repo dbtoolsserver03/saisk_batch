@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.ssm.mapper.original.BallteamMapper">
+  <resultMap id="BaseResultMap" type="cn.itcast.ssm.po.original.Ballteam">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="SEI" jdbcType="VARCHAR" property="sei" />
+    <result column="MEI" jdbcType="VARCHAR" property="mei" />
+    <result column="SEX" jdbcType="CHAR" property="sex" />
+    <result column="BIRTHDAY" jdbcType="DATE" property="birthday" />
+    <result column="SALARY" jdbcType="DECIMAL" property="salary" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="DEL_FLG" jdbcType="VARCHAR" property="delFlg" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.itcast.ssm.po.original.Ballteam">
+    <result column="PHOTO" jdbcType="LONGVARBINARY" property="photo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, SEI, MEI, SEX, BIRTHDAY, SALARY, CREATE_USER, CREATE_TIME, UPDATE_USER, UPDATE_TIME, 
+    DEL_FLG
+  </sql>
+  <sql id="Blob_Column_List">
+    PHOTO
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ballteam
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ballteam
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.itcast.ssm.po.original.Ballteam">
+    insert into ballteam (ID, SEI, MEI, 
+      SEX, BIRTHDAY, SALARY, CREATE_USER, 
+      CREATE_TIME, UPDATE_USER, UPDATE_TIME, 
+      DEL_FLG, PHOTO)
+    values (#{id,jdbcType=VARCHAR}, #{sei,jdbcType=VARCHAR}, #{mei,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=CHAR}, #{birthday,jdbcType=DATE}, #{salary,jdbcType=DECIMAL}, #{createUser,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{delFlg,jdbcType=VARCHAR}, #{photo,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.itcast.ssm.po.original.Ballteam">
+    insert into ballteam
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="sei != null">
+        SEI,
+      </if>
+      <if test="mei != null">
+        MEI,
+      </if>
+      <if test="sex != null">
+        SEX,
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY,
+      </if>
+      <if test="salary != null">
+        SALARY,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="delFlg != null">
+        DEL_FLG,
+      </if>
+      <if test="photo != null">
+        PHOTO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="sei != null">
+        #{sei,jdbcType=VARCHAR},
+      </if>
+      <if test="mei != null">
+        #{mei,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=DECIMAL},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlg != null">
+        #{delFlg,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null">
+        #{photo,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.itcast.ssm.po.original.Ballteam">
+    update ballteam
+    <set>
+      <if test="sei != null">
+        SEI = #{sei,jdbcType=VARCHAR},
+      </if>
+      <if test="mei != null">
+        MEI = #{mei,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        SEX = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="birthday != null">
+        BIRTHDAY = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null">
+        SALARY = #{salary,jdbcType=DECIMAL},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlg != null">
+        DEL_FLG = #{delFlg,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null">
+        PHOTO = #{photo,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.itcast.ssm.po.original.Ballteam">
+    update ballteam
+    set SEI = #{sei,jdbcType=VARCHAR},
+      MEI = #{mei,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=CHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SALARY = #{salary,jdbcType=DECIMAL},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      DEL_FLG = #{delFlg,jdbcType=VARCHAR},
+      PHOTO = #{photo,jdbcType=LONGVARBINARY}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.itcast.ssm.po.original.Ballteam">
+    update ballteam
+    set SEI = #{sei,jdbcType=VARCHAR},
+      MEI = #{mei,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=CHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      SALARY = #{salary,jdbcType=DECIMAL},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      DEL_FLG = #{delFlg,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
