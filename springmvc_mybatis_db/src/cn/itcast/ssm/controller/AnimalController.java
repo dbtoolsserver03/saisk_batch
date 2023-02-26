@@ -1,7 +1,12 @@
 package cn.itcast.ssm.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.itcast.ssm.po.original.TAnimal;
+import cn.itcast.ssm.service.AnimalService;
 
 //import cn.itcast.ssm.po.original.AnimalTable;
 //import cn.itcast.ssm.service.AnimalService;
@@ -9,15 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AnimalController {
 
-//	@Autowired
-//	private AnimalService animalService;
+	@Autowired
+	private AnimalService animalService;
 
 	@RequestMapping("animalInit")
 	public String animalInit()
 			throws Exception {
 	    return "animalinfo/animalList";
 	}
-
+	@RequestMapping("animalInitInsert")
+	public String animalInitInsert()
+			throws Exception {
+	    return "animalinfo/animalInsert";
+	}
+	
+	@RequestMapping("animalinsert")
+	public String animalInsert(@ModelAttribute TAnimal animal)
+			throws Exception {
+		animalService.inserAnimal(animal);
+	    return "animalinfo/animalInsert";//"redirect:/queryAnimals.action";
+	}
 //	
 //	@RequestMapping(value = "/editAnimal", method = { RequestMethod.POST, RequestMethod.GET })
 //	public String editItemsSubmit(Model model,  @RequestParam(value = "id", required = true,defaultValue="1") String animalId) throws Exception {
@@ -30,11 +46,7 @@ public class AnimalController {
 //	}
 //	
 //	
-//	@RequestMapping("animalInitInsert")
-//	public String animalInitInsert()
-//			throws Exception {
-//	    return "animalinfo/animalInsert";
-//	}
+
 //	
 //	
 //	@RequestMapping("animalupdate")
@@ -44,12 +56,7 @@ public class AnimalController {
 //	    return "redirect:/queryAnimals.action";
 //	}
 //	
-//	@RequestMapping("animalinsert")
-//	public String animalInsert(@ModelAttribute AnimalTable animal)
-//			throws Exception {
-//		animalService.inserAnimal(animal);
-//	    return "redirect:/queryAnimals.action";
-//	}
+
 ////
 ////	
 //	@RequestMapping("queryAnimals")
