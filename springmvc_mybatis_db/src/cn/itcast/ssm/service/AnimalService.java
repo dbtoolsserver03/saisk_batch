@@ -1,5 +1,7 @@
 package cn.itcast.ssm.service;
 
+import java.util.List;
+
 import cn.itcast.ssm.po.original.TAnimal;
 
 public interface AnimalService {
@@ -13,5 +15,7 @@ public interface AnimalService {
 //	public TeacherTable findTeacherByID(String teacherId);
 //
 //	public int deleteItems(String[] teacherIds);
+
+	public List<TAnimal> findAnimalList(TAnimal animal);
 
 }

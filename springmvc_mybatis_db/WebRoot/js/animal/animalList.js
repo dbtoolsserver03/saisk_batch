@@ -9,9 +9,9 @@
 		document.animalForm.submit();
 	}
 
-	function queryTeachers() {
+	function queryAnimals() {
 		//提交form
-		document.animalForm.action = "queryTeachers.action";
+		document.animalForm.action = "queryAnimals.action";
 		document.animalForm.submit();
 	}
 

@@ -1,9 +1,12 @@
 package cn.itcast.ssm.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import cn.itcast.ssm.po.original.TAnimal;
 import cn.itcast.ssm.service.AnimalService;
@@ -32,7 +35,7 @@ public class AnimalController {
 	public String animalInsert(@ModelAttribute TAnimal animal)
 			throws Exception {
 		animalService.inserAnimal(animal);
-	    return "animalinfo/animalInsert";//"redirect:/queryAnimals.action";
+	    return "redirect:/queryAnimals.action";
 	}
 //	
 //	@RequestMapping(value = "/editAnimal", method = { RequestMethod.POST, RequestMethod.GET })
@@ -59,32 +62,32 @@ public class AnimalController {
 
 ////
 ////	
-//	@RequestMapping("queryAnimals")
-//	public ModelAndView animalList(@ModelAttribute AnimalTable animal)
-//			throws Exception {
-//
-////		// 调用service查找 数据库，查询商品列表
-//		List<AnimalTable> animalLst = animalService.findAnimalList(animal);
-//
-//		// 返回ModelAndView
-//		ModelAndView modelAndView = new ModelAndView();
-//		// 相当 于request的setAttribut，在jsp页面中通过itemsList取数据
-////		modelAndView.addObject("voItemPic", voItem);
-//		// 指定视图
-//		// 下边的路径，如果在视图解析器中配置jsp路径的前缀和jsp路径的后缀，修改为
-//		// modelAndView.setViewName("/WEB-INF/jsp/items/itemsList.jsp");
-//		// 上边的路径配置可以不在程序中指定jsp路径的前缀和jsp路径的后缀
-//		
-//		//modelAndView.addObject("animalName", animal.getAnimalName());
-//		
-//		modelAndView.addObject("animal", animal);
-//
-//		modelAndView.addObject("animalLst", animalLst);
-//		modelAndView.setViewName("animalinfo/animalList");
-//
-//		return modelAndView;
-//	
-//	}
+	@RequestMapping("queryAnimals")
+	public ModelAndView animalList(@ModelAttribute TAnimal animal)
+			throws Exception {
+
+//		// 调用service查找 数据库，查询商品列表
+		List<TAnimal> animalLst = animalService.findAnimalList(animal);
+
+		// 返回ModelAndView
+		ModelAndView modelAndView = new ModelAndView();
+		// 相当 于request的setAttribut，在jsp页面中通过itemsList取数据
+//		modelAndView.addObject("voItemPic", voItem);
+		// 指定视图
+		// 下边的路径，如果在视图解析器中配置jsp路径的前缀和jsp路径的后缀，修改为
+		// modelAndView.setViewName("/WEB-INF/jsp/items/itemsList.jsp");
+		// 上边的路径配置可以不在程序中指定jsp路径的前缀和jsp路径的后缀
+		
+		//modelAndView.addObject("animalName", animal.getAnimalName());
+		
+		modelAndView.addObject("animal", animal);
+
+		modelAndView.addObject("animalLst", animalLst);
+		modelAndView.setViewName("animalinfo/animalList");
+
+		return modelAndView;
+	
+	}
 //	
 //	
 //	// 批量删除 商品信息

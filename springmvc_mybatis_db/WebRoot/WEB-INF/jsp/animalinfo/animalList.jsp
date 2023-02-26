@@ -37,7 +37,7 @@
 		<table width="100%" border=1>
 			<tr>
 				<td>动物名称：
-				<input name="animalName" value="${animal.animalName}" />
+				<input name="sei" value="${animal.sei}" />
 				
 				</td>
 				
@@ -49,7 +49,6 @@
 			</tr>
 		</table>
 		
-		<!-- 
 		<c:if test="${animalLst !=null && fn:length(animalLst) > 0}">
 		动物一览：
 		<table width="100%" border=1>
@@ -63,23 +62,22 @@
 				<c:forEach items="${animalLst}" var="animal" varStatus="status">
 					<tr>
 						<td><input type="checkbox" name="animals_id" currentStatusxx="aa_${status.count}"
-							value="${animal.animalId}"></td>
-						<td>${animal.animalName }</td>
+							value="${animal.id}"></td>
+						<td>${animal.sei}${animal.mei}</td>
 						<td>
 						
 						<c:choose>
-						    <c:when test="${animal.animalSex == 0}">女</c:when>
-						    <c:when test="${animal.animalSex == 1}">男</c:when>
+						    <c:when test="${animal.sex == 0}">母</c:when>
+						    <c:when test="${animal.sex == 1}">公</c:when>
 					        <c:otherwise>未知</c:otherwise>
 						</c:choose>						
 						</td>
-						<td><fmt:formatDate value="${animal.animalAge}"	pattern="yyyy/MM/dd" /></td>
-						<td><a href="${pageContext.request.contextPath }/editAnimal.action?id=${animal.animalId}">修改</a></td>
+						<td><fmt:formatDate value="${animal.birthday}"	pattern="yyyy/MM/dd" /></td>
+						<td><a href="${pageContext.request.contextPath }/editAnimal.action?id=${animal.id}">修改</a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</c:if>
-		 -->
 	</form>
 </body>
 
