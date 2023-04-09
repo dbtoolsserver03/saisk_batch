@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#id_div{ background-color: rgb(255, 128, 64); }
+.c_user { background-color: rgb(255, 255, 128); }
+option { color: rgb(0, 0, 255); }
+label { color: rgb(0, 255, 0); }
+
+/*
+所有的DATE 背景色为粉色
+*/
+
+input[type="date"] {background-color:pink; }

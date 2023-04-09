@@ -14,13 +14,25 @@
 			#id_div{ background-color: rgb(128, 255, 255); }
 		</style>
 
+		<script type="text/javascript">
+			function funView(){
+				var element_user = document.getElementById("id_user");
+
+				element_user.className="";
+				element_user.style.backgroundColor=""
+				var element_div = document.getElementById("div_view");
+				debugger;
+				element_div.innerText=element_user.value;
+
+			}
+		</script>
 	</head>
 	<body>
 		
 		<div id="id_div">
 			<!-- table 除了可以显示数据外，也可以用于布局-->
 				<table>
-					<tr><td>ユーザー</td><td><input type="text" class="c_user" style="background-color: rgb(255, 0, 0);" value="tanaka"></td></tr>
+					<tr><td>ユーザー</td><td><input id="id_user" type="text" class="c_user" style="background-color: rgb(255, 0, 0);" value="tanaka"></td></tr>
 					<tr><td>パスワード</td><td><input type="password" class="c_user" value="123"></td></tr>
 				</table>
 				<input type="button" value="login" style="background-color: #CDDC39;
@@ -82,5 +94,13 @@
 			</tr>
 		</table>
 
+	<hr>
+	
+	<input type="button" value="表示" onclick="funView()">
+	<div id="div_view" style="background-color: cadetblue;">
+		XXX
+		
+	</div>
+	
 	</body>
 </html>
