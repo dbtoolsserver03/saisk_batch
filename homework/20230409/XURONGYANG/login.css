@@ -1,0 +1,163 @@
+body{
+    background-color: rgb(118, 118, 118);
+}
+
+.title{
+    height: 100px;
+    width: 800px;
+    margin: auto;
+    background-color: black;
+}
+
+.login-img{
+    height:100px;
+}
+
+.list-img{
+    height:100px;
+}
+
+.info-img{
+    height:100px;
+}
+    
+.content{
+    background-color: rgb(4, 4, 4);
+    width: 800px;
+    height: 610px;
+    margin: auto;
+    text-align:center;
+}
+
+.content-head{
+    background-color:grey;
+    width: 600px;
+    height: 80px;
+    margin: auto;
+}
+
+.content-login{
+    background-color: grey;
+    width: 600px;
+    height: 250px;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.login-content .login-title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.login-content input{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    text-align:center;
+}
+
+.login-content .login-button{
+    width: 308px;
+    margin-top:10px;
+    height: 40px;
+    background-color: rgb(26, 188, 247);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+.login-content a{
+    margin-top:100px;
+    height: 40px;
+    font-size: 20px;
+}
+
+input{
+    height: 40px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.table-input{
+    color: aquamarine;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.td{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.sex{
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+}
+
+.list-button{
+    width: 120px;
+    margin-top:40px;
+    height: 35px;
+    background-color: rgb(26, 188, 247);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+.info-list{
+    background-color: rgb(4, 4, 4);
+    width: 800px;
+    height: 610px;
+    
+    text-align:center;
+    margin-top: 20px;
+    margin-left: 305px;
+}
+
+.table-info{
+    color: aquamarine;
+    width: 800px;
+    height: 400;
+}
+
+.info-table-input{
+    color: aquamarine;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.photo{
+    color: aquamarine;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.info-content{
+    background-color: rgb(4, 4, 4);
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    text-align:center;
+}
+
+.info-button{
+    width: 120px;
+    margin-top:40px;
+    height: 35px;
+    background-color: rgb(26, 188, 247);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-align:center;
+    margin-bottom: 20px;
+}

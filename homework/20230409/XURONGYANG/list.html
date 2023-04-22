@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>人事一覧</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="login.css"/>
+    </head>
+    <body>
+        <div class="title">
+            <img class="list-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ABC-2021-LOGO.svg/1280px-ABC-2021-LOGO.svg.png" alt="ABC">
+        </div>
+
+        <div class="content">
+            <div class="content-head">
+                <h1>人事一覧</h1>
+            </div>
+
+            <div class="content-info">
+                <table class="table-input">
+                    <tr>
+                        <td class="td">姓　　名</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">フリカナ</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">性　　別</td>
+                        <td>
+                            <input class="sex" type="radio" checked="checked" name="sex">男
+                            <input class="sex" type="radio" name="sex">女
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td">生年月日</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">電話番号</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">郵便番号</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">住　　所</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </table>
+                <div >
+                    <input id="id_btn_detail" class="list-button" type="button" value="詳細">
+                    <input id="id_btn_delete" class="list-button" type="button" value="削除">
+                    <input id="id_btn_update" class="list-button" type="button" value="更新">
+                    <input id="id_btn_new" class="list-button" type="button" value="新規">
+                    <input id="id_btn_search" onclick="open()"class="list-button" type="button" value="検索">
+                </div>
+            </div>
+        </div>
+
+        <div class="info-list" id="info-list">
+            <table class="table-info" border="1">
+                <tr>
+                    <th class="background-color" >選択</th>
+                    <th class="background-color" >番号</th>
+                    <th class="background-color" >姓名</th>
+                    <th class="background-color" >生年月日</th>
+                    <th class="background-color" >給料</th>
+                    <th class="background-color" >携帯番号</th>
+                    <th class="background-color" >住所</th>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_1" name="selectRadio" type="radio" value="1"></td>
+                    <td>01</td>
+                    <td>张三</td>
+                    <td>1998/01/01</td>
+                    <td>210,000</td>
+                    <td>080-0000-0001</td>
+                    <td>東京都中央区日本橋3-1-1</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_2" name="selectRadio" type="radio" value="2"></td>
+                    <td>02</td>
+                    <td>李四</td>
+                    <td>1998/01/02</td>
+                    <td>220,000</td>
+                    <td>080-0000-0002</td>
+                    <td>東京都中央区日本橋3-1-2</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_3" name="selectRadio" type="radio" value="3"></td>
+                    <td>03</td>
+                    <td>王五</td>
+                    <td>1998/01/03</td>
+                    <td>230,000</td>
+                    <td>080-0000-0003</td>
+                    <td>東京都中央区日本橋3-1-3</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_4" name="selectRadio" type="radio" value="4"></td>
+                    <td>04</td>
+                    <td>马六</td>
+                    <td>1998/01/04</td>
+                    <td>240,000</td>
+                    <td>080-0001-0004</td>
+                    <td>東京都中央区日本橋3-1-4</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_5" name="selectRadio" type="radio" value="5"></td>
+                    <td>05</td>
+                    <td>李七</td>
+                    <td>1998/01/05</td>
+                    <td>250,000</td>
+                    <td>080-0001-0005</td>
+                    <td>東京都中央区日本橋3-1-5</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_6" name="selectRadio" type="radio" value="6"></td>
+                    <td>06</td>
+                    <td>赵八</td>
+                    <td>1998/01/06</td>
+                    <td>260,000</td>
+                    <td>080-0001-0006</td>
+                    <td>東京都中央区日本橋3-1-6</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_7" name="selectRadio" type="radio" value="7"></td>
+                    <td>07</td>
+                    <td>孙九</td>
+                    <td>1998/01/07</td>
+                    <td>270,000</td>
+                    <td>080-0001-0007</td>
+                    <td>東京都中央区日本橋3-1-7</td>
+                </tr>
+                <tr>
+                    <td align="center"><input style="height: 20px; width: 20px;"
+                        id="id_rdo_selected_8" name="selectRadio" type="radio" value="8"></td>
+                    <td>08</td>
+                    <td>周十</td>
+                    <td>1998/01/08</td>
+                    <td>280,000</td>
+                    <td>080-0001-0008</td>
+                    <td>東京都中央区日本橋3-1-8</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
