@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>中古車情報</title>
+	
+
+</head>
+<body>
+	<div align="right">
+		ユーザー１
+	</div>
+	<table style="background-color: blue;" width="100%">
+		<tr height="50">
+			<td align="right"><img width="170" height="80" src="https://img.goo-net.com/cache/common/newlogo_header_210628.png"></td>
+			<td align="center"><b>中古車情報管理システム</b></td>
+			<td width="170"></td>
+			<td align="right"><a href="login.html" style="color: white;">ログアウト</a></td>
+		</tr>	
+	</table>
+	
+	<div id="id_info">
+		<table width="100%">
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">イメージ</td>
+				<td><img src="https://img.goo-net.com/cache/common/newlogo_header_210628.png" width="300" height="200" /></td>
+			</tr>
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">メーカー</td>
+				<td width="30%"><input id="id_text_mak" width="100%" type="text"></td>
+				<td width="20%" style="background-color: aquamarine;">タイプ</td>
+				<td width="30%"><input id="id_text_typ" width="100%" type="text"></td>
+			</tr>
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">年式</td>
+				<td width="30%"><input id="id_text_yea" width="100%" type="text"></td>
+				<td width="20%" style="background-color: aquamarine;">排気量</td>
+				<td width="30%"><input id="id_text_dis" width="100%" type="text"></td>
+			</tr>
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">走行</td>
+				<td width="30%"><input id="id_text_run" width="100%" type="text"></td>
+				<td width="20%" style="background-color: aquamarine;">車検</td>
+				<td width="30%"><input id="id_text_vei" width="100%" type="text"></td>
+			</tr>
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">修復歴</td>
+				<td width="30%"><input id="id_radio_repair_y" name="repair" type="radio" value="有" />あり 
+				                <input id="id_radio_repair_n" name="repair" type="radio" value="無" />なし</td>
+				<td width="20%" style="background-color: aquamarine;">車体色</td>
+				<td width="30%"><input id="id_text_color" width="100%" type="text"></td>
+			</tr>
+			<tr>
+				<td width="20%" style="background-color: aquamarine;">価格</td>
+				<td width="30%"><input id="id_text_price" width="100%" type="text"></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div align="right">
+		<input id="id_btn_back" type="button" value="  戻る  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input id="id_btn_clear" type="button" value="  クリア  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input id="id_btn_ok" type="button" value="  確定  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+	</div>
+</body>
+</html>

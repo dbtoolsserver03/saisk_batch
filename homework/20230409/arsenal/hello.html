@@ -15,71 +15,34 @@
 		</style>
 
 		<script type="text/javascript">
-			alert(111);
-			
-			// 下面的代码取不到标签对象，因为还没有加载完。
-			//var element_test = document.getElementById("id_user");
-			//alert(element_test.value);
-			
-			function funView(element){
-				alert(element.value);
-				
-				// 通过id属性取标签对象
+			function funView(){
 				var element_user = document.getElementById("id_user");
 
 				element_user.className="";
 				element_user.style.backgroundColor=""
 				var element_div = document.getElementById("div_view");
-				var element_pwd = document.getElementById("id_pwd");
-
-				// 通过name属性取标签对象,返回对象数组
-				
-				// 从该HTML文档里面找有name属性,并且name值为sex的标签
-				// 取出了两个input标签
-				var elements_sex = document.getElementsByName("sex");
-			
-				var sexVal="";
-				
-				//  elements_sex[0]  带表第1个标签 
-				//  elements_sex[1]  带表第2个标签
-				for(var i=0; i<elements_sex.length;i++){
-
-					// 取数组中的一个标签对象
-					var element = elements_sex[i];
-					if(element.checked) {
-						sexVal=element.value;
-						break;
-					}
-				}
-
-				//element_div.innerText=element_user.value+"\n"+element_pwd.value;
-				element_div.innerHTML=element_user.value+"<br>"
-									+element_pwd.value+"<br>"
-									+sexVal;
-			}
-			
-			function init(msg){
-				alert(msg);
-				// 画面加载完毕，会自动执行onload的init方法
-				var element_test = document.getElementById("id_user");
-				alert(element_test.value);
-				
-					
-				const target = document.getElementById('target');
-				let count = 0;
-				
 				debugger;
-				target.oncontextmenu = function(){
-					//alert(333);
-					//処理
-				    return false;
-				}
-			}
+				element_div.innerText=element_user.value;
 
-			
+			}
 		</script>
+		
+		<script type="text/javascript">
+			function funView(){
+				var element_user = document.getElementById("id_user");
+
+				element_user.className="";
+				element_user.style.backgroundColor=""
+				var element_div = document.getElementById("div_view1");
+				debugger;
+				element_div.innerText=element_user.value;
+				
+				var element_user = document.getElementById("id_pwd");
+
+			}
+			</script>
 	</head>
-	<body onload='init("加载完毕")' id="target">
+	<body>
 		
 		<div id="id_div">
 			<!-- table 除了可以显示数据外，也可以用于布局-->
@@ -92,10 +55,10 @@
 			    color: #bd7c7c;">
 	    </div>
 	    
-		<Hr>
+		<hr>
 		<!--type="radio"，"checkbox"  一定要加name属性用于分组 -->
-		性別<input id="id_man" type="radio" name="sex" value="1"> <label  for="id_man" class="c_user">man</label> 
-		 <label> <input type="radio" name="sex"  value="0">woman </label>
+		性別<input id="id_man" type="radio" name="sex"> <label  for="id_man">man</label> 
+		 <label> <input type="radio" name="sex">woman </label>
 		 
 		<br>
 		技術<label><input type="checkbox" name="lan">java</label>
@@ -145,22 +108,14 @@
 				<td align="right"><input type="number"></td>
 			</tr>
 		</table>
+
 	<hr>
 	
-	<!-- this 代表当前标签，将当前标签传给funView方法-->
-	<input id="qqqq" type="button" value="表示" onclick="funView(this)">
+	<input type="button" value="表示" onclick="funView()">
 	<div id="div_view" style="background-color: cadetblue;">
-		XXX<br>YYY
+		XXX<br>yyy
+		
 	</div>
 	
 	</body>
 </html>
-
-
-<!--
-把用户输入的密码显示到DIV上。
-1.给按钮加事件，和响应事件所需要的方法
-2.HEAD里面实现方法。
-3.JS取密码
-4.JS将密码设定到指定DIV上
--->

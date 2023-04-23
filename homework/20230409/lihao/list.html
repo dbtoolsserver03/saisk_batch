@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>中古車一覧</title>
+	<link rel="icon" href="" type="image/vnd.microsoft.icon">
+</head>
+<body>
+	<div align="right">
+		ユーザー１
+	</div>
+	<table style="background-color: blue;" width="100%">
+		<tr height="50">
+			<td align="right"><img width="170" height="80" src="https://img.goo-net.com/cache/common/newlogo_header_210628.png"></td>
+			<td align="center"><b>中古車情報管理システム</b></td>
+			<td width="170"></td>
+			<td align="right"><a href="login.html" style="color: white;">ログアウト</a></td>
+		</tr>	
+	</table>
+	<table width="100%">
+		<tr>
+			<td width="10%" style="background-color: aquamarine;">番号</td><td width="25%"><input id="id_text_num" width="100%" type="text"></td>
+			<td width="10%" style="background-color: aquamarine;">メーカー</td><td width="25%"><input id="id_text_ma" width="100%" type="text"></td>
+			<td width="10%" style="background-color: aquamarine;">価格</td>
+			<td width="20%"><select id="id_sel_ned" >
+		    	<option value="" selected>--Please choose an option--</option>
+		    	<option value="">～30万円</option>
+		    	<option value="">～50万円</option>
+		    	<option value="">～100万円</option>
+		    	<option value="">～200万円</option>
+		    	<option value="">～300万円</option>
+		    	<option value="">500万円以上</option>
+			</select></td>
+		</tr>
+	</table>
+	<div align="right">
+		<input type="button" value="  詳細  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input type="button" value="  削除  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input type="button" value="  更新  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input type="button" value="  新規  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+		<input type="button" value="  検索  " style="background-color: rgb(255, 128, 192); color: rgb(0, 128, 255);">
+	</div>
+	<br>
+	<br>
+	<table width="100%" border="1">
+		<tr>
+			<th style="background-color: aquamarine;">選択</th>
+			<th style="background-color: aquamarine;">番号</th>
+			<th style="background-color: aquamarine;">メーカー</th>
+			<th style="background-color: aquamarine;">タイプ</th>
+			<th style="background-color: aquamarine;">価格</th>
+			<th style="background-color: aquamarine;">走行距離</th>
+			<th style="background-color: aquamarine;">修復歴</th>
+			<th style="background-color: aquamarine;">排気量</th>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_1" name="selectRadio" type="radio" value="1"></td>
+			<td align="right">01</td>
+			<td align="center">トヨタ</tdalign="center">
+			<td align="center">プリウス</td>
+			<td align="right">32.9万円</td>
+			<td align="right">9.6万km</td>
+			<td align="center">なし</td>
+			<td align="right">1800cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_2" name="selectRadio" type="radio" value="2"></td>
+			<td align="right">02</td>
+			<td align="center">メルセデス・ベンツ</tdalign="center">
+			<td align="center">ＳＬＣ</td>
+			<td align="right">349.9万円</td>
+			<td align="right">3.0万km</td>
+			<td align="center">なし</td>
+			<td align="right">2000cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_3" name="selectRadio" type="radio" value="3"></td>
+			<td align="right">03</td>
+			<td align="center">ホンダ</tdalign="center">
+			<td align="center">ＣＲ－Ｚ</td>
+			<td align="right">52.2万円</td>
+			<td align="right">8.9万km</td>
+			<td align="center">なし</td>
+			<td align="right">1500cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_4" name="selectRadio" type="radio" value="4"></td>
+			<td align="right">04</td>
+			<td align="center">アウディ</tdalign="center">
+			<td align="center">ＴＴクーペ</td>
+			<td align="right">269.8万円</td>
+			<td align="right">5.7万km</td>
+			<td align="center">なし</td>
+			<td align="right">2000cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_5" name="selectRadio" type="radio" value="5"></td>
+			<td align="right">05</td>
+			<td align="center">レクサス</tdalign="center">
+			<td align="center">ＬＳ</td>
+			<td align="right">819万円</td>
+			<td align="right">2.5万km</td>
+			<td align="center">なし</td>
+			<td align="right">2500cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_6" name="selectRadio" type="radio" value="6"></td>
+			<td align="right">06</td>
+			<td align="center">日産</tdalign="center">
+			<td align="center">ＧＴ－Ｒ</td>
+			<td align="right">1575.8万円</td>
+			<td align="right">0.6万km</td>
+			<td align="center">なし</td>
+			<td align="right">3800cc</td>
+		</tr>
+		<tr>
+			<td align="center"><input id="id_rdo_selected_7" name="selectRadio" type="radio" value="7"></td>
+			<td align="right">07</td>
+			<td align="center">スズキ</tdalign="center">
+			<td align="center">ジムニー</td>
+			<td align="right">239.7万円</td>
+			<td align="right">0.2万km</td>
+			<td align="center">なし</td>
+			<td align="right">660cc</td>
+		</tr>
+	</table>
+</body>
+</html>
