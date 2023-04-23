@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>株式会社ABC人事システム</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="login.css"/>
+    <script>
+        function jump() {
+            window.location.href = "list.html"
+        }
+        </script>
+    </script>
+</head>
+<body>
+    <div class="title">
+        <img class="login-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ABC-2021-LOGO.svg/1280px-ABC-2021-LOGO.svg.png" alt="ABC">
+    </div>
+    <div class="content">
+        <div class="content-head">
+            <h1>株式会社ABC人事システム</h1>
+        </div>
+        <div class="content-login">
+            <h2 class="login-title">ログイン</h2>
+            <input type="text" placeholder="社員番号"/>
+            <br/>
+            <input class="login-input" type="password" placeholder="パスワード"/>
+            <br>
+            <input class="login-button" type="button" value="ログイン" onclick="jump()"/>
+            <br>
+            <a href="info.html">新規登録</a>
+            <br/>
+            <br/>
+        </div>
+    </div>
+</body>
+</html>
