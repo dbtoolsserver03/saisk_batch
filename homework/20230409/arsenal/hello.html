@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+<!--	<link rel="shortcut icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">-->
+		<link rel="icon" href="./icon/favicon.ico" type="image/vnd.microsoft.icon">
+		<meta charset="utf-8">
+		<title>hello</title>
+		
+		<link rel="stylesheet" href="./css/hello.css">
+		
+		<style type="text/css">
+			#id_div{ background-color: rgb(128, 255, 255); }
+		</style>
+
+		<script type="text/javascript">
+			function funView(){
+				var element_user = document.getElementById("id_user");
+
+				element_user.className="";
+				element_user.style.backgroundColor=""
+				var element_div = document.getElementById("div_view");
+				debugger;
+				element_div.innerText=element_user.value;
+
+			}
+		</script>
+		
+		<script type="text/javascript">
+			function funView(){
+				var element_user = document.getElementById("id_user");
+
+				element_user.className="";
+				element_user.style.backgroundColor=""
+				var element_div = document.getElementById("div_view1");
+				debugger;
+				element_div.innerText=element_user.value;
+				
+				var element_user = document.getElementById("id_pwd");
+
+			}
+			</script>
+	</head>
+	<body>
+		
+		<div id="id_div">
+			<!-- table 除了可以显示数据外，也可以用于布局-->
+				<table>
+					<tr><td>ユーザー</td><td><input id="id_user" type="text" class="c_user" style="background-color: rgb(255, 0, 0);" value="tanaka"></td></tr>
+					<tr><td>パスワード</td><td><input id="id_pwd" type="password" class="c_user" value="123"></td></tr>
+				</table>
+				<input type="button" value="login" style="background-color: #CDDC39;
+			    font-size: large;
+			    color: #bd7c7c;">
+	    </div>
+	    
+		<hr>
+		<!--type="radio"，"checkbox"  一定要加name属性用于分组 -->
+		性別<input id="id_man" type="radio" name="sex"> <label  for="id_man">man</label> 
+		 <label> <input type="radio" name="sex">woman </label>
+		 
+		<br>
+		技術<label><input type="checkbox" name="lan">java</label>
+		<label><input type="checkbox" name="lan">C</label>
+		<label><input type="checkbox" name="lan">VB</label>
+		
+		<br>血液型
+		<select>
+		    <option value="">--Please choose an option--</option>
+		    <option value="parrot" selected>O</option>
+		    <option value="spider">A</option>
+		    <option value="goldfish">B</option>
+		</select>
+		<br>
+		<a href="https://www.baidu.com/" target="aaa">ホームページ</a>
+		<a href="https://www.yahoo.co.jp/" target="aaa">YAHOO</a>
+		<br>
+		
+		<a href="https://www.sohu.com/" target="aaa">
+			<input type="image" width="150" height="80" 
+			src="./img/sohu_logo@2x-a5df49.png">
+		</a>
+		<br>
+		自己紹介<textarea rows="5" cols="10"></textarea>
+		<br>
+		誕生日<input type="date">
+
+		<hr>
+		
+		<table border="1" width="100%">
+			<tr> <!-- table row-->
+				<th> no.</th><!-- table head-->
+				<th> name</th>
+				<th> birthday</th>
+				<th> salary</th>
+			</tr>
+			<tr>
+				<td align="center">1</td><!-- table data-->
+				<td>zhang3</td>
+				<td align="center">1999/01/01</td>
+				<td align="right">100000</td>
+			</tr>
+			<tr>
+				<td align="center">2</td>
+				<td><input type="text"> </td>
+				<td align="center"><input type="date"></td>
+				<td align="right"><input type="number"></td>
+			</tr>
+		</table>
+
+	<hr>
+	
+	<input type="button" value="表示" onclick="funView()">
+	<div id="div_view" style="background-color: cadetblue;">
+		XXX<br>yyy
+		
+	</div>
+	
+	</body>
+</html>
