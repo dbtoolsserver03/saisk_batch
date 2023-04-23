@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+<!--	<link rel="shortcut icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">-->
+		<link rel="icon" href="./icon/favicon.ico" type="image/vnd.microsoft.icon">
+		<meta charset="utf-8">
+		<title>hello</title>
+		
+		<link rel="stylesheet" href="./css/hello.css">
+		
+		<style type="text/css">
+			#id_div{ background-color: rgb(128, 255, 255); }
+		</style>
+
+	<script src="./script/plug-in/jquery-3.6.4.js"></script>
+
+	<script src="./script/my_jquery.js"></script>
+	
+		<script type="text/javascript">
+			
+
+		</script>
+	</head>
+	<body id="target">
+		
+		<div id="id_div">
+			<!-- table 除了可以显示数据外，也可以用于布局-->
+				<table>
+					<tr><td>ユーザー</td><td><input id="id_user" type="text" class="c_user" style="background-color: rgb(255, 0, 0);" value="tanaka"></td></tr>
+					<tr><td>パスワード</td><td><input id="id_pwd" type="password" class="c_user" value="123"></td></tr>
+				</table>
+				<input type="button" value="login" style="background-color: #CDDC39;
+			    font-size: large;
+			    color: #bd7c7c;">
+	    </div>
+	    
+		<Hr>
+		<!--type="radio"，"checkbox"  一定要加name属性用于分组 -->
+		性別<input id="id_man" type="radio" name="sex" value="1"> <label  for="id_man" class="c_user">man</label> 
+		 <label> <input type="radio" name="sex"  value="0">woman </label>
+		 
+		<br>
+		技術<label><input type="checkbox" value="j" name="lan">java</label>
+		<label><input type="checkbox" value="c" name="lan">C</label>
+		<label><input type="checkbox" value="v" name="lan">VB</label>
+		
+		<br>血液型
+		<select>
+		    <option value="">--Please choose an option--</option>
+		    <option value="parrot" selected>O</option>
+		    <option value="spider">A</option>
+		    <option value="goldfish">B</option>
+		</select>
+		<br>
+		<a href="https://www.baidu.com/" target="aaa">ホームページ</a>
+		<a href="https://www.yahoo.co.jp/" target="aaa">YAHOO</a>
+		<br>
+		
+		<a href="https://www.sohu.com/" target="aaa">
+			<input type="image" width="150" height="80" 
+			src="./img/sohu_logo@2x-a5df49.png">
+		</a>
+		<br>
+		自己紹介<textarea rows="5" cols="10"></textarea>
+		<br>
+		誕生日<input type="date">
+
+		<hr>
+		
+		<table border="1" width="100%">
+			<tr> <!-- table row-->
+				<th> no.</th><!-- table head-->
+				<th> name</th>
+				<th> birthday</th>
+				<th> salary</th>
+			</tr>
+			<tr>
+				<td align="center">1</td><!-- table data-->
+				<td>zhang3</td>
+				<td align="center">1999/01/01</td>
+				<td align="right">100000</td>
+			</tr>
+			<tr>
+				<td align="center">2</td>
+				<td><input type="text"> </td>
+				<td align="center"><input type="date"></td>
+				<td align="right"><input type="number"></td>
+			</tr>
+		</table>
+	<hr>
+	
+	<!-- this 代表当前标签，将当前标签传给funView方法-->
+	<input id="id_btn_view" type="button" value="表示">
+	<div id="div_view" style="background-color: cadetblue;">
+		XXX<br>YYY
+	</div>
+	
+	</body>
+</html>
+
+
+<!--
+把用户输入的密码显示到DIV上。
+1.给按钮加事件，和响应事件所需要的方法
+2.HEAD里面实现方法。
+3.JS取密码
+4.JS将密码设定到指定DIV上
+-->
