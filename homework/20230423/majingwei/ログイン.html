@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #666;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px #999;
+            text-align: center;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .form-container {
+            text-align: left;
+        }
+
+        .container img {
+            display: block;
+            margin: 0 auto;
+            width: 20%;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>ログイン画面</h1>
+    <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfwedoIdMCOItnTtRe_xpz-pGTWIAESu63ix0PkXlS6w&amp;s" data-atf="4" data-frt="0">
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <form>
+                <div class="form-container">
+                    <label for="uname"><b>ユーザー</b></label>
+                    <input type="text" placeholder="ユーザーネームを入力する" name="uname" required>
+                    <label for="psw"><b>パスワード</b></label>
+                    <input type="password" placeholder="パスワードを入力する" name="psw" required>
+                    <button type="button" onclick="showDetails()">ログイン</button>
+                    <div id="details" style="display:none;">
+                        <hr>
+                        <div id="username"></div>
+                        <div id="password"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function showDetails() {
+            var username = document.getElementsByName("uname")[0].value;
+            var password = document.getElementsByName("psw")[0].value;
+            document.getElementById("username").innerHTML = "ユーザー: " + username;
+            document.getElementById("password").innerHTML = "パスワード: " + password;
+            document.getElementById("details").style.display = "block";
+        }
+    </script>
+</body>
+</html>
