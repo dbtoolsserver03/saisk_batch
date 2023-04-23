@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>To</title>
+
+	<script>
+
+		function init() {
+			
+			// 対象URL：https://gray-code.com/js_sample/url1.html?id=5&username=taro&mode=read&aid=gc39195&mode=premium&mode=testuser
+			
+			// URLを取得
+			let url = new URL(window.location.href);
+			
+			// URLSearchParamsオブジェクトを取得
+			let params = url.searchParams;
+			
+			// getメソッド
+			document.getElementById('id_user').innerText=params.get('myuser');
+			document.getElementById('id_pwd').innerText=params.get('pwd');
+			
+			
+		}
+	</script>
+
+</head>
+
+<body onload="init()">
+
+	user:<label id="id_user">aaaaaaaaaaaaaaa</label>
+	<br>
+	pwd:<label id="id_pwd">bbbbbbbbbbbbbbb</label>
+	
+</body>
+
+</html>

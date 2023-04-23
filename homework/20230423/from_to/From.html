@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FROM</title>
+
+<script>
+	
+	function fun() {
+		
+		document.form1.submit();
+	}
+	
+	function fun2() {
+		
+		document.form2.submit();
+	}
+	
+	function myJump() {
+		window.location.href="./to.html?myuser=111&bbb=222";
+	}
+</script>
+
+</head>
+<body>
+
+
+<!--
+	画面跳转有两种方式
+	 1.window.location.href="./to.html?myuser=111&bbb=222";
+	   优点，灵活
+	   缺点，只能是GET方式 表单数据项目多时，会很乱。
+	  
+	  2.通过表单FORM来跳转画面。
+	   优点 可以指定跳转方式 GET POST
+	   
+	   GET   明文，安全性低，适合查询处理，URL有字符长度限制。
+	   POST  安全性高，没有字符长度限制，可无穷大
+	   
+	   要满足以下条件方可传递给下个画面
+	    1.入力值所在的标签，要有name属性。
+	    2.入力值所在的标签，不可以是disabled
+	    3.入力值所在的标签，要在FORM表单里
+-->
+
+<form name="form1" action="./To.html" method="get">
+	
+user:<input type="text" name="myuser" value="tanaka">
+<br>
+pwd:<input type="password" name="pwd" value="123">
+<br>
+age:<input type="text" name="age" disabled value="22">
+<br>
+<input type="hidden" name="saraly" value="999">
+<br>
+
+the sex:
+<label><input type="radio" name = "sex" value="1">man</label>
+<label><input type="radio" name = "sex" value="0">woman</label>
+<br>
+
+skill
+<label><input type="checkbox" name = "skl" value="j">java</label>
+<label><input type="checkbox" name = "skl" value="v">vb</label>
+<label><input type="checkbox" name = "skl" value="c">c</label>
+<label><input type="checkbox" name = "skl" value="n">net</label>
+<br>
+
+<input type="submit" value="login">
+
+</form>
+
+<input type="submit" value="loginA" onclick="fun()">
+
+<br>
+
+<a href="#"  onclick="fun2()">jump to.html</a>
+
+<form name="form2" action="./To.html" method="get">
+	age:<input type="text" name="age"  value="2222">
+	<br>
+	<input type="hidden" name="saraly" value="999">
+</form>
+<hr>
+<input type="button" onclick="myJump()" value="test ">
+
+
+</body>
+</html>
