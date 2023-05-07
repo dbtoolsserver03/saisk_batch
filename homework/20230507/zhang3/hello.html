@@ -33,6 +33,42 @@
 				tag.style.backgroundColor="";
 			}
 			
+			function funView(){
+
+				var tag = document.getElementById("id_user");
+				var tagView = document.getElementById("id_view");
+				
+				// 从当前的HTML文件里面取标签，标签满足的条件是  name = "sex_grp"
+				var tagSex=document.getElementsByName("sex_grp");
+				
+				// 当浏览器解释执行JS代码时，发现debugger;就自动停下来，不需要手动打断点
+				//debugger;
+				
+				var sexVal = "";
+				for(var i=0; i<tagSex.length;i++) {
+					if(tagSex[i].checked) {
+						sexVal = tagSex[i].labels[0].innerText;
+						break;
+					}
+				}
+				
+				// 从当前的HTML文件里面取标签，标签满足的条件是  name = "sex_grp"
+				var tagBlood=document.getElementById("id_blood");
+				
+				// 当浏览器解释执行JS代码时，发现debugger;就自动停下来，不需要手动打断点
+				debugger;
+				
+				var bloodVal = "";
+				for(var i=0; i<tagBlood.length;i++) {
+					if(tagBlood[i].selected) {
+						bloodVal = tagBlood[i].value;
+						break;
+					}
+				}
+				
+				
+				tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal;
+			}
 		</script>
 	</head>
 	
@@ -56,14 +92,15 @@
 				</span>
 			</button>
 			<input type="button" value="CLEAR" onclick="funClear()">
+			<input type="button" value="VIEW" onclick="funView()">
 		 </div>
 
 		<hr>
 		
 		<div style="background-color: beige;">
-			sex: <input id="id_sex_man" type="radio" name="sex_grp">
+			sex: <input id="id_sex_man" type="radio" name="sex_grp" value="1">
 					<label for="id_sex_man">man</label>
-				 <label><input type="radio" name="sex_grp">woman</label>
+				 <label><input type="radio" name="sex_grp" value="0">woman</label>
 			<br>
 	
 			level:<label><input type="radio" name="level_grp">PM</label>
@@ -74,7 +111,7 @@
 	
 			<br>
 			blood:
-			<select>
+			<select id="id_blood">
 			    <option value="">--Please choose an option--</option>
 			    <option value="A1">A型</option>
 			    <option value="B">B型</option>
@@ -122,6 +159,10 @@
 			
 		</div>
 
+<div id="id_view" style="background-color: cadetblue;">
+	xxx
+	
+</div>
 		<hr>
 		
 		<table border="1" width="100%">
