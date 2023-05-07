@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>hello html</title>
+        <!-- 注释快捷键 ctrl + shift + c-->
+		<!--要用相对路径，不要用绝对路径-->
+		<!--相对路径 ./ -->
+		<!--绝对路径 C:\Users\tech\git050701\saisk\homework\20230507\zhang3-->
+		<!--  . 相当于 C:\Users\tech\git050701\saisk\homework\20230507\zhang3 -->
+		<link rel="shortcut icon" href="./img/favicon.ico">
+	</head>
+	
+	<body>
+		
+	 	<div style="background-color: wheat;">
+			<!-- table 标签不仅可以用来显示数据 ，也可以用来画面布局-->
+			<table>
+				<tr><td>user:</td><td><input id="id_user" style="background-color: aqua;color: red;" type="text" value="xxxx"></td></tr>
+				<tr><td>password:</td><td><input type="password" value="123"></td></tr>
+			</table>
+			
+			<br>
+			<input type="button" value="login" style="background-color: burlywood;">
+		 </div>
+
+		<hr>
+		
+		<div style="background-color: beige;">
+			sex: <input id="id_sex_man" type="radio" name="sex_grp">
+					<label for="id_sex_man">man</label>
+				 <label><input type="radio" name="sex_grp">woman</label>
+			<br>
+	
+			level:<label><input type="radio" name="level_grp">PM</label>
+			<label><input type="radio" name="level_grp">PL</label>
+			<label><input type="radio" name="level_grp">SPL</label>
+			<label><input type="radio" name="level_grp">SE/BSE</label>
+			<label><input type="radio" name="level_grp" checked>PG</label>
+	
+			<br>
+			blood:
+			<select>
+			    <option value="">--Please choose an option--</option>
+			    <option value="A1">A型</option>
+			    <option value="B">B型</option>
+			    <option selected value="O">O型</option>
+			</select>
+			
+			<br>
+			language:<label><input type="checkbox" name="lan_grp" checked>english</label>
+			<label><input type="checkbox" name="lan_grp">日本語</label>
+			<label><input type="checkbox" name="lan_grp">中文</label>
+			<br>
+			技術:<label><input type="checkbox" name="tech_grp">JAVA</label>
+			<label><input type="checkbox" name="tech_grp">HTML</label>
+			<label><input type="checkbox" name="tech_grp">C++</label>
+	
+			<br>
+				<a href="https://www.yahoo.co.jp/" target="tag01">
+					<input alt="xxx_tiger" type="image"  width="150" height="100" src="./img/tiger.png">
+				</a>
+			<br>
+			
+		 	<!--target属性 用来指定在浏览器的哪个标签上显示画面，如果不指定这个属性，将在自己的标签上显示-->
+			<a href="https://www.baidu.com/">baidu myself</a>
+			<br>
+			<a href="https://www.baidu.com/" target="tag01">baidu</a>
+			<br>
+			<a href="https://www.yahoo.co.jp/" target="tag01">yahoo</a>
+			<br>
+			
+			<!--锚点链接-->
+			<a href="#id_user">to top</a>
+			<br>
+			<!--跳转到下个画面-->
+			<a href="./to.html" target="tag02">to html</a>
+		 	<br>
+			出生年月日<input type="date" value="2023-05-07">
+			<br>
+			自己紹介<textarea rows="5" cols="10" ></textarea>
+			<br>
+			file <input type="file">
+			<br>
+			color <input type="color">
+			<br>
+			hidden <input type="hidden" value="123">
+			
+			
+		</div>
+
+		<hr>
+		
+		<table border="1" width="100%">
+			<tr><th>select</th><th>no</th><th>name</th><th>birthday</th><th>salary</th></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>1</td><td>zhang3</td><td  align="center" >1999/01/01</td><td align="right">200000</td></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>2</td><td>li4</td><td align="center">1999/01/02</td><td align="right">300000</td></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>3</td><td><input type="text" value="xxxx"></td><td align="center"><input type="date" value="2001-01-01"></td><td align="right"><input type="number" value="99999"></td></tr>
+		</table>
+		
+
+	</body>
+</html>
