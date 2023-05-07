@@ -9,7 +9,6 @@
 		<!--绝对路径 C:\Users\tech\git050701\saisk\homework\20230507\zhang3-->
 		<!--  . 相当于 C:\Users\tech\git050701\saisk\homework\20230507\zhang3 -->
 		<link rel="shortcut icon" href="./img/favicon.ico">
-		
 		<link rel="stylesheet" href="./css/style.css">
 		<style>
 			._63Ie6douiF2dG_ihlFTen {
@@ -23,16 +22,14 @@
 			}
 		</style>
 		
+		<script src="./js/my.js"></script>
 		<script>
-			
-			function funClear(){
+			alert(111);
+				// 浏览器逐行解析执行HTML文件，因为还没有加载完BODY标签里面的内容，所以下面的代码会出
+				//var tagUser = document.getElementById("id_user");
+				//alert(tagUser.value);
 				
-				var tag = document.getElementById("id_user");
-				alert(tag.value);
-				tag.value="";
-				tag.style.backgroundColor="";
-			}
-			
+			alert(222);
 			function funView(){
 
 				var tag = document.getElementById("id_user");
@@ -56,7 +53,7 @@
 				var tagBlood=document.getElementById("id_blood");
 				
 				// 当浏览器解释执行JS代码时，发现debugger;就自动停下来，不需要手动打断点
-				debugger;
+				//debugger;
 				
 				var bloodVal = "";
 				for(var i=0; i<tagBlood.length;i++) {
@@ -66,13 +63,33 @@
 					}
 				}
 				
+				var tagLan=document.getElementsByName("lan_grp");
+				var lanVal = "";
+				for(var i=0; i<tagLan.length;i++) {
+					if(tagLan[i].checked) {
+						lanVal = lanVal + tagLan[i].value + ",";
+					}
+				}
 				
-				tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal;
+				if(lanVal.endsWith(",")){
+					lanVal = lanVal.substring(0,lanVal.length-1);
+				}
+				
+				
+				//tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal+ "\n" + lanVal;
+				tagView.innerHTML=tag.value + "<br>" + sexVal+ "<br>" + bloodVal+ "<br>" + lanVal;
+			}
+			
+			function init() {
+				alert("load over");
+				
+				var tagUser = document.getElementById("id_user");
+				alert(tagUser.value);
 			}
 		</script>
 	</head>
 	
-	<body>
+	<body onload="init();">
 		
 	 	<div id="id_div_login">
 			<!-- table 标签不仅可以用来显示数据 ，也可以用来画面布局-->
@@ -80,7 +97,7 @@
 				<tr><td>user:</td><td><input id="id_user" style="background-color: aqua;color: red;" type="text" value="xxxx"></td></tr>
 				
 				<!--一个标签里，style和class属性同时存在，并且对相同的样式设值，以style为准。-->
-				<tr><td>password:</td><td><input class="cls_pwd" style="background-color: aqua;"  type="password" value="123"></td></tr>
+				<tr><td>password:</td><td><input id="id_pwd" class="cls_pwd" style="background-color: aqua;"  type="password" value="123"></td></tr>
 			</table>
 			
 			<br>
@@ -119,9 +136,9 @@
 			</select>
 			
 			<br>
-			language:<label><input type="checkbox" name="lan_grp" checked>english</label>
-			<label><input type="checkbox" name="lan_grp">日本語</label>
-			<label><input type="checkbox" name="lan_grp">中文</label>
+			language:<label><input type="checkbox" name="lan_grp" checked value="en">english</label>
+			<label><input type="checkbox" name="lan_grp" value="jp">日本語</label>
+			<label><input type="checkbox" name="lan_grp" value="zh">中文</label>
 			<br>
 			技術:<label><input type="checkbox" name="tech_grp">JAVA</label>
 			<label><input type="checkbox" name="tech_grp">HTML</label>
