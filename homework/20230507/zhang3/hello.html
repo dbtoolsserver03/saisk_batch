@@ -9,19 +9,53 @@
 		<!--绝对路径 C:\Users\tech\git050701\saisk\homework\20230507\zhang3-->
 		<!--  . 相当于 C:\Users\tech\git050701\saisk\homework\20230507\zhang3 -->
 		<link rel="shortcut icon" href="./img/favicon.ico">
+		
+		<link rel="stylesheet" href="./css/style.css">
+		<style>
+			._63Ie6douiF2dG_ihlFTen {
+			    position: relative;
+			    width: 139px;
+			    height: 34px;
+			    cursor: pointer;
+			    background-color: #4070ff;
+			    border: 0;
+			    -webkit-appearance: none;
+			}
+		</style>
+		
+		<script>
+			
+			function funClear(){
+				
+				var tag = document.getElementById("id_user");
+				alert(tag.value);
+				tag.value="";
+				tag.style.backgroundColor="";
+			}
+			
+		</script>
 	</head>
 	
 	<body>
 		
-	 	<div style="background-color: wheat;">
+	 	<div id="id_div_login">
 			<!-- table 标签不仅可以用来显示数据 ，也可以用来画面布局-->
 			<table>
 				<tr><td>user:</td><td><input id="id_user" style="background-color: aqua;color: red;" type="text" value="xxxx"></td></tr>
-				<tr><td>password:</td><td><input type="password" value="123"></td></tr>
+				
+				<!--一个标签里，style和class属性同时存在，并且对相同的样式设值，以style为准。-->
+				<tr><td>password:</td><td><input class="cls_pwd" style="background-color: aqua;"  type="password" value="123"></td></tr>
 			</table>
 			
 			<br>
 			<input type="button" value="login" style="background-color: burlywood;">
+			
+			<button class="_63Ie6douiF2dG_ihlFTen cl-noclick-log" type="submit">
+				<span class="_3s3YPSCNUcgAFkPwVeRyfT">
+					<span class="PHOgFibMkQJ6zcDBLbga8">検索</span>
+				</span>
+			</button>
+			<input type="button" value="CLEAR" onclick="funClear()">
 		 </div>
 
 		<hr>
@@ -78,7 +112,7 @@
 		 	<br>
 			出生年月日<input type="date" value="2023-05-07">
 			<br>
-			自己紹介<textarea rows="5" cols="10" ></textarea>
+			自己紹介<textarea  class="cls_pwd" rows="5" cols="10" ></textarea>
 			<br>
 			file <input type="file">
 			<br>
@@ -86,14 +120,17 @@
 			<br>
 			hidden <input type="hidden" value="123">
 			
-			
 		</div>
 
 		<hr>
 		
 		<table border="1" width="100%">
+			<!--	tr: table row-->
+			<!--	th: table head-->
+			<!--	td: table data-->
+			
 			<tr><th>select</th><th>no</th><th>name</th><th>birthday</th><th>salary</th></tr>
-			<tr><td align="center"><input type="radio" name="sel"></td><td>1</td><td>zhang3</td><td  align="center" >1999/01/01</td><td align="right">200000</td></tr>
+			<tr><td  class="cls_pwd" align="center"><input type="radio" name="sel"></td><td>1</td><td>zhang3</td><td  align="center" >1999/01/01</td><td align="right">200000</td></tr>
 			<tr><td align="center"><input type="radio" name="sel"></td><td>2</td><td>li4</td><td align="center">1999/01/02</td><td align="right">300000</td></tr>
 			<tr><td align="center"><input type="radio" name="sel"></td><td>3</td><td><input type="text" value="xxxx"></td><td align="center"><input type="date" value="2001-01-01"></td><td align="right"><input type="number" value="99999"></td></tr>
 		</table>
