@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>選手情報入力</title>
 	<link rel="icon" href="pic/222.ico" type="image/vnd.microsoft.icon">
+	<link href="css/lightbox.css" rel="stylesheet" />
 	<script src="css/jquery-3.6.4.min.js"></script>
+	<script src="css/lightbox.js"></script>
 	<script type="text/javascript">
 	 	$(document).ready(function(){
 		 	$("#id_btn_back").click(function(){
@@ -20,7 +22,10 @@
 				}		
 		 	 }); 
 		 });
-	
+		 lightbox.option({
+     		'resizeDuration': 200,
+      		'wrapAround': true
+   		})
 	</script>
 </head>
 <body>
@@ -46,13 +51,13 @@
 				<p align="left" style="color: rgb(0, 0, 0)">免許正面</p>
 			</td> 
 			<td width="25%">
-				<img src="pic/333.png" width="300" height="180">
+				<a href="pic/333.png" data-lightbox="image-1" data-title="免許正面"><img src="pic/333.png" width="300" height="180"></a>
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">免許裏面</p>
 			</td> 
 			<td width="25%">
-				<img src="pic/444.png" width="300" height="180">	
+				<a href="pic/444.png" data-lightbox="image-1" data-title="免許裏面"><img src="pic/444.png" width="300" height="180"></a>	
 			</td> 
 		</tr>	
 		</table>
