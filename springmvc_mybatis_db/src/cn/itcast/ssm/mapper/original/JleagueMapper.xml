@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.ssm.mapper.original.JleagueMapper">
+  <resultMap id="BaseResultMap" type="cn.itcast.ssm.po.original.Jleague">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="SEI" jdbcType="VARCHAR" property="sei" />
+    <result column="NA" jdbcType="VARCHAR" property="na" />
+    <result column="BRITH" jdbcType="TIMESTAMP" property="brith" />
+    <result column="TEAM" jdbcType="VARCHAR" property="team" />
+    <result column="TELNUMBER" jdbcType="VARCHAR" property="telnumber" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, SEI, NA, BRITH, TEAM, TELNUMBER, ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jleague
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jleague
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.itcast.ssm.po.original.Jleague">
+    insert into jleague (ID, SEI, NA, 
+      BRITH, TEAM, TELNUMBER, 
+      ADDRESS)
+    values (#{id,jdbcType=INTEGER}, #{sei,jdbcType=VARCHAR}, #{na,jdbcType=VARCHAR}, 
+      #{brith,jdbcType=TIMESTAMP}, #{team,jdbcType=VARCHAR}, #{telnumber,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.itcast.ssm.po.original.Jleague">
+    insert into jleague
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="sei != null">
+        SEI,
+      </if>
+      <if test="na != null">
+        NA,
+      </if>
+      <if test="brith != null">
+        BRITH,
+      </if>
+      <if test="team != null">
+        TEAM,
+      </if>
+      <if test="telnumber != null">
+        TELNUMBER,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sei != null">
+        #{sei,jdbcType=VARCHAR},
+      </if>
+      <if test="na != null">
+        #{na,jdbcType=VARCHAR},
+      </if>
+      <if test="brith != null">
+        #{brith,jdbcType=TIMESTAMP},
+      </if>
+      <if test="team != null">
+        #{team,jdbcType=VARCHAR},
+      </if>
+      <if test="telnumber != null">
+        #{telnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.itcast.ssm.po.original.Jleague">
+    update jleague
+    <set>
+      <if test="sei != null">
+        SEI = #{sei,jdbcType=VARCHAR},
+      </if>
+      <if test="na != null">
+        NA = #{na,jdbcType=VARCHAR},
+      </if>
+      <if test="brith != null">
+        BRITH = #{brith,jdbcType=TIMESTAMP},
+      </if>
+      <if test="team != null">
+        TEAM = #{team,jdbcType=VARCHAR},
+      </if>
+      <if test="telnumber != null">
+        TELNUMBER = #{telnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.itcast.ssm.po.original.Jleague">
+    update jleague
+    set SEI = #{sei,jdbcType=VARCHAR},
+      NA = #{na,jdbcType=VARCHAR},
+      BRITH = #{brith,jdbcType=TIMESTAMP},
+      TEAM = #{team,jdbcType=VARCHAR},
+      TELNUMBER = #{telnumber,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

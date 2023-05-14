@@ -33,6 +33,9 @@
 <a href="${pageContext.request.contextPath }/items/initItems.action">商品</a>
 <br>
 <a href="${pageContext.request.contextPath }/initUserLst.action">用户一览</a>
+
+<br>
+<a href="${pageContext.request.contextPath }/teacherInit0514.action">老师0514</a>
 </body>
 
 </html>

@@ -97,7 +97,34 @@ create table `t_animal` (
 `BIRTHDAY` DATE null COMMENT '誕生日',
 `FOOD` DECIMAL(10,1) null COMMENT 'FOOD',
 `CREATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '作成时间',
-`UPDATE_USER` VARCHAR(10) not null DEFAULT ID000 COMMENT '更新者',
+`UPDATE_USER` VARCHAR(10) not null DEFAULT 'ID000' COMMENT '更新者',
 `UPDATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
 `DEL_FLG` CHAR(1) not null DEFAULT 0 COMMENT '削除フラグ',
 PRIMARY KEY (`ID`)) COMMENT='動物テーブル';
+create table `t_carinfo` (
+`car_id` varchar(10) not null comment 'ID',
+`car_maker` varchar(20) not null comment 'メーカー',
+`car_type` varchar(20) not null comment 'タイプ',
+`car_price` varchar(100) not null comment '価格',
+`car_mileage` varchar(100) not null comment '走行距離',
+`car_repair` char(1) not null comment '修復歴',
+`car_displacement` varchar(20) not null comment '排気量',
+primary key (`car_id`)) comment='車データ';
+CREATE TABLE Jleague (
+`ID` INT not null comment '番号',
+`SEI` varchar(20) not null comment '姓',
+`NA` varchar(20) null comment '名',
+`BRITH` DATETIME not null comment '生年月日',
+`TEAM` varchar(20) null comment '所属チーム',
+`TELNUMBER` varchar(20) null comment '携帯番号',
+`ADDRESS` varchar(60) null comment 'ADDRESS',
+primary key (`ID`)
+);
+
+create table `CUSTOMERS` (
+`id` varchar(10) not null comment 'ID',
+`AGE` varchar(20) not null comment 'AGE',
+`ADDRESS` varchar(20) not null comment 'ADDRESS',
+`SALARY` varchar(100) not null comment 'SALARY',
+primary key (`id`)
+);
