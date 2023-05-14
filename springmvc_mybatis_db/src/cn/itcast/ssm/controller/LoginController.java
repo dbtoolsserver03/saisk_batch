@@ -41,8 +41,7 @@ public class LoginController {
 		
 		if(loginBean.getAgree() == null || loginBean.getAgree().length()==0) {
 			
-			model.addAttribute("usernamexx", username);
-			model.addAttribute("passwordyy", password);
+			model.addAttribute("usernmXXX", username);
 			model.addAttribute("error", "请同意");
 			model.addAttribute("loginInfo", loginBean);
 			
@@ -53,7 +52,6 @@ public class LoginController {
 		if(word == null || word.length()==0) {
 			
 			model.addAttribute("usernamexx", username);
-			model.addAttribute("passwordyy", password);
 			model.addAttribute("error", "没有输入验证码");
 			model.addAttribute("loginInfo", loginBean);
 			
