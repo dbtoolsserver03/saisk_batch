@@ -9,8 +9,15 @@
 		 	$("#id_my_btn").click(function(){
 			debugger;
 			var userId = $("#id_user_id")[0].value;
-			//  console.log("userId:"+userId);
-			window.location = '代表情報.html';	
+			
+			// 纯 jquery 写法
+			console.log(" 纯 jquery 写法 userId:"+$("#id_user_id").val());
+			 
+			// 纯 javascript 写法
+			console.log("纯 javascript 写法 userId:"+document.getElementById("id_user_id").value);
+			
+			console.log("混写 userId:"+userId);
+			window.location = '代表情報.html?user='+userId;	
 		 	}); 
 		});	
 	</script>

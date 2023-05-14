@@ -3,47 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>代表情報</title>
-	<link rel="icon" href="pic/222.ico" type="image/vnd.microsoft.icon">
-	<script src="css/jquery-3.6.4.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="icon" href="./pic/222.ico" type="image/vnd.microsoft.icon">
+	<script src="./css/jquery-3.6.4.min.js"></script>
+	
 	<script type="text/javascript">	
 		$(document).ready(function(){
+			
+			$("#id_btn_detail").prop( 'disabled', true );
+			
 		 	$("#id_btn_new").click(function(){
 			debugger;
 			var userId = $("#id_btn_new")[0].value; 
 			window.location = 'player info.html';	
 			}); 
-		});
-		$(document).ready(function(){
-		 	$("#id_btn_update").click(function(){
+			
+			$("#id_btn_update").click(function(){
 			debugger;
 			var userId = $("#id_btn_update")[0].value; 
 			window.location = 'player info.html';	
 			}); 
-		});
-		$(document).ready(function(){
+			
 		 	$("#id_btn_delete").click(function(){
 			debugger;
 			var userId = $("#id_btn_delete")[0].value; 
 			window.location = 'player info.html';	
 			}); 
-		});
-		$(document).ready(function(){
-		 	$("#id_btn_detail").click(function(){
-			debugger;
-			var userId = $("#id_btn_detail")[0].value; 
-			window.location = 'player info.html';	
+			
+			$("#id_btn_detail").click(function(){
+				debugger;
+				var userId = $("#id_btn_detail")[0].value; 
+				window.location = 'player info.html';	
 	  		}); 
-		});
-		function showDiv() {
-		document.getElementById('id_table').style.display = "block";}
-		$(function(){
-			$("#id_btn_search").click(function() {
+	  		
+	  		$("#id_btn_search").click(function() {
 				$("#id_btn_detail").show();
 				$("#id_btn_delete").show();
 				$("#id_btn_update").show();
 			});
-		});			
+		});
+
+		function showDiv() {
+			document.getElementById('id_table').style.display = "block";
+		}
 	</script>
 </head>
 <body>	
@@ -83,11 +84,6 @@
 				<input id="id_text_mei" style="width: 300px;height: 30px;" type="text">
 			</td>
 		</tr>
-		</table>
-	</div>
-	
-	<div style="background-color:azure">
-		<table width="100%">
 		<tr>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">電話番号</p>
