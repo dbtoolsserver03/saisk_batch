@@ -36,7 +36,7 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login(Model model, HttpSession session, 
 			@ModelAttribute LoginBean loginBean,
-			String username, String password,String word)
+			String username, String password,String word,String telWord)
 			throws Exception {
 		
 		if(loginBean.getAgree() == null || loginBean.getAgree().length()==0) {

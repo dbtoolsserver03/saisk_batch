@@ -43,7 +43,7 @@ function register() {
 用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usernamexx}" /><br/>
 用户密码 ：<input id="id_password" type="password" name="password" value="${passwordyy}"/><br/>
 用户验证码 ：<input id="id_word" type="text" name="word" /><br/>
-
+手机验证码 ：<input type="text" name="telWord" /><br/>
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
 
