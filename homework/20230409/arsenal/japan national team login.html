@@ -2,7 +2,18 @@
 <html lang="jp">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="/users/xky/it/222.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="pic/222.ico" type="image/vnd.microsoft.icon">
+	<script src="css/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		 	$("#id_my_btn").click(function(){
+			debugger;
+			var userId = $("#id_user_id")[0].value;
+			//  console.log("userId:"+userId);
+			window.location = '代表情報.html';	
+		 	}); 
+		});	
+	</script>
 	<title>サッカー日本代表</title>
 </head>
 
@@ -15,24 +26,26 @@
 	
 	<div style="background-color:blue">
 		<table width="100%">
-			<tr>
-				<td width="25%"></td>
-				<td width="25%">
-					<div align="right" style="width:50px;height:60px;"> <img src="/users/xky/it/123.png"/></div>	
-				</td>
-				<td width="25%">
-					<p align="center" style="color: azure">日本代表登録システム</p>					
-				</td>
-				<td width="25%"></td>
-			</tr>	
+		<tr>
+			<td width="25%"></td>
+			<td width="25%">
+				<div align="right" style="width:50px;height:60px;"> <img src="pic/123.png"/></div>	
+			</td>
+			<td width="25%">
+				<p align="center" style="color: azure">日本代表登録システム</p>					
+			</td>
+			<td width="25%"></td>
+		</tr>	
 		</table>
 	</div>
 		
 	<div align="center">	
 		<br><br><br><br><br>
-		<input id="id_user_id" type="text" name="userId" style="background-color:DeepSkyBlue" placeholder="ログインID">
+			<input id="id_user_id" type="text" name="userId" style="background-color:DeepSkyBlue" placeholder="ログインID">
 		<br>
-		<input type="password" name="password" style="background-color: aqua;" placeholder="パスワード"	>			
+			<input type="password" name="password" style="background-color: aqua;" placeholder="パスワード"	>	
+		<br><br>
+			 <input id="id_my_btn" type="button"  class="btn-pink"  value="  ログイン  " >	
 	</div>
 	
 	

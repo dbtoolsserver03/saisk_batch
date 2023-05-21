@@ -66,4 +66,65 @@ CREATE TABLE `teacher_table` (
   `teacher_sex` char(1) NOT NULL COMMENT '性別',
   `teacher_age` date NOT NULL COMMENT '生日',
   PRIMARY KEY (`teacher_id`)
-)
+);
+
+
+create table `ballteam` (
+`ID` VARCHAR(5) not null COMMENT 'ID',
+`SEI` VARCHAR(20) not null COMMENT '姓',
+`MEI` VARCHAR(20) not null COMMENT '名',
+`SEX` CHAR(2) null COMMENT '性別',
+`BIRTHDAY` DATE null COMMENT '誕生日',
+`SALARY` DECIMAL(10,1) null COMMENT '工资',
+`PHOTO` BLOB null COMMENT '照片',
+`CREATE_USER` VARCHAR(5) not null COMMENT '作成者',
+`CREATE_TIME` DATETIME not null COMMENT '作成时间',
+`UPDATE_USER` VARCHAR(10) not null COMMENT '更新者',
+`UPDATE_TIME` DATETIME not null COMMENT '更新时间',
+`DEL_FLG` VARCHAR(10) not null COMMENT '削除フラグ',
+PRIMARY KEY (`ID`)) COMMENT='球队テーブル';
+create table `teacher_table` (
+`teacher_id` VARCHAR(10) not null COMMENT '先生ID',
+`teacher_name` VARCHAR(32) not null COMMENT '先生姓名',
+`teacher_sex` CHAR(1) not null COMMENT '性別',
+`teacher_age` DATE not null COMMENT '生日',
+PRIMARY KEY (`teacher_id`)) COMMENT='先生テーブル';
+create table `t_animal` (
+`ID` VARCHAR(5) not null COMMENT 'ID',
+`SEI` VARCHAR(20) not null COMMENT '姓',
+`MEI` VARCHAR(20) not null COMMENT '名',
+`SEX` CHAR(1) null COMMENT '性別',
+`BIRTHDAY` DATE null COMMENT '誕生日',
+`FOOD` DECIMAL(10,1) null COMMENT 'FOOD',
+`CREATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '作成时间',
+`UPDATE_USER` VARCHAR(10) not null DEFAULT 'ID000' COMMENT '更新者',
+`UPDATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+`DEL_FLG` CHAR(1) not null DEFAULT 0 COMMENT '削除フラグ',
+PRIMARY KEY (`ID`)) COMMENT='動物テーブル';
+create table `t_carinfo` (
+`car_id` varchar(10) not null comment 'ID',
+`car_maker` varchar(20) not null comment 'メーカー',
+`car_type` varchar(20) not null comment 'タイプ',
+`car_price` varchar(100) not null comment '価格',
+`car_mileage` varchar(100) not null comment '走行距離',
+`car_repair` char(1) not null comment '修復歴',
+`car_displacement` varchar(20) not null comment '排気量',
+primary key (`car_id`)) comment='車データ';
+CREATE TABLE Jleague (
+`ID` INT not null comment '番号',
+`SEI` varchar(20) not null comment '姓',
+`NA` varchar(20) null comment '名',
+`BRITH` DATETIME not null comment '生年月日',
+`TEAM` varchar(20) null comment '所属チーム',
+`TELNUMBER` varchar(20) null comment '携帯番号',
+`ADDRESS` varchar(60) null comment 'ADDRESS',
+primary key (`ID`)
+);
+
+create table `CUSTOMERS` (
+`id` varchar(10) not null comment 'ID',
+`AGE` varchar(20) not null comment 'AGE',
+`ADDRESS` varchar(20) not null comment 'ADDRESS',
+`SALARY` varchar(100) not null comment 'SALARY',
+primary key (`id`)
+);

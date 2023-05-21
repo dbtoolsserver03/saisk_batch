@@ -36,13 +36,12 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login(Model model, HttpSession session, 
 			@ModelAttribute LoginBean loginBean,
-			String username, String password,String word)
+			String username, String password,String word,String telWord)
 			throws Exception {
 		
 		if(loginBean.getAgree() == null || loginBean.getAgree().length()==0) {
 			
-			model.addAttribute("usernamexx", username);
-			model.addAttribute("passwordyy", password);
+			model.addAttribute("usernmXXX", username);
 			model.addAttribute("error", "请同意");
 			model.addAttribute("loginInfo", loginBean);
 			
@@ -53,7 +52,6 @@ public class LoginController {
 		if(word == null || word.length()==0) {
 			
 			model.addAttribute("usernamexx", username);
-			model.addAttribute("passwordyy", password);
 			model.addAttribute("error", "没有输入验证码");
 			model.addAttribute("loginInfo", loginBean);
 			

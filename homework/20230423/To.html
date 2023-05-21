@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>To</title>
+
+<script>
+		
+		function init() {
+			let url = new URL(window.location.href);
+			
+			let parmas = url.searchParams;
+		
+			
+			
+			document.getElementById('id_user').innerText=parmas.get('myuser');
+			document.getElementById('id_pwd').innerText=parmas.get('password');	
+			
+				}
+			
+	
+</script>
+
+</head>
+<body onload="init()">
+User:<label id="id_user"></label>
+<br><br>
+Pwd:<label id="id_pwd"></label>
+
+</body>
+</html>

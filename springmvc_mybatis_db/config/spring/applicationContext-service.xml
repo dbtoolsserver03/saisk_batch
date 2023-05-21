@@ -19,4 +19,8 @@
 <bean id="teacherService" class="cn.itcast.ssm.service.impl.TeacherServiceImpl"/>
 <bean id="animalService" class="cn.itcast.ssm.service.impl.AnimalServiceImpl"/>
 <bean id="ballteamService" class="cn.itcast.ssm.service.impl.BallteamServiceImpl"/>
+<bean id="carInfoService" class="cn.itcast.ssm.service.impl.CarInfoServiceImpl"/>
+<bean id="jLeagueService" class="cn.itcast.ssm.service.impl.JleagueServiceImpl"/>
+<bean id="customersService" class="cn.itcast.ssm.service.impl.CustomersServiceImpl"/>
+
 </beans>

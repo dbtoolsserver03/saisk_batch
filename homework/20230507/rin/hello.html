@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<link rel="shortcut icon" href="https://s.yimg.jp/c/icon/s/bsc/2.0/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="./css/NewFile.css">
+	<script>
+
+		alert("welcome");
+
+
+	</script>
+	<!--	 注释快捷键 ctrl + shift + c-->
+	<script>
+
+
+		function funClear() {
+
+			var tag = document.getElementById("id_user");
+			//alert(tag.value);
+			tag.value = "";
+			//tag.className="";
+
+			var tagPW = document.getElementById("id_password");
+			tagPW.value = "";
+			//tagPW.className="";
+		}
+
+		function funView() {
+			var tag = document.getElementById("id_user");
+			var tagView = document.getElementById("id_view");
+			var tagSex = document.getElementsByName("sex_grp");
+
+			var sexVal = "";
+			for (var i = 0; i < tagSex.length; i++) {
+				if (tagSex[i].checked) {
+					sexVal = tagSex[i].labels[0].innerText;
+					break;
+				}
+			}
+
+
+			var tagBlood = document.getElementById("id_blood");
+
+			var bloodVal = "";
+			for (var i = 0; i < tagBlood.length; i++) {
+				if (tagBlood[i].selected) {
+					bloodVal = tagBlood[i].value;
+					break;
+				}
+			}
+			var tagLan = document.getElementsByName("lan_grp");
+
+			var lanVal = "";
+			for (var i = 0; i < tagLan.length; i++) {
+				if (tagLan[i].checked) {
+					lanVal = lanVal + tagLan[i].value + ",";
+				}
+			}
+
+			if (lanVal.endsWith(",")) {
+				lanVal = lanVal.substring(0, lanVal.length - 1);
+			}
+
+			var tagTech = document.getElementsByName("tech_grp");
+			var techVal = "";
+			for (var i = 0; i < tagLan.length; i++) {
+				if (tagTech[i].checked) {
+					techVal = techVal + tagTech[i].value + ",";
+				}
+			}
+
+			if (techVal.endsWith(",")) {
+				techVal = techVal.substring(0, techVal.length - 1);
+			}
+
+			var tagText = document.getElementById("id_text");
+
+
+
+			//tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal+ "\n" + lanVal+ "\n" + techVal+"\n"+tagText;
+			tagView.innerHTML = tag.value + "<br>" + sexVal + "<br>" + bloodVal + "<br>" + lanVal + "<br>" + techVal + "<br>" + tagText.value;
+			//debugger;
+		}
+
+
+	</script>
+
+</head>
+
+<body>
+
+
+	<div id="id_div_login" style="background-color: lightgray;">
+		<table>
+			<tr>
+				<td>user:</td>
+				<td><input id="id_user" type="text" class="cls_pwd" value="abc"></td>
+			</tr>
+			<tr>
+				<td>password:</td>
+				<td><input id="id_password" class="cls_pwd" type="password"></td>
+			</tr>
+		</table>
+
+		<br>
+		<input type="button" value="login" style="background-color: cyan;">
+		<input type="button" value="clear" onclick="funClear()">
+		<input type="button" value="VIEW" onclick="funView()">
+
+	</div>
+	<hr>
+	<div style="    background-color: slategrey">
+		sex:<input id="id_sex_man" type="radio" name="sex_grp">
+		<label for="id_sex_man">man</label>
+		<label><input type="radio" name="sex_grp">woman</label>
+		<br>
+		level:<label><input type="radio" name="level_grp">PM</label>
+		<label><input type="radio" name="level_grp">PL</label>
+		<label><input type="radio" name="level_grp">SPL</label>
+		<label><input type="radio" name="level_grp">SE/BSE</label>
+		<label><input type="radio" name="level_grp">PG</label>
+
+		<br>
+		blood:
+		<select id="id_blood">
+			<option value="">--Please choose an option--</option>
+			<option value="A">A型</option>
+			<option value="B">B型</option>
+			<option value="O">O型</option>
+		</select>
+
+		<br>
+		language:<label><input type="checkbox" name="lan_grp" value="en">English</label>
+		<label><input type="checkbox" name="lan_grp" value="jp">日本語</label>
+		<label><input type="checkbox" name="lan_grp" value="zh">中文</label>
+		<br>
+		技術:<label><input type="checkbox" name="tech_grp" value="java">Java</label>
+		<label><input type="checkbox" name="tech_grp" value="html">HTML</label>
+		<label><input type="checkbox" name="tech_grp" value="c++">C++</label>
+		<br>
+		<a href="https://yahoo.co.jp/" target="target1">
+			<input alt="abc" type="image" width="600" height="333" src="./image/0x0.webp">
+		</a>
+		<br>
+		<a href="https://google.com/" target="target2">google</a>
+		<br>
+		出生年月日<input type="date" value="2023-05-07">
+		<br>
+		自己紹介
+		<br>
+		<textarea rows="5" cols="20" style="background-color: lightgray;" id="id_text"></textarea>
+		<br>
+
+		file:<input type="file">
+		<br>
+		color:<input type="color">
+		<br>
+		hidden <input type="hidden" value="123456">
+	</div>
+
+	<div id="id_view" style="background-color:rgb(152, 219, 230);">
+		<!--	tr: table row-->
+		<!--	th: table head-->
+		<!--	td: table data-->
+	</div>
+	<hr>
+	<table border="1" width="100%">
+		<tr>
+			<th>select</th>
+			<th>no</th>
+			<th>name</th>
+			<th>birthday</th>
+			<th>salary</th>
+		</tr>
+		<tr>
+			<td align="center"><input type="radio" name="sel"></td>
+			<td>1</td>
+			<td>zhang3</td>
+			<td align="center">1999/01/01</td>
+			<td align="right">300000</td>
+		</tr>
+		<tr>
+			<td align="center"><input type="radio" name="sel"></td>
+			<td>2</td>
+			<td>li4</td>
+			<td align="center">1999/01/02</td>
+			<td align="right">350000</td>
+		</tr>
+		<tr>
+			<td align="center"><input type="radio" name="sel"></td>
+			<td>3</td>
+			<td><input type="text" value="abcd"></td>
+			<td align="center"><input type="date"></td>
+			<td align="right"><input type="number" value="999"></td>
+		</tr>
+
+	</table>
+
+
+
+</body>
+
+</html>

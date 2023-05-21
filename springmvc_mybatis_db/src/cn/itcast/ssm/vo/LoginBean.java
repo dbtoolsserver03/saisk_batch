@@ -7,7 +7,15 @@ public class LoginBean {
 	 private String password;
 	 private String word;
 	 private String agree;
+	 private String telWord;
 	 
+
+	public String getTelWord() {
+		return telWord;
+	}
+	public void setTelWord(String telWord) {
+		this.telWord = telWord;
+	}
 	public String getAgree() {
 		return agree;
 	}
