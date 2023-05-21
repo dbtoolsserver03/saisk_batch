@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>star dust</title>
+<link rel="shortcut icon" href="./img/yahoo.ico">
+		
+
+		<script>
+			alert(111);
+				// 浏览器逐行解析执行HTML文件，因为还没有加载完BODY标签里面的内容，所以下面的代码会出
+				//var tagUser = document.getElementById("id_user");
+				//alert(tagUser.value);
+				
+			alert(222);
+			function funView(){
+
+				var tag = document.getElementById("id_user");
+				var tagView = document.getElementById("id_view");
+				
+				// 从当前的HTML文件里面取标签，标签满足的条件是  name = "sex_grp"
+				var tagSex=document.getElementsByName("sex_grp");
+				
+				// 当浏览器解释执行JS代码时，发现debugger;就自动停下来，不需要手动打断点
+				//debugger;
+				
+				var sexVal = "";
+				for(var i=0; i<tagSex.length;i++) {
+					if(tagSex[i].checked) {
+						sexVal = tagSex[i].labels[0].innerText;
+						break;
+					}
+				}
+				
+				// 从当前的HTML文件里面取标签，标签满足的条件是  name = "sex_grp"
+				var tagBlood=document.getElementById("id_blood");
+				
+				// 当浏览器解释执行JS代码时，发现debugger;就自动停下来，不需要手动打断点
+				//debugger;
+				
+				var bloodVal = "";
+				for(var i=0; i<tagBlood.length;i++) {
+					if(tagBlood[i].selected) {
+						bloodVal = tagBlood[i].value;
+						break;
+					}
+				}
+				
+				var tagLan=document.getElementsByName("lan_grp");
+				var lanVal = "";
+				for(var i=0; i<tagLan.length;i++) {
+					if(tagLan[i].checked) {
+						lanVal = lanVal + tagLan[i].value + ",";
+					}
+				}
+				
+				if(lanVal.endsWith(",")){
+					lanVal = lanVal.substring(0,lanVal.length-1);
+				}
+				
+				
+				//tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal+ "\n" + lanVal;
+				tagView.innerHTML=tag.value + "<br>" + sexVal+ "<br>" + bloodVal+ "<br>" + lanVal;
+			}
+			
+			function init() {
+				alert("load over");
+				
+				var tagUser = document.getElementById("id_user");
+				alert(tagUser.value);
+			}
+		</script>
+		
+</head>
+<style>
+	.pwd
+	{
+		background-color:darkred
+	}
+	
+</style>
+<body>
+	<div style="background-color: aqua;">
+			<table>
+				<tr><td>user:</td><td><input id="id_user" style="background-color: aqua;color: red;" type="text" value="xxxx"></td></tr>
+				<tr><td>password:</td><td><input id="id_psw" class="pwd" input type="password" value="123"></td></tr>
+			</table>
+			SSS
+			<br>
+			<input type="button" value="login" style="background-color: burlywood;">
+			<input type="button" value="CLEAR" onclick="funClear()">
+			<input type="button" value="VIEW" onclick="funView()">
+		 </div>
+    <hr>
+    
+    
+    sex:<input id="id_sex_man" type="radio" name="sex_grp">
+          <label for="id_sex_man">man</label>
+        <label><input type="radio" name="sex_grp">women</label>
+        <br>
+        
+        level:
+        <label><input type="radio" name="level_grp">PM</label>
+         <label><input type="radio" name="level_grp">PL</label>
+          <label><input type="radio" name="level_grp">SPL</label>
+           <label><input type="radio" name="level_grp">SE/BSE</label>
+            <label><input type="radio" name="level_grp"checked>PG</label>
+    <br>
+    	blood:
+			<select id="id_blood">
+			    <option value="">--Please choose an option--</option>
+			    <option value="A1">A型</option>
+			    <option value="B">B型</option>
+			    <option selected value="O">O型</option>
+			</select>
+		<br>
+		language :<label><input type="checkbox" name="lan_grp">English</label>
+		<label><input type="checkbox" name="lan_grp">日本語</label>
+		<label><input type="checkbox" name="lan_grp">中文</label>
+		
+		<br>
+		技術:<label><input type="checkbox" name="tech_grp">java</label>
+		<label><input type="checkbox" name="tech_grp">c++</label>
+		<label><input type="checkbox" name="tech_grp">HTML</label>
+		
+		<br>
+		<a href="https://www.yahoo.co.jp/" target="tag1"><input alt="XXX card" type="image" width="350" height="500" src="./img/572850.jpg"></a>
+		<br>
+		<a href="https://www.baidu.com/" target="tag1">baidu</a>
+		<br>
+		<a href="https://www.yahoo.co.jp/" target="tag1">yahoo</a>
+		<br>
+		
+		<a href="#id_user">To top</a>
+		<a href="NewFile.html">NewFile</a>
+		<br>
+		出生年月日<input type="date" value="2023-05-07">
+		<br>
+		自己紹介<textarea rows="5" cols="6"></textarea>
+		<br>
+		file<input type="file">
+		<br>
+		color<input type="color">
+		<br>
+		hidden<input type="hidden" value="123">
+		<br>
+		<div>
+			
+		<div id="id_view" style="background-color: cadetblue;">	
+			
+			xxx
+			
+		</div>
+		<hr>
+		<table border="1" width="100%">
+			<tr><th>select</th><th>no</th><th>name</th><th>birthday</th><th>salary</th></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>1</td><td><input type="text" value="xxxx"></td><td align="center" ><input type="date" value="2001-01-01"><td align="right"><input type="number" value="99999"></td></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>2</td><td><input type="text" value="xxxx"></td><td align="center"><input type="date" value="2001-01-01"><td align="right"><input type="number" value="99999"></td></tr>
+			<tr><td align="center"><input type="radio" name="sel"></td><td>3</td><td><input type="text" value="xxxx"></td><td align="center"><input type="date" value="2001-01-01"></td><td align="right"><input type="number" value="99999"></td></tr>
+		</table>
+		
+</body>
+</html>
