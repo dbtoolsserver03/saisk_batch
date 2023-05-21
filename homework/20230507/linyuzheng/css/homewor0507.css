@@ -1,0 +1,23 @@
+.footer {
+	position: fixed;
+	left: 500px;
+	bottom: 0px;
+	width: 100%;
+	height: 25px;
+}
+.align-center{
+	text-align:center;
+	position: fixed;
+	left: 30%;
+}
+
+.align-right{
+    text-align: right;
+}
+.background-color-td{
+	background-color: bisque;
+}
+.tittle-center{
+	text-align: center;
+}
+	
