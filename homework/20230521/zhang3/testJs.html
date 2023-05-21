@@ -4,31 +4,27 @@
 <meta charset="UTF-8">
 <title>test jquery</title>
 
+<style>
+	
+	.bkc{
+		background-color:cyan;
+	}
+	
+</style>
 <script src="./js/plug/jquery/jquery-3.7.0.js"></script>
-<script>
-	$(document).ready(function(){
-		
-	 //  document.getElementById("id_btn_jquery")  javascript 
-	 //  $("#id_btn_jquery")                       jquery
-	 
-	  $("#id_btn_jquery").click(function(){
-		 
-			// document.getElementById("id_user").value;
-	    	var userVal = $("#id_user").val();
-	     	$("#id_div_view").html(userVal);
-	     	$(this).hide();
-	  });
-	  
-	});
-</script>
+
+<script src="./js/test.js"></script>
 
 </head>
 
-
 <body>
-user:<input type="text" id="id_user" value="tanaka">
+user:<input title="aaaaa" type="text" id="id_user" value="tanaka">user2:<input type="text" id="id_user2" value="tanaka2">
 <br>
-pwd:<input type="password" id="id_pwd" value="123">
+pwd:<input type="password" class="bkc" id="id_pwd" value="123">
+<br>
+sex:
+<label><input type="radio" value="1" name="sexGrp">man</label>
+<label><input type="radio" value="0" name="sexGrp">woman</label>
 <br>
 <input id="id_btn_jquery" type="button" value="testJquery">
 
