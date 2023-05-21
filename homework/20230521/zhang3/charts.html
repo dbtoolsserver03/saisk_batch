@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'xxxx'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+
+<!--
+2。自学BILIBLI，找适合自己的，HTML，CSS，JS的相关视频来深入学习。
+【马士兵Web前端零基础入门HTML+CSS+Javascript全套教程，带你成就年薪40W前端架构师！
+-哔哩哔哩】 https://b23.tv/4DwZa7X
+
+【尚硅谷jQuery教程(jquery从入门到精通)
+
+-哔哩哔哩】 https://b23.tv/Blg0PXC
+
+
+
+
+
+3.插件JS
+
+1  https://jqueryui.com/
+
+2  https://github.com/lokesh/lightbox2
+
+3.https://developers-dot-devsite-v2-prod.appspot.com/chart?hl=ja
+
+4.https://datatables.net/
+
+5.https://echarts.apache.org/  收费
+
+-->
