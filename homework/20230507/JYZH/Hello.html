@@ -59,8 +59,21 @@
 				}
 				
 				
+				var tagTech=document.getElementsByName("tech_grp");
+				var tecVal = "";
+				for(var i=0; i<tagTech.length;i++) {
+					if(tagTech[i].checked) {
+						tecVal = tecVal + tagTech[i].value + ",";
+					}
+				}
+				
+				if(tecVal.endsWith(",")){
+					tecVal = tecVal.substring(0,tecVal.length-1);
+				}
+				
+				
 				//tagView.innerText=tag.value + "\n" + sexVal+ "\n" + bloodVal+ "\n" + lanVal;
-				tagView.innerHTML=tag.value + "<br>" + sexVal+ "<br>" + bloodVal+ "<br>" + lanVal;
+				tagView.innerHTML=tag.value + "<br>" + sexVal+ "<br>" + bloodVal+ "<br>" + lanVal+ "<br>" + tecVal;
 			}
 			
 			function init() {
@@ -68,6 +81,10 @@
 				
 				var tagUser = document.getElementById("id_user");
 				alert(tagUser.value);
+			}
+			
+			function funClear() {
+				
 			}
 		</script>
 		
@@ -119,10 +136,10 @@
 		<label><input type="checkbox" name="lan_grp">中文</label>
 		
 		<br>
-		技術:<label><input type="checkbox" name="tech_grp">java</label>
-		<label><input type="checkbox" name="tech_grp">c++</label>
-		<label><input type="checkbox" name="tech_grp">HTML</label>
-		
+		技術:<label><input type="checkbox" value="j" name="tech_grp">java</label>
+		<label><input type="checkbox" value="c" name="tech_grp">c++</label>
+		<label><input type="checkbox" value="h" name="tech_grp">HTML</label>
+	
 		<br>
 		<a href="https://www.yahoo.co.jp/" target="tag1"><input alt="XXX card" type="image" width="350" height="500" src="./img/572850.jpg"></a>
 		<br>
