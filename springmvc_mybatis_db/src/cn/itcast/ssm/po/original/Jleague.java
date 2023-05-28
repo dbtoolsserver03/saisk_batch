@@ -17,6 +17,18 @@ public class Jleague {
 
     private String address;
 
+    private String placeOfBirth;
+
+    private String salary;
+
+    private String jpDeputy;
+
+    private String skill;
+
+    private String position;
+
+    private String rcl;
+
     public Integer getId() {
         return id;
     }
@@ -71,5 +83,53 @@ public class Jleague {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getJpDeputy() {
+        return jpDeputy;
+    }
+
+    public void setJpDeputy(String jpDeputy) {
+        this.jpDeputy = jpDeputy;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getRcl() {
+        return rcl;
+    }
+
+    public void setRcl(String rcl) {
+        this.rcl = rcl;
     }
 }

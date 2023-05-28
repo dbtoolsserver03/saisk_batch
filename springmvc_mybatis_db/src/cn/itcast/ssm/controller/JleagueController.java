@@ -1,7 +1,10 @@
 package cn.itcast.ssm.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.itcast.ssm.po.original.Jleague;
 
 @Controller
 public class JleagueController{
@@ -28,9 +31,12 @@ public class JleagueController{
 			throws Exception {
 	    return "jleague/japaninfo";
 		}
+	
+	
 	@RequestMapping("jleague/japaninfo")
-	public String japaninfo() 
+	public String japaninfo(@ModelAttribute Jleague jleague) 
 			throws Exception {
+		System.out.println(jleague);
 	    return "jleague/japandetail";
 		}
 	
