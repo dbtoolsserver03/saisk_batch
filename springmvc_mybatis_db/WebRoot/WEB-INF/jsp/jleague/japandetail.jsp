@@ -16,13 +16,9 @@
 	<script>	
 		$(document).ready(function(){
 			document.getElementById('id_btn_delete').style.display = "NONE";
-			document.getElementById('id_btn_detail').style.display = "NONE";
 		});
 
 		function showDiv() {
-			document.getElementById('id_table').style.display = "block";
-			document.getElementById('id_btn_delete').style.display = "block";
-			document.getElementById('id_btn_detail').style.display = "block";
 
 			document.searchForm.action = "/springmvc_mybatis_db/jleague/japansearch.action";
 			document.searchForm.submit();
@@ -41,12 +37,17 @@
 
 				if(isSelected){
 					document.getElementById('id_btn_delete').style.display = "block";
-					document.getElementById('id_btn_detail').style.display = "block";
 				} else {
 					document.getElementById('id_btn_delete').style.display = "NONE";
-					document.getElementById('id_btn_detail').style.display = "NONE";
 				}
 			}
+
+		function del() {
+		    if( window.confirm('削除処理を実行してよろしいでしょうか？') ) {
+				document.searchForm.action = "/springmvc_mybatis_db/jleague/deleteJleague.action";
+				document.searchForm.submit();
+		    }
+		}
 	</script>
 	
 	<style type="text/css">
@@ -123,8 +124,7 @@
 	
 	<table width="100%">
 		<td width="60%"></td>
-		<td width="10%"><input id="id_btn_detail" type="button"  class="button" value="詳細"></td>
-		<td width="10%"><input id="id_btn_delete" type="button"  class="button" value="削除"></td>
+		<td width="10%"><input id="id_btn_delete" type="button"  class="button" value="一括削除" onclick="del()" style="display: NONE"></td>
 		<td width="10%"><input id="id_btn_new"  class="button" type="submit" value="新規"></td>
 		<td width="10%"><input id="id_btn_search"  class="button" type="button" value="検索" onclick="showDiv()" /></td>
 	</table>
@@ -135,13 +135,13 @@
 		<tr>
 			<th width="4%">選択</th>
 			<th width="4%">番号</th>
-			<th width="10%">姓</th>
-			<th width="10%">名</th>
+			<th width="5%">姓</th>
+			<th width="5%">名</th>
 			<th width="15%">生年月日</th>
 			<th width="15%">所属チーム</th>
 			<th width="15%">携帯番号</th>
 			<th width="20%">住所</th>
-			<th width="10%">操作</th>
+			<th width="20%">操作</th>
 		</tr>
 		
 		<c:forEach items="${jleagueLst}" var="jleague" varStatus="status">
@@ -154,11 +154,12 @@
 				<td>${jleague.team}</td>
 				<td>${jleague.telnumber}</td>
 				<td>${jleague.address}</td>
-				<td><a href="${pageContext.request.contextPath }/editJleague.action?id=${jleague.id}">修改</a></td>
+				<td>
+					<a href="${pageContext.request.contextPath }/jleague/editJleague.action?id=${jleague.id}">修正</a>
+					<a href="${pageContext.request.contextPath }/jleague/viewJleague.action?id=${jleague.id}">詳細</a>
+				</td>
 			</tr>
 		</c:forEach>
-		
-		
 		
 		</table>
 	<div align="center" class="copyright">© Japan Football Association All Rights Reserved.</div>	
