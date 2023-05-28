@@ -6,16 +6,16 @@
   		SELECT * FROM JLEAGUE
   		<where>
    			<if test="sei!=null and sei != ''">
-   				SEI LIKE '%${sei}%'
+   			and	SEI LIKE '%${sei}%'
    			</if>
    			<if test="na!=null and na != ''">
-   				NA LIKE '%${na}%'
+   			and	NA LIKE '%${na}%'
    			</if>
    			<if test="telnumber!=null and telnumber != ''">
-   				TELNUMBER = #{telnumber}
+   			and	TELNUMBER = #{telnumber}
    			</if>
    			<if test="address!=null and address != ''">
-   				ADDRESS LIKE '%${address}%'
+   			and	ADDRESS LIKE '%${address}%'
    			</if>
   		</where>
   	</select>

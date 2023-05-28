@@ -15,13 +15,8 @@
 	
 	<script>	
 		$(document).ready(function(){
-			$("#id_btn_detail").prop( 'disabled', true );
-			
-	  		$("#id_btn_search").click(function() {
-				$("#id_btn_detail").show();
-				$("#id_btn_delete").show();
-				$("#id_btn_update").show();
-			});
+			document.getElementById('id_btn_delete').style.display = "NONE";
+			document.getElementById('id_btn_detail').style.display = "NONE";
 		});
 
 		function showDiv() {
@@ -32,7 +27,42 @@
 			document.searchForm.action = "/springmvc_mybatis_db/jleague/japansearch.action";
 			document.searchForm.submit();
 		}
+		function funCheckBoxClick() {
+
+				var elements = document.getElementsByName("chk_select");
+
+				var isSelected = false;
+				for(var i=0;i<elements.length;i++) {
+					if(elements[i].checked){
+						isSelected=true;
+						break;
+					}
+				}
+
+				if(isSelected){
+					document.getElementById('id_btn_delete').style.display = "block";
+					document.getElementById('id_btn_detail').style.display = "block";
+				} else {
+					document.getElementById('id_btn_delete').style.display = "NONE";
+					document.getElementById('id_btn_detail').style.display = "NONE";
+				}
+			}
 	</script>
+	
+	<style type="text/css">
+	
+		.button{
+			display:inline-block;
+			background:#d13415;
+			padding:10px 30px;
+			text-align:center;
+			color:#FFF;
+			margin:5px;
+			border:1px solid;
+			cursor:pointer;
+		}
+	
+	</style>
 </head>
 <body>	
 <form name="searchForm" action="/springmvc_mybatis_db/jleague/japandetail.action" method="post">
@@ -90,14 +120,15 @@
 	</div>
 	
 	<div id="id_btn_all" align="right">
-		<input id="id_btn_detail" type= value="詳細" style="display: none; background-color: deeppink;">
-		<input id="id_btn_delete" type="button" value="削除" style="display: none; background-color: deeppink;">
-		<input id="id_btn_update" type="button" value="更新" style="display: none; background-color: deeppink;">
-		<input id="id_btn_new" style="background-color: deeppink;" class="btn-pink" type="submit" value="新規">
-		<input id="id_btn_search" style="background-color: deeppink;" class="btn-pink" type="button" value="検索" onclick="showDiv()" />
-	</div>
-		<br><br>
-		
+	
+	<table width="100%">
+		<td width="60%"></td>
+		<td width="10%"><input id="id_btn_detail" type="button"  class="button" value="詳細"></td>
+		<td width="10%"><input id="id_btn_delete" type="button"  class="button" value="削除"></td>
+		<td width="10%"><input id="id_btn_new"  class="button" type="submit" value="新規"></td>
+		<td width="10%"><input id="id_btn_search"  class="button" type="button" value="検索" onclick="showDiv()" /></td>
+	</table>
+
 		
 	<div align="center">
 		<table  id="id_table" width="100%" border="1">
@@ -115,7 +146,7 @@
 		
 		<c:forEach items="${jleagueLst}" var="jleague" varStatus="status">
 			<tr>
-				<td><input type="checkbox" name="jleague_id" value="${jleague.id}"></td>
+				<td><input type="checkbox" name="chk_select" value="${jleague.id}" onclick="funCheckBoxClick()"></td>
 				<td>${jleague.id}</td>
 				<td>${jleague.sei}</td>
 				<td>${jleague.na}</td>
