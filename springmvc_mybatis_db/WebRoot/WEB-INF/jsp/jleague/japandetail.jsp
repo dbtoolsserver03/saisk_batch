@@ -11,7 +11,8 @@
 <head>
 	<title>代表情報</title>
 	<link rel="icon" href="/springmvc_mybatis_db/img/222.ico" type="image/vnd.microsoft.icon">
-	<script  type="text/javascript" src="/springmvc_mybatis_db/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+	
 	<script>	
 		$(document).ready(function(){
 			$("#id_btn_detail").prop( 'disabled', true );
@@ -25,13 +26,18 @@
 
 		function showDiv() {
 			document.getElementById('id_table').style.display = "block";
-			document.getElementById('id_delete').style.display = "block";
-			document.getElementById('id_detail').style.display = "block";
+			document.getElementById('id_btn_delete').style.display = "block";
+			document.getElementById('id_btn_detail').style.display = "block";
+
+			document.searchForm.action = "/springmvc_mybatis_db/jleague/japansearch.action";
+			document.searchForm.submit();
+
+			
 		}
 	</script>
 </head>
 <body>	
-<form action="/springmvc_mybatis_db/jleague/japandetail.action" method="post">
+<form name="searchForm" action="/springmvc_mybatis_db/jleague/japandetail.action" method="post">
 	<div align="right">
 	<a href="http://www.jfa.jp">連携協会 </a>
 	</div>
@@ -59,27 +65,27 @@
 				<p align="left" style="color: rgb(0, 0, 0)">姓</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_sei" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_sei" name="sei" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width:"25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">名</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_mei" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_mei"  name="na" style="width: 300px;height: 30px;" type="text">
 			</td>
 		</tr>
 		<tr>
 			<td width="25%" style="background-color: paleturquoise;">
-				<p align="left" style="color: rgb(0, 0, 0)">電話番号</p>
+				<p align="left"  name="telnumber" style="color: rgb(0, 0, 0)">電話番号</p>
 			</td> 
 			<td width="25%">	
 				<input id="id_text_number" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
-				<p align="left" style="color: rgb(0, 0, 0)">住所</p>
+				<p align="left"  style="color: rgb(0, 0, 0)">住所</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_adress" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_adress" name="address"  style="width: 300px;height: 30px;" type="text">
 			</td>
 		</tr>	
 		</table>

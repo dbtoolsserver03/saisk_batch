@@ -1,14 +1,19 @@
 package cn.itcast.ssm.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.itcast.ssm.po.original.Jleague;
+import cn.itcast.ssm.service.JleagueService;
 
 @Controller
 public class JleagueController{
 
+	@Autowired
+	JleagueService jLeagueService;
+	
 	@RequestMapping("jleague")
 	public String jleague()
 			throws Exception {
@@ -26,6 +31,18 @@ public class JleagueController{
 			throws Exception {
 	    return "jleague/japandetail";
 		}
+	
+	
+	
+	@RequestMapping("jleague/japansearch")
+	public String japansearch(@ModelAttribute Jleague jleague) 
+			throws Exception {
+		
+		jLeagueService.findJleagueList(jleague);
+		
+	    return "jleague/japandetail";
+		}
+	
 	@RequestMapping("jleague/japandetail")
 	public String japandetail() 
 			throws Exception {
@@ -37,6 +54,7 @@ public class JleagueController{
 	public String japaninfo(@ModelAttribute Jleague jleague) 
 			throws Exception {
 		System.out.println(jleague);
+		jLeagueService.inserJleague(jleague);
 	    return "jleague/japandetail";
 		}
 	
