@@ -1,7 +1,10 @@
 package cn.itcast.ssm.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -35,11 +38,14 @@ public class JleagueController{
 	
 	
 	@RequestMapping("jleague/japansearch")
-	public String japansearch(@ModelAttribute Jleague jleague) 
+	public String japansearch(@ModelAttribute Jleague jleague, Model model) 
 			throws Exception {
 		
-		jLeagueService.findJleagueList(jleague);
+		List<Jleague> lst = jLeagueService.findJleagueList(jleague);
 		
+		model.addAttribute("jleagueLst", lst);
+		model.addAttribute("aaa", "123");
+		model.addAttribute("obj", jleague);
 	    return "jleague/japandetail";
 		}
 	

@@ -11,11 +11,11 @@
    			<if test="na!=null and na != ''">
    				NA LIKE '%${na}%'
    			</if>
-   			<if test="telnumber!=null and telnumber!=null != ''">
-   				TELNUMBER = #{telnumber!=null}
+   			<if test="telnumber!=null and telnumber != ''">
+   				TELNUMBER = #{telnumber}
    			</if>
    			<if test="address!=null and address != ''">
-   				ADDRESS LIKE '%${address!=null}%'
+   				ADDRESS LIKE '%${address}%'
    			</if>
   		</where>
   	</select>

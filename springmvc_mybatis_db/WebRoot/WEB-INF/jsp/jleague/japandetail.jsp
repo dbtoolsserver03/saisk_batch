@@ -31,8 +31,6 @@
 
 			document.searchForm.action = "/springmvc_mybatis_db/jleague/japansearch.action";
 			document.searchForm.submit();
-
-			
 		}
 	</script>
 </head>
@@ -65,7 +63,7 @@
 				<p align="left" style="color: rgb(0, 0, 0)">姓</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_sei" name="sei" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_sei" name="sei" style="width: 300px;height: 30px;" type="text" value="${obj.sei}">
 			</td>
 			<td width:"25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">名</p>
@@ -79,7 +77,7 @@
 				<p align="left"  name="telnumber" style="color: rgb(0, 0, 0)">電話番号</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_number" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_number" name="telnumber" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left"  style="color: rgb(0, 0, 0)">住所</p>
@@ -99,8 +97,10 @@
 		<input id="id_btn_search" style="background-color: deeppink;" class="btn-pink" type="button" value="検索" onclick="showDiv()" />
 	</div>
 		<br><br>
+		
+		
 	<div align="center">
-		<table  id="id_table" style="display: none" width="100%" border="1">
+		<table  id="id_table" width="100%" border="1">
 		<tr>
 			<th width="4%">選択</th>
 			<th width="4%">番号</th>
@@ -109,8 +109,26 @@
 			<th width="15%">生年月日</th>
 			<th width="15%">所属チーム</th>
 			<th width="15%">携帯番号</th>
-			<th width="27%">住所</th>
+			<th width="20%">住所</th>
+			<th width="10%">操作</th>
 		</tr>
+		
+		<c:forEach items="${jleagueLst}" var="jleague" varStatus="status">
+			<tr>
+				<td><input type="checkbox" name="jleague_id" value="${jleague.id}"></td>
+				<td>${jleague.id}</td>
+				<td>${jleague.sei}</td>
+				<td>${jleague.na}</td>
+				<td><fmt:formatDate value="${jleague.brith}" pattern="yyyy/MM/dd" />  </td>
+				<td>${jleague.team}</td>
+				<td>${jleague.telnumber}</td>
+				<td>${jleague.address}</td>
+				<td><a href="${pageContext.request.contextPath }/editJleague.action?id=${jleague.id}">修改</a></td>
+			</tr>
+		</c:forEach>
+		
+		
+		
 		</table>
 	<div align="center" class="copyright">© Japan Football Association All Rights Reserved.</div>	
 </body>
