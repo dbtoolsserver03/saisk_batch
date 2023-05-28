@@ -42,8 +42,8 @@ function register() {
 
 用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usernmXXX}" /><br/>
 用户密码 ：<input id="id_password" type="password" name="password" /><br/>
-用户验证码 ：<input id="id_word" type="text" name="word" /><br/>
-手机验证码 ：<input type="text" name="telWord" /><br/>
+用户验证码 ：<input id="id_word" type="text" name="word" value="1"/><br/>
+手机验证码 ：<input type="text" name="telWord"  value="1" /><br/>
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
 
@@ -52,7 +52,7 @@ function register() {
 
 <br>
 
-<label><input type="checkbox" name="agree" value="1" > 同意遵守绿色网络</label>
+<label><input type="checkbox" name="agree" value="1" checked="checked" > 同意遵守绿色网络</label>
 <!-- 显示错误信息 -->
 <c:if test="${error!=null}">
 	<br/>${error}

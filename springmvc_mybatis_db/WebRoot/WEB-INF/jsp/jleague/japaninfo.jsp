@@ -48,8 +48,12 @@
 		</tr>
 	</table>
 	</div>
+	
+	
+	
 	<div>
 	<a style="background-color:azure">
+	
 		<table width="100%">
 			<tr>
 			<td width="25%" style="background-color: paleturquoise;">
@@ -64,6 +68,25 @@
 			<td width="25%">
 				<a href="/springmvc_mybatis_db/img/444.png" data-lightbox="image-1" data-title="免許裏面"><img src="/springmvc_mybatis_db/img/444.png" width="300" height="180"></a>	
 			</td> 
+		</tr>	
+		</table>
+	</div>
+	
+	<div>
+	<a style="background-color:azure">
+	
+		<table width="100%">
+			<tr>
+			<td width="25%" style="background-color: paleturquoise;">
+				 <p align="left" style="color: rgb(0, 0, 0)">ID</p>
+			</td> 
+			<td width="25%">	
+				<input id="id_text_sei" name="id" style="width: 300px;height: 30px;" type="text">
+			</td>
+			<td width="25%">	
+			</td> 
+			<td width="25%">	
+			</td>
 		</tr>	
 		</table>
 	</div>
