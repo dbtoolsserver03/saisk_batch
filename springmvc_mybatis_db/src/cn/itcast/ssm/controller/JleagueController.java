@@ -7,65 +7,131 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.itcast.ssm.po.original.Jleague;
 import cn.itcast.ssm.service.JleagueService;
 
 @Controller
-public class JleagueController{
+public class JleagueController {
 
 	@Autowired
 	JleagueService jLeagueService;
-	
+
 	@RequestMapping("jleague")
 	public String jleague()
 			throws Exception {
-	    return "jleague/japanlogin";
-		}
-	
+		return "jleague/japanlogin";
+	}
+
 	@RequestMapping("jleague/japanlogin")
-	public String japanlogin() 
+	public String japanlogin()
 			throws Exception {
-	    return "jleague/japanlogin2";
-		}
-	
+		return "jleague/japanlogin2";
+	}
+
 	@RequestMapping("jleague/japanlogin2")
-	public String japanlogin2() 
+	public String japanlogin2()
 			throws Exception {
-	    return "jleague/japandetail";
-		}
-	
-	
-	
+		return "jleague/japandetail";
+	}
+
 	@RequestMapping("jleague/japansearch")
-	public String japansearch(@ModelAttribute Jleague jleague, Model model) 
+	public String japansearch(@ModelAttribute Jleague jleague, Model model)
 			throws Exception {
-		
+
 		List<Jleague> lst = jLeagueService.findJleagueList(jleague);
-		
+
 		model.addAttribute("jleagueLst", lst);
 		model.addAttribute("aaa", "123");
 		model.addAttribute("obj", jleague);
-	    return "jleague/japandetail";
-		}
-	
-	@RequestMapping("jleague/japandetail")
-	public String japandetail() 
-			throws Exception {
-	    return "jleague/japaninfo";
-		}
-	
-	
-	@RequestMapping("jleague/japaninfo")
-	public String japaninfo(@ModelAttribute Jleague jleague) 
-			throws Exception {
-		System.out.println(jleague);
-		jLeagueService.inserJleague(jleague);
-	    return "jleague/japandetail";
-		}
-	
-	
+		return "jleague/japandetail";
 	}
+
+	@RequestMapping("jleague/japandetail")
+	public String japandetail(Model model)
+			throws Exception {
+		
+		model.addAttribute("mode", "insert_mode");
+		return "jleague/japaninfo";
+	}
+	
+	
+	
+	/**
+	 * 更新実行
+	 * @param jleague
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("jleague/updatejapaninfo")
+	public String updatejapaninfo(@ModelAttribute Jleague jleague)
+			throws Exception {
+		jLeagueService.updateJleague(jleague);
+		return "jleague/japandetail";
+	}
+	
+	
+	/**
+	 * 新規追加実行
+	 * @param jleague
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("jleague/japaninfo")
+	public String japaninfo(@ModelAttribute Jleague jleague)
+			throws Exception {
+		jLeagueService.inserJleague(jleague);
+		return "jleague/japandetail";
+	}
+	
+	
+	/**
+	 * 修正画面
+	 * @param model
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="jleague/editJleague", method = { RequestMethod.POST, RequestMethod.GET })
+	public String editJleague(Model model,@RequestParam String id) throws Exception {
+		Jleague jLeague = jLeagueService.findJleagueByID(id);
+		model.addAttribute("obj", jLeague);
+		model.addAttribute("mode", "update_mode");
+		
+		return "jleague/japaninfo";
+	}
+	
+	/**
+	 * 詳細画面
+	 * @param model
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="jleague/viewJleague", method = { RequestMethod.POST, RequestMethod.GET })
+	public String viewJleague(Model model,@RequestParam String id) throws Exception {
+		Jleague jLeague = jLeagueService.findJleagueByID(id);
+		model.addAttribute("obj", jLeague);
+		model.addAttribute("mode", "view_mode");
+		return "jleague/japaninfo";
+	}
+	
+	@RequestMapping("jleague/deleteJleague")
+	public String deleteJleague(String[] chk_select) throws Exception {
+
+		// 从JSP传到JAVA程序有三种方法
+		// 1。传参数（JSP的NAME和参数的名称要一致）
+		// 2。通过request取值
+		// 3。通过BEAN 实现GET，SET方法取值  （推荐使用）
+
+		// 调用service批量删除
+		jLeagueService.deleteItems(chk_select);
+		return "jleague/japandetail";
+
+	}
+}
 //
 //	
 //	

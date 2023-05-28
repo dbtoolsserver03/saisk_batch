@@ -29,20 +29,24 @@ public class JleagueServiceImpl implements JleagueService {
 
 	@Override
 	public int updateJleague(Jleague jLeague) {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		return jleagueMapper.updateByPrimaryKeySelective(jLeague);
 	}
 
 	@Override
-	public Jleague findJleagueByID(String jLeague) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+	public Jleague findJleagueByID(String id) {
+		return jleagueMapper.selectByPrimaryKey(Integer.valueOf(id));
 	}
 
 	@Override
 	public int deleteItems(String[] jLeague) {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		
+		int cnt=0;
+		
+		for (String id : jLeague) {
+			cnt += jleagueMapper.deleteByPrimaryKey(Integer.valueOf(id));
+		}
+		
+		return cnt;
 	}
 
   
