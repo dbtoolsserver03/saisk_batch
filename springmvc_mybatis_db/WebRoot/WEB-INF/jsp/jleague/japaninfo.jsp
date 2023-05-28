@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -76,13 +75,13 @@
 				 <p align="left" style="color: rgb(0, 0, 0)">姓</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_sei" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_sei" name="sei" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				 <p align="left" style="color: rgb(0, 0, 0)">名</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_mei" style="width: 300px;height: 30px;" type="text">	
+				<input id="id_text_mei" name ="na" style="width: 300px;height: 30px;" type="text">	
 			</td>
 		</tr>	
 		</table>
@@ -95,13 +94,13 @@
 				 <p align="left" style="color: rgb(0, 0, 0)">電話番号</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_number" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_number" name ="telnumber" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">住所</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_adress" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_adress" name="address" style="width: 300px;height: 30px;" type="text">
 			</td>
 		</tr>	
 		</table>
@@ -114,13 +113,13 @@
 				<p align="left" style="color: rgb(0, 0, 0)">生年月日</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_birthday" width="100%" type="date"></td>
+				<input id="id_text_birthday" name="brith" width="100%" type="date"></td>
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">出身地</p>
 			</td> 
 			<td width="25%">
-				<input id="id_text_city" style="width: 300px;height: 30px;" type="text">	
+				<input id="id_text_city" name="placeOfBirth" style="width: 300px;height: 30px;" type="text">	
 			</td>
 		</tr>	
 		</table>
@@ -133,13 +132,13 @@
 				<p align="left" style="color: rgb(0, 0, 0)">所属チーム</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_text_club" style="width: 300px;height: 30px;" type="text">
+				<input id="id_text_club" name="team" style="width: 300px;height: 30px;" type="text">
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">年収</p>
 			</td> 
 			<td width="25%">	
-				<select id="id_text_salary">
+				<select id="id_text_salary" name="salary">
 				<option value="1" selected="selected"></option>
 				<option value="2">10W-50W</option>
 				<option value="3">51W-100W</option>
@@ -159,17 +158,17 @@
 				<p align="left" style="color: rgb(0, 0, 0)">日本代表</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_radio_choose_yes" name="choose" type="radio" value="Yes" />Yes
-				<input id="id_radio_choose_no" name="choose" type="radio" value="No" />No
+				<input id="id_radio_choose_yes"  name="jpDeputy" type="radio" value="1" />Yes
+				<input id="id_radio_choose_no" name="jpDeputy" type="radio" value="0" />No
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">スキル</p>
 			</td> 
 			<td width="25%">
-				<input id="id_skill_chk_speed" type="checkbox" value="1">Speed
-				<input id="id_skill_chk_tech" type="checkbox" value="2">Tech
-				<input id="id_skill_chk_power" type="checkbox" value="3">Power
-				<input id="id_skill_chk_flexibe" type="checkbox" value="4">Flexibe
+				<label><input id="id_skill_chk_speed" name="skill" type="checkbox" value="1">Speed</label>
+				<input id="id_skill_chk_tech" name="skill" type="checkbox" value="2">Tech
+				<input id="id_skill_chk_power" name="skill" type="checkbox" value="3">Power
+				<input id="id_skill_chk_flexibe" name="skill" type="checkbox" value="4">Flexibe
 			</td>
 		</tr>
 		</table>
@@ -182,20 +181,20 @@
 				<p align="left" style="color: rgb(0, 0, 0)">ポジション</p>
 			</td> 
 			<td width="25%">
-				<input id="id_chk_position_goalkeeper" type="checkbox" value="1">GK
-				<input id="id_chk_position_defance" type="checkbox" value="2">D
-				<input id="id_chk_position_middle" type="checkbox" value="3">M
-				<input id="id_chk_position_forward" type="checkbox" value="4">F
+				<input id="id_chk_position_goalkeeper" type="checkbox" name="position" value="1">GK
+				<input id="id_chk_position_defance" type="checkbox" name="position" value="2">D
+				<input id="id_chk_position_middle" type="checkbox" name="position" value="3">M
+				<input id="id_chk_position_forward" type="checkbox" name="position" value="4">F
 			</td>
 			<td width="25%" style="background-color: paleturquoise;">
 				<p align="left" style="color: rgb(0, 0, 0)">位置</p>
 			</td> 
 			<td width="25%">	
-				<input id="id_chk_area_right" type="checkbox" value="1">R
-				<input id="id_chk_area_center" type="checkbox" value="2">C
-				<input id="id_chk_area_left" type="checkbox" value="3">L
+				<input id="id_chk_area_right" name="rcl" type="checkbox" value="1">R
+				<input id="id_chk_area_center" name="rcl" type="checkbox" value="2">C
+				<input id="id_chk_area_left" name="rcl" type="checkbox" value="3">L
 			</td>
-		</tr>	
+		</tr>
 		</table>
 	</div>
 	
@@ -207,5 +206,6 @@
 	</div>
 	
 	<div align="center" class="copyright">© Japan Football Association All Rights Reserved.</div>
+	</form>
 </body>
 </html>

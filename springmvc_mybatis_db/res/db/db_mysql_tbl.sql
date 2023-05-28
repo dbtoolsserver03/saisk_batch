@@ -110,16 +110,23 @@ create table `t_carinfo` (
 `car_repair` char(1) not null comment '修復歴',
 `car_displacement` varchar(20) not null comment '排気量',
 primary key (`car_id`)) comment='車データ';
-CREATE TABLE Jleague (
-`ID` INT not null comment '番号',
-`SEI` varchar(20) not null comment '姓',
-`NA` varchar(20) null comment '名',
-`BRITH` DATETIME not null comment '生年月日',
-`TEAM` varchar(20) null comment '所属チーム',
-`TELNUMBER` varchar(20) null comment '携帯番号',
-`ADDRESS` varchar(60) null comment 'ADDRESS',
-primary key (`ID`)
-);
+CREATE TABLE `JLEAGUE` ( 
+    `ID` INT NOT NULL COMMENT '番号'
+    , `SEI` VARCHAR (20) NOT NULL COMMENT '姓'
+    , `NA` VARCHAR (20) DEFAULT NULL COMMENT '名'
+    , `BRITH` DATETIME NOT NULL COMMENT '生年月日'
+    , `TEAM` VARCHAR (20) DEFAULT NULL COMMENT '所属チーム'
+    , `TELNUMBER` VARCHAR (20) DEFAULT NULL COMMENT '携帯番号'
+    , `ADDRESS` VARCHAR (60) DEFAULT NULL COMMENT 'ADDRESS'
+    , `PLACE_OF_BIRTH` VARCHAR (60) DEFAULT NULL COMMENT '出身地'
+    , `SALARY` CHAR (1) DEFAULT NULL COMMENT '年収'
+    , `JP_DEPUTY` CHAR (1) DEFAULT NULL COMMENT '日本代表'
+    , `SKILL` CHAR (1) DEFAULT NULL COMMENT 'スキル'
+    , `POSITION` CHAR (1) DEFAULT NULL COMMENT 'ポジション'
+    , `RCL` CHAR (1) DEFAULT NULL COMMENT '位置'
+    , PRIMARY KEY (`ID`)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8MB3;
+
 
 create table `CUSTOMERS` (
 `id` varchar(10) not null comment 'ID',

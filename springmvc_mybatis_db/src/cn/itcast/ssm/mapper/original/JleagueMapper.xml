@@ -9,9 +9,16 @@
     <result column="TEAM" jdbcType="VARCHAR" property="team" />
     <result column="TELNUMBER" jdbcType="VARCHAR" property="telnumber" />
     <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="PLACE_OF_BIRTH" jdbcType="VARCHAR" property="placeOfBirth" />
+    <result column="SALARY" jdbcType="CHAR" property="salary" />
+    <result column="JP_DEPUTY" jdbcType="CHAR" property="jpDeputy" />
+    <result column="SKILL" jdbcType="CHAR" property="skill" />
+    <result column="POSITION" jdbcType="CHAR" property="position" />
+    <result column="RCL" jdbcType="CHAR" property="rcl" />
   </resultMap>
   <sql id="Base_Column_List">
-    ID, SEI, NA, BRITH, TEAM, TELNUMBER, ADDRESS
+    ID, SEI, NA, BRITH, TEAM, TELNUMBER, ADDRESS, PLACE_OF_BIRTH, SALARY, JP_DEPUTY, 
+    SKILL, POSITION, RCL
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,10 +33,14 @@
   <insert id="insert" parameterType="cn.itcast.ssm.po.original.Jleague">
     insert into jleague (ID, SEI, NA, 
       BRITH, TEAM, TELNUMBER, 
-      ADDRESS)
+      ADDRESS, PLACE_OF_BIRTH, SALARY, 
+      JP_DEPUTY, SKILL, POSITION, RCL
+      )
     values (#{id,jdbcType=INTEGER}, #{sei,jdbcType=VARCHAR}, #{na,jdbcType=VARCHAR}, 
       #{brith,jdbcType=TIMESTAMP}, #{team,jdbcType=VARCHAR}, #{telnumber,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR})
+      #{address,jdbcType=VARCHAR}, #{placeOfBirth,jdbcType=VARCHAR}, #{salary,jdbcType=CHAR}, 
+      #{jpDeputy,jdbcType=CHAR}, #{skill,jdbcType=CHAR}, #{position,jdbcType=CHAR}, #{rcl,jdbcType=CHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.itcast.ssm.po.original.Jleague">
     insert into jleague
@@ -55,6 +66,24 @@
       <if test="address != null">
         ADDRESS,
       </if>
+      <if test="placeOfBirth != null">
+        PLACE_OF_BIRTH,
+      </if>
+      <if test="salary != null">
+        SALARY,
+      </if>
+      <if test="jpDeputy != null">
+        JP_DEPUTY,
+      </if>
+      <if test="skill != null">
+        SKILL,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="rcl != null">
+        RCL,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -77,6 +106,24 @@
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="placeOfBirth != null">
+        #{placeOfBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=CHAR},
+      </if>
+      <if test="jpDeputy != null">
+        #{jpDeputy,jdbcType=CHAR},
+      </if>
+      <if test="skill != null">
+        #{skill,jdbcType=CHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=CHAR},
+      </if>
+      <if test="rcl != null">
+        #{rcl,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -101,6 +148,24 @@
       <if test="address != null">
         ADDRESS = #{address,jdbcType=VARCHAR},
       </if>
+      <if test="placeOfBirth != null">
+        PLACE_OF_BIRTH = #{placeOfBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        SALARY = #{salary,jdbcType=CHAR},
+      </if>
+      <if test="jpDeputy != null">
+        JP_DEPUTY = #{jpDeputy,jdbcType=CHAR},
+      </if>
+      <if test="skill != null">
+        SKILL = #{skill,jdbcType=CHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=CHAR},
+      </if>
+      <if test="rcl != null">
+        RCL = #{rcl,jdbcType=CHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
@@ -111,7 +176,13 @@
       BRITH = #{brith,jdbcType=TIMESTAMP},
       TEAM = #{team,jdbcType=VARCHAR},
       TELNUMBER = #{telnumber,jdbcType=VARCHAR},
-      ADDRESS = #{address,jdbcType=VARCHAR}
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      PLACE_OF_BIRTH = #{placeOfBirth,jdbcType=VARCHAR},
+      SALARY = #{salary,jdbcType=CHAR},
+      JP_DEPUTY = #{jpDeputy,jdbcType=CHAR},
+      SKILL = #{skill,jdbcType=CHAR},
+      POSITION = #{position,jdbcType=CHAR},
+      RCL = #{rcl,jdbcType=CHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
