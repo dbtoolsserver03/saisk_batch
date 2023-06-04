@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+<script src="./jquery-3.7.0.js"></script>
+
+</head>
+
+<body>
+<!--//form name="f2" action="./to.html" method="post"-->
+<!--//form name="f1" action="./to.html" method="get"-->
+<form id="myForm" onsubmit="redirectToAnotherPage(event)">
+	user:<input type="text" id="id_user" value="tanaka">
+	<br>
+	pwd:<input type="password" id="id_pwd" value="123123">
+	<br>
+
+	sex:
+	<label><input type="radio" value="1" name="sex_grp">man</label>
+	<label><input type="radio" value="0" name="sex_grp">woman</label>
+	<br>
+	職別:
+		<label><input type="radio" name="level_grp">PM</label>
+		<label><input type="radio" name="level_grp">PL</label>
+		<label><input type="radio" name="level_grp">SPL</label>
+		<label><input type="radio" name="level_grp">SE/BSE</label>
+		<label><input type="radio" name="level_grp">PG</label>
+	<br>
+	技術:
+		<label><input type="checkbox" name="tech_grp" value="java">Java</label>
+		<label><input type="checkbox" name="tech_grp" value="html">HTML</label>
+		<label><input type="checkbox" name="tech_grp" value="c++">C++</label>
+	<br>
+	salary:<select id="id_select_salary">
+		<option value="z" selected="selected"></option>
+		<option value="a">1W-10W</option>
+		<option value="b">11W-20W</option>
+		<option value="c">21W-30W</option>
+		<option value="d">31W-40W</option>
+		<option value="e">41W-50W</option>
+	</select>
+	<br>
+	<label><input type="radio" value="get" name="method" id="getRadio"> 公開</label>
+	<label><input type="radio" value="post" name="method" id="postRadio"> 非公開</label>
+	<br>
+	<input  type="submit" value="Submit" >
+	<div id="id_div_view" style="background-color: aquamarine;">tanaka</div>
+
+
+</form>
+<script>
+    function redirectToAnotherPage(event) {
+      event.preventDefault();
+
+      var formData = new FormData(document.getElementById("myForm"));
+      var queryParams = [];
+      var selectedMethod = document.querySelector('input[name="method"]:checked').value;
+
+      for (var pair of formData.entries()) {
+        queryParams.push(pair[0] + "=" + encodeURIComponent(pair[1]));
+      }
+
+      var url = "./to.html";
+
+      if (selectedMethod === "get" && queryParams.length > 0) {
+        url += "?" + queryParams.join("&");
+        window.location.href = url;
+      } else if (selectedMethod === "post") {
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", url);
+
+        for (var pair of formData.entries()) {
+          var input = document.createElement("input");
+          input.setAttribute("type", "hidden");
+          input.setAttribute("name", pair[0]);
+          input.setAttribute("value", pair[1]);
+          form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+      }
+    }
+  </script>
+</body>
+</html>
