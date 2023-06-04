@@ -36,27 +36,9 @@ public class LoginController {
 	@RequestMapping("/login")
 	public String login(Model model, HttpSession session, 
 			@ModelAttribute LoginBean loginBean,
-			String username, String password,String word,String telWord)
+			String username, String password)
 			throws Exception {
 		
-		if(loginBean.getAgree() == null || loginBean.getAgree().length()==0) {
-			
-			model.addAttribute("usernmXXX", username);
-			model.addAttribute("error", "请同意");
-			model.addAttribute("loginInfo", loginBean);
-			
-			return "login";
-		}
-		
-		
-		if(word == null || word.length()==0) {
-			
-			model.addAttribute("usernamexx", username);
-			model.addAttribute("error", "没有输入验证码");
-			model.addAttribute("loginInfo", loginBean);
-			
-			return "login";
-		}
 		
 	    if ((username == null || username.length() == 0)
 	            && (password == null || password.length() == 0)
@@ -116,13 +98,7 @@ public class LoginController {
 	        return "/login/register";
 
         } else {
-//          TUser tUser = new TUser();
-//          tUser.setId(request.getParameter("id"));
-//          tUser.setUsername(request.getParameter("username"));
-//          tUser.setPassword(request.getParameter("password"));
-//          tUser.setSex(request.getParameter("sex"));
-//          System.out.println(request.getParameter("birthday"));
-//          //tUser.setBirthday();
+
             tUser.setDeleteFlg("0");
             tUser.setCreateUserId("system");
             tUser.setUpdateUserId("system");

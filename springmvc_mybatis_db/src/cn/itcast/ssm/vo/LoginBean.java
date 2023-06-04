@@ -5,23 +5,7 @@ public class LoginBean {
 	// 变量名一定要和JSP里面的name相同
 	 private String username; 
 	 private String password;
-	 private String word;
-	 private String agree;
-	 private String telWord;
 	 
-
-	public String getTelWord() {
-		return telWord;
-	}
-	public void setTelWord(String telWord) {
-		this.telWord = telWord;
-	}
-	public String getAgree() {
-		return agree;
-	}
-	public void setAgree(String agree) {
-		this.agree = agree;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -33,12 +17,6 @@ public class LoginBean {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getWord() {
-		return word;
-	}
-	public void setWord(String word) {
-		this.word = word;
 	}
 	 
 }

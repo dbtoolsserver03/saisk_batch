@@ -116,7 +116,7 @@ CREATE TABLE `JLEAGUE` (
     , `POSITION` VARCHAR (20) DEFAULT NULL COMMENT 'ポジション'
     , `RCL` VARCHAR (20) DEFAULT NULL COMMENT '位置'
     , PRIMARY KEY (`ID`)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8MB3;
+) ENGINE = INNODB ;
 
 create table `CUSTOMERS` (
 `id` varchar(10) not null comment 'ID',
@@ -141,7 +141,7 @@ CREATE TABLE `kyarakuta_table` (
   `kyarakuta_age` date NOT NULL COMMENT 'birthday',
   `kyarakuta_salary` decimal(10,0) DEFAULT 0 COMMENT 'money',
   PRIMARY KEY (`kyarakuta_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='akunayitu';
+) ENGINE=InnoDB  COMMENT='akunayitu';
 CREATE TABLE `Person_table` (
   `person_id` varchar(10) NOT NULL COMMENT 'ID',
   `person_name` varchar(32) NOT NULL COMMENT '姓名',
@@ -149,7 +149,7 @@ CREATE TABLE `Person_table` (
   `person_age` date NOT NULL COMMENT '生日',
   `person_salary` decimal(10,0) DEFAULT 0 COMMENT '月給',
   PRIMARY KEY (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='パーソンテーブル';
+) ENGINE=InnoDB  COMMENT='パーソンテーブル';
 
 CREATE TABLE `card_table` (
   `card_id` varchar(10) NOT NULL COMMENT 'カードID',
@@ -158,7 +158,7 @@ CREATE TABLE `card_table` (
   `card_shuxing` date NOT NULL COMMENT '属性',
   `card_attack` decimal(5,0) DEFAULT 0 COMMENT '攻击力',
   PRIMARY KEY (`card_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='カードテーブル';
+) ENGINE=InnoDB  COMMENT='カードテーブル';
 
 
 
