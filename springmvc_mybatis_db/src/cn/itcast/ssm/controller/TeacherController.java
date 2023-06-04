@@ -25,33 +25,33 @@ public class TeacherController {
 			throws Exception {
 	    return "teacherinfo/teacherList";
 	}
-	
-	
+
+
 	@RequestMapping(value = "/editTeacher", method = { RequestMethod.POST, RequestMethod.GET })
 	public String editItemsSubmit(Model model,  @RequestParam(value = "id", required = true,defaultValue="1") String teacherId) throws Exception {
-		
+
 		TeacherTable dbInfo = teacherService.findTeacherByID(teacherId);
 
 		model.addAttribute("teacher", dbInfo);
 		return "teacherinfo/teacherUpdate";
 
 	}
-	
-	
+
+
 	@RequestMapping("teacherInitInsert")
 	public String teacherInitInsert()
 			throws Exception {
 	    return "teacherinfo/teacherInsert";
 	}
-	
-	
+
+
 	@RequestMapping("teacherupdate")
 	public String teacherupdate(@ModelAttribute TeacherTable teacher)
 			throws Exception {
 		teacherService.updateTeacher(teacher);
 	    return "redirect:/queryTeachers.action";
 	}
-	
+
 	@RequestMapping("teacherinsert")
 	public String teacherInsert(@ModelAttribute TeacherTable teacher)
 			throws Exception {
@@ -59,7 +59,7 @@ public class TeacherController {
 	    return "redirect:/queryTeachers.action";
 	}
 //
-//	
+//
 	@RequestMapping("queryTeachers")
 	public ModelAndView teacherList(@ModelAttribute TeacherTable teacher)
 			throws Exception {
@@ -75,19 +75,19 @@ public class TeacherController {
 		// 下边的路径，如果在视图解析器中配置jsp路径的前缀和jsp路径的后缀，修改为
 		// modelAndView.setViewName("/WEB-INF/jsp/items/itemsList.jsp");
 		// 上边的路径配置可以不在程序中指定jsp路径的前缀和jsp路径的后缀
-		
+
 		//modelAndView.addObject("teacherName", teacher.getTeacherName());
-		
+
 		modelAndView.addObject("teacher", teacher);
 
 		modelAndView.addObject("teacherLst", teacherLst);
 		modelAndView.setViewName("teacherinfo/teacherList");
 
 		return modelAndView;
-	
+
 	}
-	
-	
+
+
 	// 批量删除 商品信息
 	@RequestMapping("/deleteTeachers")
 	public String deleteTeachers(String[] teachers_id) throws Exception {
@@ -104,6 +104,6 @@ public class TeacherController {
 		return "redirect:/queryTeachers.action";
 
 	}
-	
-	
+
+
 }
