@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>to</title>
+
+<script>
+	
+	function init() {
+		
+		// URLを取得
+		let url = new URL(window.location.href);
+		
+		// URLSearchParamsオブジェクトを取得
+		let params = url.searchParams;
+		
+		document.getElementById("id_div").innerHTML=params.get('usr');
+		
+	}
+	
+</script>
+
+
+</head>
+<body onload="init()">
+
+<div id="id_div">
+	xxx
+</div>
+</body>
+</html>
