@@ -8,11 +8,12 @@
 		// URLを取得
 		let url = new URL(window.location.href);
 		
+		debugger;
 		// URLSearchParamsオブジェクトを取得
 		let params = url.searchParams;
-		document.getElementById("id_sex").innerText=params.get('sexGrp');
-		document.getElementById("id_user").innerText=params.get('user');
-		document.getElementById("id_pwd").innerText=params.get('pwd');
+		//document.getElementById("id_sex").innerText=params.get('sexGrp');
+		document.getElementById("id_user").innerText=params.get('usr');
+		//document.getElementById("id_pwd").innerText=params.get('pwd');
 	}
 </script>
 </head>
