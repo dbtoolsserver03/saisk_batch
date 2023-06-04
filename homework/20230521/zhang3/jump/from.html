@@ -57,7 +57,7 @@ post 表单提交时，不会在URL上显示提交的内容，安全，参数没
    (含有disable属性 的标签，不会传递给下个画面)
 3。submit按钮提交的是这个按钮所在的form表单
 -->
-<form name="f1" action="./to.html" method="get">
+<form name="f1" action="./to.html" method="get">  <!--sumbit form-->
 	
 	user:<input id="id_name" name="user" type="text"  value="tanaka">
 	<br>
@@ -69,20 +69,20 @@ post 表单提交时，不会在URL上显示提交的内容，安全，参数没
 	<br>
 	salary:<input type="hidden" value="200000" name="mysalary">
 	<br>
-	birthday:<input disabled type="date" value="2001-01-02" name="mybirthday">
+	birthday:<input disabled type="date" value="2000-04-28" name="mybirthday">
 	<br>
 	<input id="id_btn_jquery" type="submit" value="sumbit form">
 </form>
 
-<form name="f2" action="./to.html" method="get">
+<form name="f2" action="./to.html" method="get">   <!--submit form2-->
 	user:<input name="user2" type="text"value="tanaka2">
 	<input id="id_btn_jquery" type="submit" value="sumbit form 2">
 </form>
 <br>
-<input type="button" value="提交 不推荐" onclick="funToHtml()">
+<input type="button" value="提交 不推荐" onclick="funToHtml()">  <!--not recommend-->
 <br>
-<label><input type="radio" value="1" name="formGrp"> form1</label>
-<label><input type="radio" value="2" name="formGrp"> form2</label>
+<label><input type="radio" value="1" name="formGrp"> form1</label>  <!--form1-->
+<label><input type="radio" value="2" name="formGrp"> form2</label>  <!--form2-->
 <br>
 <input type="button" value="提交 表单" onclick="funSumbit()">
 
