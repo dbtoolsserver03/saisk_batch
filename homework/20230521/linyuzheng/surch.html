@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>検索一覧</title>
+<link rel="shortcut icon" href="./img/maru.img"> 
+<link rel="stylesheet" type="text/css" href="./css/./homewor0507.css">
+<script src="./js/plug/jQuery/jquery-3.7.0.js"></script>
+<script>
+	function myFunction(){
+		document.getElementById("demo").style.color="red";
+		}
+	$(document).ready(function( ){
+		$("button").click(function( ){
+			$("p").toggle();
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<h1 class="tittle-center">検索一覧</h1>
+	<div class="align-right">
+      <a href="./login.html" onclick="demo" target="_self">ログアウト</a>
+      <br>
+    </div>
+	<br>
+	<div align="center">
+	<form action="./detail.html" method="post" >
+		名字<input type="text" name="family name">
+		名前<input type="text" name="first name">
+		<br>
+		電話番号<input type="text" name="phone number">
+		住所<input type="text" name="address">
+		<br>
+		<input type="submit" value="検索" name="surch">
+		<input type="reset" value="クリア" name="reset">
+		<input type="button" onclick="window.history.back();" value="戻る"  >
+	</form></div>
+	<div align="center">  //name在路径上显示
+		
+		<button type="button">Hide</button>
+		<p>It takes time to learn JavaScript and jquery even though it's interesting.</p>
+		
+	</div>
+	
+	<div class="footer">yuzon127@gmail.com</div>
+	
+</body>
+</html>

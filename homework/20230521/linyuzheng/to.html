@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function init(){
+		let url=new URL(window.location.href);
+
+		debugger;
+		let params =url.searchParams;
+		document.getElementById("id_user").innerText=params.get('user');
+		document.getElementById("id_pwd").innerText=params.get('pwd');
+		document.getElementById("id_sex").innerText=params.get('sexGrp');
+	}
+</script>
+</head>
+<body onload="init()">
+user:<label id="id_user">x</label>
+<br>
+password:<label id="id_pwd">y</label>
+<br>
+sex:<label id="id_sex">z</label>
+
+</body>
+</html>
