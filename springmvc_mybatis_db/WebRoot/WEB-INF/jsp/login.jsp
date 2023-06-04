@@ -40,8 +40,10 @@ function register() {
 
 <!-- style="background-color:#d000fe;" -->
 
-用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usernmXXX}" /><br/>
+用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usraaa}" /><br/>
 用户密码 ：<input id="id_password" type="password" name="password" /><br/>
+用户验证码 ：<input name="validateWord" /><br/>
+
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
 
@@ -51,7 +53,7 @@ function register() {
 <br>
 <!-- 显示错误信息 -->
 <c:if test="${error!=null}">
-	<br/>${error}
+	<br/><div style="background-color:pink">${error}</div>
 </c:if>
 
 </form>

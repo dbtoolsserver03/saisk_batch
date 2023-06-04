@@ -27,19 +27,23 @@ public class LoginController {
  * 前台后台连动
  * 前台　JSP  Thymeleaf  DART フロント側
  * 后台　JAVA .NET       DART バック側     裏側
- * 
+ *
  * 画面入力的信息，如何传到JAVA端
  * JAVA端的信息，如何传到到画面端
  */
-	
+
 	// 登陆
 	@RequestMapping("/login")
-	public String login(Model model, HttpSession session, 
+	public String login(Model model, HttpSession session,
 			@ModelAttribute LoginBean loginBean,
 			String username, String password)
 			throws Exception {
-		
-		
+
+		if(loginBean.getValidateWord() == null || loginBean.getValidateWord().length()==0) {
+
+			model.addAttribute("error", "请输入验证码");
+			return "login";
+		}
 	    if ((username == null || username.length() == 0)
 	            && (password == null || password.length() == 0)
 	            ) {
@@ -49,7 +53,7 @@ public class LoginController {
 		TUser user = userService.findUser(username);
 		if (user == null || !password.equals(user.getPassword())) {
 
-		    model.addAttribute("username", username);
+		    model.addAttribute("usraaa", username);
 			model.addAttribute("error", "用户名和密码不一致");
 		     // 清除session
 	        session.invalidate();
