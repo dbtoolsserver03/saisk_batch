@@ -10,8 +10,8 @@
 <body>
 <!--//form name="f2" action="./to.html" method="post"-->
 <!--//form name="f1" action="./to.html" method="get"-->
-<form id="myForm" onsubmit="redirectToAnotherPage(event)">
-	user:<input type="text" id="id_user" value="tanaka">
+<form id="myForm" action="./to.html">
+	user:<input type="text" id="id_user" name="usr" value="tanaka">
 	<br>
 	pwd:<input type="password" id="id_pwd" value="123123">
 	<br>
@@ -32,7 +32,7 @@
 		<label><input type="checkbox" name="tech_grp" value="html">HTML</label>
 		<label><input type="checkbox" name="tech_grp" value="c++">C++</label>
 	<br>
-	salary:<select id="id_select_salary">
+	salary:<select id="id_select_salary" name="sel_salary">
 		<option value="z" selected="selected"></option>
 		<option value="a">1W-10W</option>
 		<option value="b">11W-20W</option>
