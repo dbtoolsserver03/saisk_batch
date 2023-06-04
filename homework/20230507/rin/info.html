@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>情報内容</title>
+	<script src="./jump/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+	<div class="background-color" style="background-color: indianred;">
+		<header id="header" class="header">
+			<div align="center">
+				<h2>情報内容</h2>
+			</div>
+			<div class="log-out" align="right">
+				<a href="">ログアウト</a>
+			</div>
+		</header>
+	</div>
+	<div style="    background-color: rgb(128, 135, 151)">
+		sex:<input id="id_sex_man" type="radio" name="sex_grp">
+		<label for="id_sex_man">man</label>
+		<label><input type="radio" name="sex_grp">woman</label>
+		<br>
+		level:<label><input type="radio" name="level_grp">PM</label>
+		<label><input type="radio" name="level_grp">PL</label>
+		<label><input type="radio" name="level_grp">SPL</label>
+		<label><input type="radio" name="level_grp">SE/BSE</label>
+		<label><input type="radio" name="level_grp">PG</label>
+
+		<br>
+		blood:
+		<select id="id_blood">
+			<option value="">--Please choose an option--</option>
+			<option value="A">A型</option>
+			<option value="B">B型</option>
+			<option value="O">O型</option>
+		</select>
+
+		<br>
+		language:<label><input type="checkbox" name="lan_grp" value="en">English</label>
+		<label><input type="checkbox" name="lan_grp" value="jp">日本語</label>
+		<label><input type="checkbox" name="lan_grp" value="zh">中文</label>
+		<br>
+		技術:<label><input type="checkbox" name="tech_grp" value="java">Java</label>
+		<label><input type="checkbox" name="tech_grp" value="html">HTML</label>
+		<label><input type="checkbox" name="tech_grp" value="c++">C++</label>
+		<br>
+
+		<input alt="abc" type="image" width="600" height="333" src="./image/0x0.webp">
+
+		<br>
+		出生年月日<input type="date" value="2023-05-07">
+		<br>
+		自己紹介
+		<br>
+		<textarea rows="5" cols="20" style="background-color: lightgray;" id="id_text"></textarea>
+		<br>
+
+		file:<input type="file">
+
+	</div>
+
+	<div id="id_view" style="background-color:rgb(152, 219, 230);"></div>
+</body>
+
+</html>
