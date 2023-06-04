@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+
+<script>
+	
+	function funToHtml(){
+		var name=document.getElementById("id_name").value;
+		var pwd=document.getElementById("id_pwd").value;
+		window.location.href="./to.html?user="+name+"&"+"pwd="+pwd;
+	}
+
+	function funSumbit(){
+		
+		var tag = document.getElementsByName('formGrp');
+		var tagVal = "";
+		for(var i=0; i< tag.length;i++){
+			if(tag[i].checked) {
+				tagVal = tag[i].value;
+				break;
+			}
+		}
+		if(tagVal =="1") {
+			document.f1.submit();
+		} else {
+			document.f2.submit();
+		}
+		
+	}
+		
+</script>
+</head>
+<body>
+
+<form name="f1" action="./to.html" method="get">
+	
+	user:<input id="id_name" name="user" type="text"  value="tanakakun">
+	<br>
+	pwd:<input id="id_pwd" type="password"  name="pwd" value="123">
+	<br>
+	sex:
+	<label><input type="radio" value="1" name="sexGrp" checked>man</label>
+	<label><input type="radio" value="0" name="sexGrp">woman</label>
+	<br>
+	salary:<input type="hidden" value="200000" name="mysalary">
+	<br>
+	birthday:<input disabled type="date" value="2001-01-02" name="mybirthday">
+	<br>
+	<input id="id_btn_jquery" type="submit" value="sumbit form">
+</form>
+
+<form name="f2" action="./to.html" method="get">
+	user:<input name="user2" type="text"value="tanaka2">
+	<input id="id_btn_jquery" type="submit" value="sumbit form 2">
+</form>
+<br>
+<input type="button" value="提交 不推荐" onclick="funToHtml()">
+<br>
+<label><input type="radio" value="1" name="formGrp"> form1</label>
+<label><input type="radio" value="2" name="formGrp"> form2</label>
+<br>
+<input type="button" value="提交 表单" onclick="funSumbit()">
+
+
+
+
+</body>
+</html>
