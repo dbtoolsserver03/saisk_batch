@@ -60,15 +60,6 @@ create table `t_user` (
 `update_user_id` varchar(20) null comment '更新者',
 primary key (`id`)) comment='ユーザ';
 
-CREATE TABLE `teacher_table` (
-  `teacher_id` varchar(10) NOT NULL COMMENT '先生ID',
-  `teacher_name` varchar(32) NOT NULL COMMENT '先生姓名',
-  `teacher_sex` char(1) NOT NULL COMMENT '性別',
-  `teacher_age` date NOT NULL COMMENT '生日',
-  PRIMARY KEY (`teacher_id`)
-);
-
-
 create table `ballteam` (
 `ID` VARCHAR(5) not null COMMENT 'ID',
 `SEI` VARCHAR(20) not null COMMENT '姓',
@@ -134,3 +125,40 @@ create table `CUSTOMERS` (
 `SALARY` varchar(100) not null comment 'SALARY',
 primary key (`id`)
 );
+CREATE TABLE `cat_table` (
+  `cat_id` varchar(10) NOT NULL COMMENT 'CAT_ID',
+  `cat_name` varchar(32) NOT NULL COMMENT 'CAT名',
+  `cat_sex` char(1) NOT NULL COMMENT '性別',
+  `cat_age` date NOT NULL COMMENT '生日',
+  `cat_weight` decimal(10,0) DEFAULT 0 COMMENT 'KG',
+  PRIMARY KEY (`cat_id`)
+) COMMENT='CATテーブル';
+
+CREATE TABLE `kyarakuta_table` (
+  `kyarakuta_id` varchar(10) NOT NULL COMMENT 'kyarakutaID',
+  `kyarakuta_name` varchar(32) NOT NULL COMMENT 'kyarakutaNAME',
+  `kyarakuta_sex` char(1) NOT NULL COMMENT 'SEX',
+  `kyarakuta_age` date NOT NULL COMMENT 'birthday',
+  `kyarakuta_salary` decimal(10,0) DEFAULT 0 COMMENT 'money',
+  PRIMARY KEY (`kyarakuta_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='akunayitu';
+CREATE TABLE `Person_table` (
+  `person_id` varchar(10) NOT NULL COMMENT 'ID',
+  `person_name` varchar(32) NOT NULL COMMENT '姓名',
+  `person_sex` char(1) NOT NULL COMMENT '性別',
+  `person_age` date NOT NULL COMMENT '生日',
+  `person_salary` decimal(10,0) DEFAULT 0 COMMENT '月給',
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='パーソンテーブル';
+
+CREATE TABLE `card_table` (
+  `card_id` varchar(10) NOT NULL COMMENT 'カードID',
+  `card_name` varchar(32) NOT NULL COMMENT 'カード名',
+  `card_zhongzu` char(5) NOT NULL COMMENT '种族',
+  `card_shuxing` date NOT NULL COMMENT '属性',
+  `card_attack` decimal(5,0) DEFAULT 0 COMMENT '攻击力',
+  PRIMARY KEY (`card_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='カードテーブル';
+
+
+
