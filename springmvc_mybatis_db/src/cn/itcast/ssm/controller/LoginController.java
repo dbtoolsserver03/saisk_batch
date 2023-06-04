@@ -1,5 +1,8 @@
 package cn.itcast.ssm.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -14,6 +17,7 @@ import cn.itcast.ssm.common.str.MyDateUtil;
 import cn.itcast.ssm.po.custom.CustomUser;
 import cn.itcast.ssm.po.original.TUser;
 import cn.itcast.ssm.service.UserService;
+import cn.itcast.ssm.vo.ErrorInfo;
 import cn.itcast.ssm.vo.LoginBean;
 
 @Controller
@@ -39,27 +43,35 @@ public class LoginController {
 			String username, String password)
 			throws Exception {
 
-		if(loginBean.getValidateWord() == null || loginBean.getValidateWord().length()==0) {
+		List<ErrorInfo> errorLst = new ArrayList<>();
 
-			model.addAttribute("error", "请输入验证码");
-			return "login";
-		}
 	    if ((username == null || username.length() == 0)
 	            && (password == null || password.length() == 0)
 	            ) {
 	        return "login";
         }
+
 		// 调用service进行用户身份验证
 		TUser user = userService.findUser(username);
 		if (user == null || !password.equals(user.getPassword())) {
 
 		    model.addAttribute("usraaa", username);
-			model.addAttribute("error", "用户名和密码不一致");
+
+		    ErrorInfo e = new ErrorInfo("E", "10001", "用户名和密码不一致");
+			errorLst.add(e);
+
 		     // 清除session
 	        session.invalidate();
-			return "login";
 		}
 
+		if(loginBean.getValidateWord() == null || loginBean.getValidateWord().length()==0) {
+			errorLst.add(new ErrorInfo("E", "10002", "请输入验证码"));
+		}
+
+		if (!errorLst.isEmpty()) {
+			model.addAttribute("errorList", errorLst);
+			return "login";
+		}
 
 		// 在session中保存用户身份信息
 		session.setAttribute("username", username);

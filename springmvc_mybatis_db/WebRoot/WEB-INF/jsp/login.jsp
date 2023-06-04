@@ -40,9 +40,9 @@ function register() {
 
 <!-- style="background-color:#d000fe;" -->
 
-用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="${usraaa}" /><br/>
-用户密码 ：<input id="id_password" type="password" name="password" /><br/>
-用户验证码 ：<input name="validateWord" /><br/>
+用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="tanaka" /><br/>
+用户密码 ：<input id="id_password" type="password" name="password" value="123456" /><br/>
+用户验证码 ：<input name="validateWord"  value="1"/><br/>
 
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
@@ -52,8 +52,12 @@ function register() {
 
 <br>
 <!-- 显示错误信息 -->
-<c:if test="${error!=null}">
-	<br/><div style="background-color:pink">${error}</div>
+<c:if test="${errorList!=null}">
+	<div style="background-color:pink">
+		<c:forEach var="err" items="${errorList}">
+			${err.msgType}${err.msgId} : ${err.msgContent}<br>
+		</c:forEach>
+	</div>
 </c:if>
 
 </form>
