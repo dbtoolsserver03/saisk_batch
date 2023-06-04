@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test jquery</title>
+
+<script src="./jquery-3.7.0.js"></script>
+<script>
+	$(document).ready(function(){
+		
+	 //  document.getElementById("id_btn_jquery")  javascript 
+	 //  $("#id_btn_jquery")                       jquery
+	 
+	  $("#id_btn_jquery").click(function(){
+		 
+			// document.getElementById("id_user").value;
+	    	var userVal = $("#id_user").val();
+	     	$("#id_div_view").html(userVal);
+	     	$(this).hide();
+	  });
+	  
+	});
+</script>
+
+</head>
+
+
+<body>
+user:<input type="text" id="id_user" value="tanaka">
+<br>
+pwd:<input type="password" id="id_pwd" value="123">
+<br>
+<input id="id_btn_jquery" type="button" value="testJquery">
+
+<div id="id_div_view" style="background-color: aquamarine;">
+	xxx
+</div>
+</body>
+</html>
