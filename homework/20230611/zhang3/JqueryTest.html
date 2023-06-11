@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JqueryTest</title>
+
+<script type="text/javascript" src="./js/plug-in/jquery-3.7.0.js"></script>
+
+<script type="text/javascript">
+
+		$(document).ready(function(){
+			  $("#id_login").click(function(){
+
+				 //$(this).hide();
+				 //document.getElementById("id_login").style.display = "none";
+
+			    var user =  $("#id_user").val();
+			    //var user = document.getElementById("id_user").value;
+			    console.log(user);
+
+			    /*
+				var sexElements=document.getElementsByName("sex");
+				var sexVal="";
+				for(var i=0; i<sexElements.length; i++){
+					if(sexElements[i].checked) {
+						sexVal = sexElements[i].value;
+						break;
+					}
+				}
+				*/
+				const sexVal = $('input:radio[name="sex"]:checked').val();
+
+			    console.log(sexVal);
+
+			  });
+			});
+
+</script>
+
+</head>
+<body>
+
+user:<input id="id_user" type="text" value="suzuki">
+
+<input id="id_login"  type="button" value="登録">
+
+<!--  ctrl + shift + f -->
+	<hr>
+	sex:
+	<input id="id_man" type="radio" name="sex" checked value="m">
+	<label for="id_man"> man</label>
+	<label><input type="radio" name="sex" value="w">woman</label>
+	<br>
+
+</body>
+</html>
