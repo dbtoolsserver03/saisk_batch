@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.mypink {
+	background-color: pink;
+}
+#id_date{
+	background-color: green;
+}
+
+input[type="date"]{
+	background-color: yellow;
+}
+._63Ie6douiF2dG_ihlFTen {
+    position: relative;
+    width: 139px;
+    height: 34px;
+    cursor: pointer;
+    background-color: #4070ff;
+    border: 0;
+    -webkit-appearance: none;
+}
+.PHOgFibMkQJ6zcDBLbga8 {
+    position: relative;
+    display: inline-block;
+    padding-left: 19px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
