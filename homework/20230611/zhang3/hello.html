@@ -12,10 +12,25 @@
 		</style>
 
 		<script type="text/javascript">
+
 			function funLogin() {
 				var element = document.getElementById("id_user");
 				element.style.backgroundColor="green";
-				alert(element.value);
+
+
+				var id_view_element = document.getElementById("id_view");
+
+				var sexElements=document.getElementsByName("sex");
+				var sexVal="";
+				for(var i=0; i<sexElements.length; i++){
+					if(sexElements[i].checked) {
+						sexVal = sexElements[i].value;
+						break;
+					}
+				}
+				// id_view_element.innerText=element.value +"\n"+ sexVal;
+				id_view_element.innerHTML=element.value +"<br>"+ sexVal;
+
 				//element.disabled=true;
 			}
 
@@ -52,8 +67,8 @@
 	</div>
 
 		<hr>
-		sex: <input id="id_man" type="radio" name="sex" checked> <label for="id_man"> man</label>
-			  <label><input type="radio" name="sex">woman</label>
+		sex: <input id="id_man" type="radio" name="sex" checked value="m"> <label for="id_man"> man</label>
+			  <label><input type="radio" name="sex" value="w">woman</label>
 		<br>
 		job:
 			  <label><input type="radio" name="job">pg</label>
@@ -104,6 +119,9 @@
 			<tr><td><input type="radio" name="sel"></td><td>3</td><td>wang5</td><td align="center"><input type="date"></td><td align="right"><input type="text"></td>
 		</table>
 
+<div id="id_view" style="background-color: pink">
+xxxxxx
+</div>
 <button class="_63Ie6douiF2dG_ihlFTen cl-noclick-log" type="submit"><span class="_3s3YPSCNUcgAFkPwVeRyfT"><span class="PHOgFibMkQJ6zcDBLbga8">検索</span></span></button>
 	</body>
 </html>
