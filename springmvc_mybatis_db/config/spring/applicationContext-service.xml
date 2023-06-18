@@ -22,5 +22,6 @@
 <bean id="carInfoService" class="cn.itcast.ssm.service.impl.CarInfoServiceImpl"/>
 <bean id="jLeagueService" class="cn.itcast.ssm.service.impl.JleagueServiceImpl"/>
 <bean id="customersService" class="cn.itcast.ssm.service.impl.CustomersServiceImpl"/>
+<bean id="cardService" class="cn.itcast.ssm.service.impl.CardServiceImpl"/>
 
 </beans>
