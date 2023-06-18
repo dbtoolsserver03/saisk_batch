@@ -46,19 +46,23 @@ public class CardServiceImpl implements CardService {
 	@Override
 	public int updateCard(CardTable card) {
 		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		return cardMapper.updateByPrimaryKeySelective(card);
 	}
 
 	@Override
 	public CardTable findCardByID(String cardId) {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return cardMapper.selectByPrimaryKey(cardId);
 	}
 
 	@Override
 	public int deleteItems(String[] cardIds) {
 		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+		int num = 0;
+		for (String id : cardIds) {
+			num+=cardMapper.deleteByPrimaryKey(id);
+		}
+		return num;
 	}
 
 }
