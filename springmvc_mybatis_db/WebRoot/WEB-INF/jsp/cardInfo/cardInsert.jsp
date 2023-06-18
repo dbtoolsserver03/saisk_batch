@@ -10,27 +10,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>查询卡的列表</title>
-<script type="text/javascript" src="../${pageContext.request.contextPath}/js/card/cardList.js"></script>
-
+<title>追加Card信息</title>
+<script type="text/javascript" src="js/userinfo/userinfoList.js">
+</script>
 </head>
 <body>
+add Card info
+<form  action="${pageContext.request.contextPath }/cardinsert.action" method="post">
 
-<form name="cardForm" method="post">
-		查询条件：
-		<table width="100%" border=1>
-			<tr>
-				<td>card名称： <input type="text"> </td>
+カードID	<input type="text" name="cardId"><br>
+カード名<input type="text" name="cardName"><br>
+种族<input type="text" name="cardZhongzu"><br>
+属性<input type="date" name="cardShuxing"><br>
+攻击力<input type="text" name="cardAttack"><br>
 
-				<td>
-					<input type="button" value="查询" onclick="queryCard()" />
-					<input type="button" value="新規" onclick="addCard()" />
-					<input type="button" value="批量删除" onclick="deleteCard()" />
-				</td>
-			</tr>
-		</table>
 
+<input type="submit" value="提交">
 </form>
+
 </body>
 
 </html>
