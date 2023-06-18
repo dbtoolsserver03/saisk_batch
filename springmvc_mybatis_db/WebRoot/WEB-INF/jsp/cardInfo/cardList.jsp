@@ -48,7 +48,7 @@
 						<td>${card.cardZhongzu }</td>
 						<td><fmt:formatDate value="${card.cardShuxing}"	pattern="yyyy/MM/dd" /></td>
 						<td>${card.cardAttack }</td>
-						<td><a href="${pageContext.request.contextPath }/editcard.action?id=${card.cardId}">修改</a></td>
+						<td><a href="${pageContext.request.contextPath }/editcard.action?cardId=${card.cardId}">修改</a></td>
 					</tr>
 				</c:forEach>
 			</table>

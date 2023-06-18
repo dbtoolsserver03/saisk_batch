@@ -29,8 +29,6 @@ public class CardController {
 	    return "cardInfo/cardInsert";
 	}
 
-
-
 	@RequestMapping("cardinsert")
 	public String cardinsert(CardTable card)
 			throws Exception {
@@ -53,7 +51,26 @@ public class CardController {
 	    return "cardInfo/cardList";
 	}
 
+	@RequestMapping("editcard")
+	public String editCardxxyyyyyy(CardTable card,Model model)
+			throws Exception {
+		CardTable cardDb = cardService.findCardByID(card.getCardId());
 
+		model.addAttribute("card", cardDb);
+
+	    return "cardInfo/cardUpdate";
+	}
+
+
+
+	@RequestMapping("cardupdate")
+	public String updateCard(CardTable card)
+			throws Exception {
+		cardService.updateCard(card);
+
+
+	    return "redirect:/queryCard.action";
+	}
 
 
 }
