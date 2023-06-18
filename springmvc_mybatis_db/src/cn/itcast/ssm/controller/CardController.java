@@ -73,4 +73,13 @@ public class CardController {
 	}
 
 
+
+	@RequestMapping("deleteCard")
+	public String deleteCard(String[] cards_id)
+			throws Exception {
+		cardService.deleteItems(cards_id);
+	    return "redirect:/queryCard.action";
+	}
+
+
 }
