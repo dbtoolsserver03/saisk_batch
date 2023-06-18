@@ -38,6 +38,9 @@
 <br>
 <a href="${pageContext.request.contextPath }/jleague.action">jleague</a>
 
+<br>
+<a href="${pageContext.request.contextPath }/cardInit.action">card</a>
+
 </body>
 
 </html>
