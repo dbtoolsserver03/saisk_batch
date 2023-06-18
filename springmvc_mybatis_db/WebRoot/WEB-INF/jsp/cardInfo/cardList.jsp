@@ -15,13 +15,11 @@
 
 </head>
 <body>
-
 <form name="cardForm" method="post">
 		查询条件：
 		<table width="100%" border=1>
 			<tr>
-				<td>card名称： <input type="text"> </td>
-
+				<td>card名称： <input type="text" name="cardName" value="${cardx.cardName}"> </td>
 				<td>
 					<input type="button" value="查询" onclick="queryCard()" />
 					<input type="button" value="新規" onclick="addCard()" />
@@ -29,6 +27,36 @@
 				</td>
 			</tr>
 		</table>
+
+		<c:if test="${cardLst !=null && fn:length(cardLst) > 0}">
+		card一览：
+		<table width="100%" border=1>
+				<tr>
+					<th>選択</th>
+					<th>カード名</th>
+					<th>种族</th>
+					<th>属性日</th>
+					<th>攻击力</th>
+					<th>操作</th>
+				</tr>
+
+				<c:forEach items="${cardLst}" var="card" varStatus="status">
+					<tr>
+						<td><input type="checkbox" name="cards_id" currentStatusxx="aa_${status.count}"
+							value="${card.cardId}"></td>
+						<td>${card.cardName }</td>
+						<td>${card.cardZhongzu }</td>
+						<td><fmt:formatDate value="${card.cardShuxing}"	pattern="yyyy/MM/dd" /></td>
+						<td>${card.cardAttack }</td>
+						<td><a href="${pageContext.request.contextPath }/editcard.action?id=${card.cardId}">修改</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:if>
+
+		<c:if test="${cardLst ==null || fn:length(cardLst) == 0}">
+			<label style="color: red">no result</label>l
+		</c:if>
 
 </form>
 </body>

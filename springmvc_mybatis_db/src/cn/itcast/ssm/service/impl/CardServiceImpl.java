@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import cn.itcast.ssm.mapper.custom.CustomTCardMapper;
 import cn.itcast.ssm.mapper.custom.CustomTteacherMapper;
 import cn.itcast.ssm.mapper.original.CardTableMapper;
 import cn.itcast.ssm.mapper.original.TeacherTableMapper;
@@ -25,6 +26,11 @@ public class CardServiceImpl implements CardService {
     @Autowired
     private CardTableMapper cardMapper;
 
+
+    @Autowired
+    private CustomTCardMapper customTCardMapper;
+
+
 	@Override
 	public int inserCard(CardTable card) throws Exception {
 		int ret = cardMapper.insert(card);
@@ -34,7 +40,7 @@ public class CardServiceImpl implements CardService {
 	@Override
 	public List<CardTable> findCardList(CardTable card) {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return customTCardMapper.findCardsList(card);
 	}
 
 	@Override
