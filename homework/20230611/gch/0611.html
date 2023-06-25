@@ -13,6 +13,14 @@
 
 		<script type="text/javascript">
 
+		function testColorAndFile() {
+
+			var colorElement = document.getElementById("id_color");
+			var fileElement = document.getElementById("id_file");
+			debugger;
+
+		}
+
 		</script>
 		<script src="./js/plug-in/jquery-3.7.0.js"></script>
 		<script src="./js/my.js"></script>
@@ -28,6 +36,7 @@
 
 		<input type="button" value="login登陆とうろく" onclick="funLogin(this,1)">
 		<input type="button" value="clear" onclick="funClear()">
+		<button onclick="testColorAndFile()">test color file</button>
 	</div>
 
 		<hr>
@@ -60,6 +69,9 @@
 		<br>
 		画像：
 		<input alt="tigerPic" width="50px" type="image" src="./img/tiger.jpg" height="50px">
+		画像：
+		<img alt="tigerPic" width="50px" src="./img/tiger.jpg" height="50px">
+
 		<br>
 		<a href="https://www.baidu.com/" target="target01">
 			my homepage
@@ -75,7 +87,11 @@
 		  <option value="ab">AB</option>
 		</select>
 
-
+	<hr>
+	<input id="id_color" type="color">
+	<input id="id_file" type="file">
+	<input id="id_files" type="file" multiple>
+<hr>
 		<table border="1px" width="100%">
 			<tr><th>select</th><th>NO.</th><th>name</th><th>birthday</th><th>salary</th></tr>
 			<tr><td><input type="radio" name="sel"></td><td>1</td><td>zhang3</td><td align="center">2001/01/01</td><td align="right">100000</td>
