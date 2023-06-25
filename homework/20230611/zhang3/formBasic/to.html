@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function init() {
+
+	// 対象URL：file:///C:/Users/tech/git0611/saisk/homework/20230611/zhang3/formtest/to.html?user=xxx&psw=123&birth=2023-06-08&sex=w&lan=en&lan=ch
+
+	// URLを取得
+	let url = new URL(window.location.href);
+
+	// URLSearchParamsオブジェクトを取得
+	let params = url.searchParams;
+
+	document.getElementById("u").innerText=params.get('user');
+	document.getElementById("p").innerText=params.get('pw');
+
+}
+</script>
+</head>
+<body onload="init()">
+
+<label id="u"></label>
+<label id="p"></label>
+
+</body>
+</html>
