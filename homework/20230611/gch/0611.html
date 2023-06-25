@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>hello title here</title>
+		<link rel="shortcut icon" href="./img/favicon.ico">
+
+        <link rel="stylesheet" href="./css/my.css">
+
+		<style type="text/css">
+
+		</style>
+
+		<script type="text/javascript">
+
+		</script>
+		<script src="./js/plug-in/jquery-3.7.0.js"></script>
+		<script src="./js/my.js"></script>
+
+	</head>
+
+	<body onload="init();">
+	<div style="background-color: aliceblue;">
+		<table>
+			<tr><td>user</td><td><input id="id_user" style="background-color: antiquewhite;color: red;" class="mypink"  type="text" value="tanaka" ></td></tr>
+			<tr><td>password</td><td><input id="id_pw" class="mypink" type="password" placeholder="input password please!" ></td></tr>
+		</table>
+
+		<input type="button" value="login登陆とうろく" onclick="funLogin(this,1)">
+		<input type="button" value="clear" onclick="funClear()">
+	</div>
+
+		<hr>
+		sex: <input id="id_man" type="radio" name="sex" checked value="m"> <label for="id_man"> man</label>
+			  <label><input type="radio" name="sex" value="w">woman</label>
+		<br>
+		job:
+			  <label><input type="radio" value="pg" name="job">pg</label>
+			  <label><input type="radio" value="se" name="job" checked >se</label>
+			  <label><input type="radio" value="bse" name="job">bse</label>
+			  <label><input type="radio" value="l" name="job">leader</label>
+			  <label><input type="radio" value="sl" name="job">sub leader</label>
+			  <label><input type="radio" value="pm" name="job">pm</label>
+		<br>
+		hobby:
+		<label><input type="checkbox" value="fb" name="hob" checked >football</label>
+		<label><input type="checkbox" value="s" name="hob">swing</label>
+		<label><input type="checkbox" value="film" name="hob">film</label>
+		<br>
+		language:
+		<label><input type="checkbox" name="lan">english</label>
+		<label><input type="checkbox" name="lan">chinese</label>
+		<label><input type="checkbox" name="lan">japanese</label>
+		<br>
+		自己紹介:
+		<textarea class="mypink" rows="5" cols="10">i am ok</textarea>
+		<br>
+		誕生日:
+		<input id="id_date" type="date" value="2001-01-01">
+		<br>
+		画像：
+		<input alt="tigerPic" width="50px" type="image" src="./img/tiger.jpg" height="50px">
+		<br>
+		<a href="https://www.baidu.com/" target="target01">
+			my homepage
+			<input alt="tigerPic" width="50px" type="image" src="./img/tiger.jpg" height="50px">
+		</a>
+
+		<br>blood:
+		<select>
+		 <option value =""></option>
+		  <option value ="a">A</option>
+		  <option value ="b">B</option>
+		  <option value="o" selected >O</option>
+		  <option value="ab">AB</option>
+		</select>
+
+
+		<table border="1px" width="100%">
+			<tr><th>select</th><th>NO.</th><th>name</th><th>birthday</th><th>salary</th></tr>
+			<tr><td><input type="radio" name="sel"></td><td>1</td><td>zhang3</td><td align="center">2001/01/01</td><td align="right">100000</td>
+			<tr><td><input type="radio" name="sel"></td><td>2</td><td>li4</td><td align="center">2001/01/02</td><td align="right"><input type="text"></td>
+			<tr><td><input type="radio" name="sel"></td><td>3</td><td>wang5</td><td align="center"><input type="date"></td><td align="right"><input type="text"></td>
+		</table>
+
+<div id="id_view" style="background-color: pink">
+xxxxxx
+</div>
+<button class="_63Ie6douiF2dG_ihlFTen cl-noclick-log" type="submit"><span class="_3s3YPSCNUcgAFkPwVeRyfT"><span class="PHOgFibMkQJ6zcDBLbga8">検索</span></span></button>
+	</body>
+</html>
