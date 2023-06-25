@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>from</title>
+
+<script type="text/javascript">
+
+ function funForm() {
+
+	 if(document.getElementById("id_a").checked){
+		 document.aForm.submit();
+	 } else {
+		 document.bForm.submit();
+	 }
+
+ }
+
+ 	function stupidJump() {
+
+ 		// 如果表表单内容有100个,那么要手动拼写100个类似下面的语句
+		  window.location = './to.html?user='
+				             +document.getElementById("id_user").value
+				            +'&psw='+document.getElementById("id_psw").value;
+ 	}
+</script>
+</head>
+<body>
+
+
+<!--
+post get 区别
+
+get 提交表单 URL会显示参数，安全性低，参数内容有限制
+post提交表单 URL不会显示参数，安全性高，参数内容无限制
+
+ -->
+
+
+ <!--
+form提交条件
+ <input type="submit"> : 这个按钮提交的是这个按钮所在的表单
+                         表单里的标签要有name属性
+                         表单里的标签不可以是disable
+
+ <input type="button"> : 通过JS方法，提交指定表单 例：document.aForm.submit();
+                         表单里的标签要有name属性
+                         表单里的标签不可以是disable
+ -->
+<form name="aForm" action="./to.html" method="get">
+  my user <input type="text" name="user" value="auser">
+  <br>my psw <input type="password" name="psw">
+  <br>birthday <input type="date" name="birth">
+  <br>sex
+  <label><input type="radio" value="m" name="sex">man</label>
+  <label><input type="radio" value="w" name="sex">woman</label>
+  <br>
+  language:
+  <label><input type="checkbox" value="en" name="lan">english</label>
+  <label><input type="checkbox" value="ch" name="lan">chinese</label>
+  <label><input type="checkbox" value="jp" name="lan">japanese</label>
+  <br>
+
+  salary:<input type="text" name="sal">
+  <br>
+
+    height:<input type="text" name ="h" disabled value="179">
+   <br>
+    weight:<input type="hidden" name ="w"  value="155">
+
+  <br>
+
+  <input type="submit" value="confirm">
+
+</form>
+
+
+<form name="bForm" action="./to.html" method="get">
+  my user <input type="text" name="user"  value="buser">
+  <br>my psw <input type="password" name="psw">
+
+ 		<br>blood:
+		<select name="myblood">
+		 <option value =""></option>
+		  <option value ="a">A</option>
+		  <option value ="b">B</option>
+		  <option value="o" selected >O</option>
+		  <option value="ab">AB</option>
+		</select>
+
+  <input type="submit" value="confirm">
+</form>
+
+<br>
+<input id="id_a" type="radio" name="sel" value="a" checked>aForm
+<input type="radio" name="sel" value="b">bForm
+<input type="button" value="funFormJs" onclick="funForm()">
+
+<hr>
+  my user <input type="text" value="cuser" id="id_user">
+  <br>my psw <input type="password" id="id_psw">
+<input type="button" value="stupid" onclick="stupidJump()">
+
+</body>
+</html>
