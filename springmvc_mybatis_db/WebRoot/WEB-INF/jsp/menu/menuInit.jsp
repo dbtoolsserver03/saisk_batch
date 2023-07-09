@@ -41,6 +41,12 @@
 <br>
 <a href="${pageContext.request.contextPath }/cardInit.action">card</a>
 
+
+<br>
+<a href="${pageContext.request.contextPath }/bloodInit.action">献血</a>
+
+
+
 </body>
 
 </html>
