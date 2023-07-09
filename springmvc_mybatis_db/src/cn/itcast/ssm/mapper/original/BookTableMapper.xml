@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.ssm.mapper.original.BookTableMapper">
+  <resultMap id="BaseResultMap" type="cn.itcast.ssm.po.original.BookTable">
+    <id column="book_id" jdbcType="VARCHAR" property="bookId" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_type" jdbcType="CHAR" property="bookType" />
+    <result column="book_age" jdbcType="DATE" property="bookAge" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    book_id, book_name, book_type, book_age
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from book_table
+    where book_id = #{bookId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from book_table
+    where book_id = #{bookId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.itcast.ssm.po.original.BookTable">
+    insert into book_table (book_id, book_name, book_type, 
+      book_age)
+    values (#{bookId,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, #{bookType,jdbcType=CHAR}, 
+      #{bookAge,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.itcast.ssm.po.original.BookTable">
+    insert into book_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookId != null">
+        book_id,
+      </if>
+      <if test="bookName != null">
+        book_name,
+      </if>
+      <if test="bookType != null">
+        book_type,
+      </if>
+      <if test="bookAge != null">
+        book_age,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookId != null">
+        #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null">
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookType != null">
+        #{bookType,jdbcType=CHAR},
+      </if>
+      <if test="bookAge != null">
+        #{bookAge,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.itcast.ssm.po.original.BookTable">
+    update book_table
+    <set>
+      <if test="bookName != null">
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookType != null">
+        book_type = #{bookType,jdbcType=CHAR},
+      </if>
+      <if test="bookAge != null">
+        book_age = #{bookAge,jdbcType=DATE},
+      </if>
+    </set>
+    where book_id = #{bookId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.itcast.ssm.po.original.BookTable">
+    update book_table
+    set book_name = #{bookName,jdbcType=VARCHAR},
+      book_type = #{bookType,jdbcType=CHAR},
+      book_age = #{bookAge,jdbcType=DATE}
+    where book_id = #{bookId,jdbcType=VARCHAR}
+  </update>
+</mapper>

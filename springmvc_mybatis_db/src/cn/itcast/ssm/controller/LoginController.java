@@ -39,29 +39,20 @@ public class LoginController {
 	// 登陆
 	@RequestMapping("/login")
 	public String login(Model model, HttpSession session,
-			@ModelAttribute LoginBean loginBean,
-			String username, String password)
+			@ModelAttribute LoginBean loginBean)
 			throws Exception {
 
 		List<ErrorInfo> errorLst = new ArrayList<>();
 
-	    if ((username == null || username.length() == 0)
-	            && (password == null || password.length() == 0)
+	    if ((loginBean.getUname() == null || loginBean.getUname().length() == 0)
+	            && (loginBean.getPasswd() == null || loginBean.getPasswd().length() == 0)
 	            ) {
 	        return "login";
         }
 
-	    if(!"1".equals(loginBean.getAgree())) {
-		    model.addAttribute("errAgree", "请同意后再登陆");
-		    return "login";
-	    }
-
-
 		// 调用service进行用户身份验证
-		TUser user = userService.findUser(username);
-		if (user == null || !password.equals(user.getPassword())) {
-
-		    model.addAttribute("usraaa", username);
+		TUser user = userService.findUser(loginBean.getUname());
+		if (user == null || !loginBean.getPasswd().equals(user.getPassword())) {
 
 		    ErrorInfo e = new ErrorInfo("E", "10001", "用户名和密码不一致");
 			errorLst.add(e);
@@ -74,13 +65,20 @@ public class LoginController {
 			errorLst.add(new ErrorInfo("E", "10002", "请输入验证码"));
 		}
 
+	    if(!"1".equals(loginBean.getAgree())) {
+			errorLst.add(new ErrorInfo("E", "10003", "请同意后再登陆"));
+	    }
+
 		if (!errorLst.isEmpty()) {
 			model.addAttribute("errorList", errorLst);
+
+			model.addAttribute("mybean",loginBean);
+
 			return "login";
 		}
 
 		// 在session中保存用户身份信息
-		session.setAttribute("username", username);
+		session.setAttribute("username", loginBean.getUname());
 		// 定向到菜单页面
 		return "menu/menuInit";
 		//return "redirect:/items/initItems.action";

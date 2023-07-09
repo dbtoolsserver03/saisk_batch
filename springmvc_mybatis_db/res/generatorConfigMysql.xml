@@ -58,6 +58,15 @@
 		<table tableName="TEACHER_TABLE" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false"></table>
+		<table tableName="blood_table" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false"></table>
+			<table tableName="book_table" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+
+
 		<!-- 有些表的字段需要指定java类型 <table schema="" tableName=""> <columnOverride column=""
 			javaType="" /> </table> -->
 	</context>
