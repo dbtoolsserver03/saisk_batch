@@ -60,105 +60,26 @@ create table `t_user` (
 `update_user_id` varchar(20) null comment '更新者',
 primary key (`id`)) comment='ユーザ';
 
-create table `ballteam` (
-`ID` VARCHAR(5) not null COMMENT 'ID',
-`SEI` VARCHAR(20) not null COMMENT '姓',
-`MEI` VARCHAR(20) not null COMMENT '名',
-`SEX` CHAR(2) null COMMENT '性別',
-`BIRTHDAY` DATE null COMMENT '誕生日',
-`SALARY` DECIMAL(10,1) null COMMENT '工资',
-`PHOTO` BLOB null COMMENT '照片',
-`CREATE_USER` VARCHAR(5) not null COMMENT '作成者',
-`CREATE_TIME` DATETIME not null COMMENT '作成时间',
-`UPDATE_USER` VARCHAR(10) not null COMMENT '更新者',
-`UPDATE_TIME` DATETIME not null COMMENT '更新时间',
-`DEL_FLG` VARCHAR(10) not null COMMENT '削除フラグ',
-PRIMARY KEY (`ID`)) COMMENT='球队テーブル';
 create table `teacher_table` (
 `teacher_id` VARCHAR(10) not null COMMENT '先生ID',
 `teacher_name` VARCHAR(32) not null COMMENT '先生姓名',
 `teacher_sex` CHAR(1) not null COMMENT '性別',
 `teacher_age` DATE not null COMMENT '生日',
 PRIMARY KEY (`teacher_id`)) COMMENT='先生テーブル';
-create table `t_animal` (
-`ID` VARCHAR(5) not null COMMENT 'ID',
-`SEI` VARCHAR(20) not null COMMENT '姓',
-`MEI` VARCHAR(20) not null COMMENT '名',
-`SEX` CHAR(1) null COMMENT '性別',
-`BIRTHDAY` DATE null COMMENT '誕生日',
-`FOOD` DECIMAL(10,1) null COMMENT 'FOOD',
-`CREATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '作成时间',
-`UPDATE_USER` VARCHAR(10) not null DEFAULT 'ID000' COMMENT '更新者',
-`UPDATE_TIME` DATETIME not null DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
-`DEL_FLG` CHAR(1) not null DEFAULT 0 COMMENT '削除フラグ',
-PRIMARY KEY (`ID`)) COMMENT='動物テーブル';
-create table `t_carinfo` (
-`car_id` varchar(10) not null comment 'ID',
-`car_maker` varchar(20) not null comment 'メーカー',
-`car_type` varchar(20) not null comment 'タイプ',
-`car_price` varchar(100) not null comment '価格',
-`car_mileage` varchar(100) not null comment '走行距離',
-`car_repair` char(1) not null comment '修復歴',
-`car_displacement` varchar(20) not null comment '排気量',
-primary key (`car_id`)) comment='車データ';
-CREATE TABLE `JLEAGUE` ( 
-    `ID` INT NOT NULL COMMENT '番号'
-    , `SEI` VARCHAR (20) NOT NULL COMMENT '姓'
-    , `NA` VARCHAR (20) DEFAULT NULL COMMENT '名'
-    , `BRITH` DATETIME NOT NULL COMMENT '生年月日'
-    , `TEAM` VARCHAR (20) DEFAULT NULL COMMENT '所属チーム'
-    , `TELNUMBER` VARCHAR (20) DEFAULT NULL COMMENT '携帯番号'
-    , `ADDRESS` VARCHAR (60) DEFAULT NULL COMMENT 'ADDRESS'
-    , `PLACE_OF_BIRTH` VARCHAR (60) DEFAULT NULL COMMENT '出身地'
-    , `SALARY` CHAR (1) DEFAULT NULL COMMENT '年収'
-    , `JP_DEPUTY` CHAR (1) DEFAULT NULL COMMENT '日本代表'
-    , `SKILL` VARCHAR (20) DEFAULT NULL COMMENT 'スキル'
-    , `POSITION` VARCHAR (20) DEFAULT NULL COMMENT 'ポジション'
-    , `RCL` VARCHAR (20) DEFAULT NULL COMMENT '位置'
-    , PRIMARY KEY (`ID`)
-) ENGINE = INNODB ;
 
-create table `CUSTOMERS` (
-`id` varchar(10) not null comment 'ID',
-`AGE` varchar(20) not null comment 'AGE',
-`ADDRESS` varchar(20) not null comment 'ADDRESS',
-`SALARY` varchar(100) not null comment 'SALARY',
-primary key (`id`)
-);
-CREATE TABLE `cat_table` (
-  `cat_id` varchar(10) NOT NULL COMMENT 'CAT_ID',
-  `cat_name` varchar(32) NOT NULL COMMENT 'CAT名',
-  `cat_sex` char(1) NOT NULL COMMENT '性別',
-  `cat_age` date NOT NULL COMMENT '生日',
-  `cat_weight` decimal(10,0) DEFAULT 0 COMMENT 'KG',
-  PRIMARY KEY (`cat_id`)
-) COMMENT='CATテーブル';
+CREATE TABLE `Blood_table` (
+  `Person_id` varchar(10) NOT NULL COMMENT 'ID',
+  `Person_name` varchar(10) NOT NULL COMMENT 'name',
+  `Gender` char(2) NOT NULL COMMENT '性別',
+  `age` date NOT NULL COMMENT '生日',
+  `Blood_cc` decimal(10,0)  DEFAULT 200 COMMENT '献血量(CC)',
+  PRIMARY KEY (`Person_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='献血テーブル';
 
-CREATE TABLE `kyarakuta_table` (
-  `kyarakuta_id` varchar(10) NOT NULL COMMENT 'kyarakutaID',
-  `kyarakuta_name` varchar(32) NOT NULL COMMENT 'kyarakutaNAME',
-  `kyarakuta_sex` char(1) NOT NULL COMMENT 'SEX',
-  `kyarakuta_age` date NOT NULL COMMENT 'birthday',
-  `kyarakuta_salary` decimal(10,0) DEFAULT 0 COMMENT 'money',
-  PRIMARY KEY (`kyarakuta_id`)
-) ENGINE=InnoDB  COMMENT='akunayitu';
-CREATE TABLE `Person_table` (
-  `person_id` varchar(10) NOT NULL COMMENT 'ID',
-  `person_name` varchar(32) NOT NULL COMMENT '姓名',
-  `person_sex` char(1) NOT NULL COMMENT '性別',
-  `person_age` date NOT NULL COMMENT '生日',
-  `person_salary` decimal(10,0) DEFAULT 0 COMMENT '月給',
-  PRIMARY KEY (`person_id`)
-) ENGINE=InnoDB  COMMENT='パーソンテーブル';
-
-CREATE TABLE `card_table` (
-  `card_id` varchar(10) NOT NULL COMMENT 'カードID',
-  `card_name` varchar(32) NOT NULL COMMENT 'カード名',
-  `card_zhongzu` char(5) NOT NULL COMMENT '种族',
-  `card_shuxing` date NOT NULL COMMENT '属性',
-  `card_attack` decimal(5,0) DEFAULT 0 COMMENT '攻击力',
-  PRIMARY KEY (`card_id`)
-) ENGINE=InnoDB  COMMENT='カードテーブル';
-
-
-
+CREATE TABLE `book_table` (
+  `book_id` varchar(10) NOT NULL COMMENT 'DOGID',
+  `book_name` varchar(32) NOT NULL COMMENT 'book名',
+  `book_type` char(1) NOT NULL COMMENT 'book类型',
+  `book_age` date NOT NULL COMMENT 'book年份',
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='book_table'
