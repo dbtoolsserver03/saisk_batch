@@ -51,6 +51,12 @@ public class LoginController {
 	        return "login";
         }
 
+	    if(!"1".equals(loginBean.getAgree())) {
+		    model.addAttribute("errAgree", "请同意后再登陆");
+		    return "login";
+	    }
+
+
 		// 调用service进行用户身份验证
 		TUser user = userService.findUser(username);
 		if (user == null || !password.equals(user.getPassword())) {
