@@ -58,41 +58,6 @@
 		<table tableName="TEACHER_TABLE" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="T_ANIMAL" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-			<table tableName="BALLTEAM" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<!-- <table schema="" tableName="sys_user"></table> <table schema="" tableName="sys_role"></table>
-			<table schema="" tableName="sys_permission"></table> <table schema="" tableName="sys_user_role"></table>
-			<table schema="" tableName="sys_role_permission"></table> -->
-		<table tableName="T_CARINFO" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="Jleague" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="CUSTOMERS" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
-		<table tableName="cat_table" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
-		<table tableName="kyarakuta_table" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
-		<table tableName="Person_table" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
-		<table tableName="card_table" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
 		<!-- 有些表的字段需要指定java类型 <table schema="" tableName=""> <columnOverride column=""
 			javaType="" /> </table> -->
 	</context>
