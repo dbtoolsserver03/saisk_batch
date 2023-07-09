@@ -44,6 +44,8 @@ function register() {
 用户密码 ：<input id="id_password" type="password" name="password" value="123456" /><br/>
 用户验证码 ：<input name="validateWord"  value="1"/><br/>
 
+同意绿色网络 ：<input name="agree" type="checkbox"  value="1"/> <br/>
+
 <input type="submit" class="blue-btn" value="登陆"/>
 <input type="button" value="清除" onclick="fnclear()"/>
 
@@ -59,6 +61,15 @@ function register() {
 		</c:forEach>
 	</div>
 </c:if>
+
+<!-- 显示错误信息 -->
+<c:if test="${errAgree!=null}">
+	<div style="background-color: red">
+	  ${errAgree}
+	</div>
+</c:if>
+
+
 
 </form>
 
