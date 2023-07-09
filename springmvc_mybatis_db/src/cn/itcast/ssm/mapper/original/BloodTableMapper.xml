@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.ssm.mapper.original.BloodTableMapper">
+  <resultMap id="BaseResultMap" type="cn.itcast.ssm.po.original.BloodTable">
+    <id column="Person_id" jdbcType="VARCHAR" property="personId" />
+    <result column="Person_name" jdbcType="VARCHAR" property="personName" />
+    <result column="Gender" jdbcType="CHAR" property="gender" />
+    <result column="age" jdbcType="DATE" property="age" />
+    <result column="Blood_cc" jdbcType="DECIMAL" property="bloodCc" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Person_id, Person_name, Gender, age, Blood_cc
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blood_table
+    where Person_id = #{personId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from blood_table
+    where Person_id = #{personId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.itcast.ssm.po.original.BloodTable">
+    insert into blood_table (Person_id, Person_name, Gender, 
+      age, Blood_cc)
+    values (#{personId,jdbcType=VARCHAR}, #{personName,jdbcType=VARCHAR}, #{gender,jdbcType=CHAR}, 
+      #{age,jdbcType=DATE}, #{bloodCc,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.itcast.ssm.po.original.BloodTable">
+    insert into blood_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="personId != null">
+        Person_id,
+      </if>
+      <if test="personName != null">
+        Person_name,
+      </if>
+      <if test="gender != null">
+        Gender,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="bloodCc != null">
+        Blood_cc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="personId != null">
+        #{personId,jdbcType=VARCHAR},
+      </if>
+      <if test="personName != null">
+        #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=DATE},
+      </if>
+      <if test="bloodCc != null">
+        #{bloodCc,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.itcast.ssm.po.original.BloodTable">
+    update blood_table
+    <set>
+      <if test="personName != null">
+        Person_name = #{personName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        Gender = #{gender,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=DATE},
+      </if>
+      <if test="bloodCc != null">
+        Blood_cc = #{bloodCc,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where Person_id = #{personId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.itcast.ssm.po.original.BloodTable">
+    update blood_table
+    set Person_name = #{personName,jdbcType=VARCHAR},
+      Gender = #{gender,jdbcType=CHAR},
+      age = #{age,jdbcType=DATE},
+      Blood_cc = #{bloodCc,jdbcType=DECIMAL}
+    where Person_id = #{personId,jdbcType=VARCHAR}
+  </update>
+</mapper>

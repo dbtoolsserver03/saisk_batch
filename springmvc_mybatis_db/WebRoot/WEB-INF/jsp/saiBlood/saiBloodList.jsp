@@ -13,6 +13,6 @@
 <title>血型查询</title>
 </head>
 <body>
-BLOOD
+saiBLOOD
 </body>
 </html>

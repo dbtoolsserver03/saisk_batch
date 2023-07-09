@@ -40,9 +40,9 @@ function register() {
 
 <!-- style="background-color:#d000fe;" -->
 
-用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="username"value="tanaka" /><br/>
-用户密码 ：<input id="id_password" type="password" name="password" value="123456" /><br/>
-用户验证码 ：<input name="validateWord"  value="1"/><br/>
+用户账号：<input id="id_username" class="mytext" style="background-color:#ea9de4;" type="text" name="uname" value="${mybean.uname}"/><br/>
+用户密码 ：<input id="id_password" type="password" name="passwd" /><br/>
+用户验证码 ：<input name="validateWord" /><br/>
 
 同意绿色网络 ：<input name="agree" type="checkbox"  value="1"/> <br/>
 
@@ -62,12 +62,6 @@ function register() {
 	</div>
 </c:if>
 
-<!-- 显示错误信息 -->
-<c:if test="${errAgree!=null}">
-	<div style="background-color: red">
-	  ${errAgree}
-	</div>
-</c:if>
 
 
 

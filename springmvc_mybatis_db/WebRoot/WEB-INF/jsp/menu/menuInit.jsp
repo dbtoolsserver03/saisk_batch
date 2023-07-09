@@ -43,7 +43,7 @@
 
 
 <br>
-<a href="${pageContext.request.contextPath }/bloodInit.action">献血</a>
+<a href="${pageContext.request.contextPath }/saiBloodInit.action">sai献血</a>
 
 
 

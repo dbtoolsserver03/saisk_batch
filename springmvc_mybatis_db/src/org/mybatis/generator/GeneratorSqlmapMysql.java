@@ -19,7 +19,7 @@ public class GeneratorSqlmapMysql {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		//指定 逆向工程配置文件
-		File configFile = new File("res\\generatorConfigMysql.xml"); 
+		File configFile = new File("res"+File.separator+"generatorConfigMysql.xml");
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
@@ -27,23 +27,23 @@ public class GeneratorSqlmapMysql {
 				callback, warnings);
 		myBatisGenerator.generate(null);
 
-	} 
+	}
 	public static void main(String[] args) throws Exception {
 		try {
-			
+
 			File directory = new File("");//参数为空
 
 			String courseFile = directory.getCanonicalPath() ;
 
-			MyDirectoryUtils.delFile(courseFile+"/src/cn/itcast/ssm/po/original", "", true);
-			MyDirectoryUtils.delFile(courseFile+"/src/cn/itcast/ssm/mapper/original", "", true);
+			MyDirectoryUtils.delFile(courseFile+File.separator+"src"+File.separator+"cn"+File.separator+"itcast+"+File.separator+"+ssm"+File.separator+"po"+File.separator+"original", "", true);
+			MyDirectoryUtils.delFile(courseFile+File.separator+"src"+File.separator+"cn"+File.separator+"itcast"+File.separator+"ssm"+File.separator+"mapper"+File.separator+"original", "", true);
 
 			GeneratorSqlmapMysql generatorSqlmap = new GeneratorSqlmapMysql();
 			generatorSqlmap.generator();
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

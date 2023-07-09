@@ -4,12 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class BloodController {
+public class SaiBloodController {
 
-	@RequestMapping("bloodInit")
+	@RequestMapping("saiBloodInit")
 	public String teacherInit()
 			throws Exception {
-	    return "blood/bloodList";
+	    return "saiBlood/saiBloodList";
 	}
 
 }
