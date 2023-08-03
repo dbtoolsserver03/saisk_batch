@@ -7,10 +7,7 @@ import cn.itcast.ssm.po.original.KyarakutaTable;
 
 public interface kyarakutaService {
 	
-	@Autowired
-    private KyarakutaTableMapper kyarakutaMapper;
-    @Autowired
-    private CustomKyarakutaMapper customkyarakutaMapper;
+	
 	
 	
 	
