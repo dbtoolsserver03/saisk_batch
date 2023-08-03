@@ -10,33 +10,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>功能菜单</title>
+<title>メニュー画面</title>
 </head>
 <body>
+<div align="center">
+    <br><br><br><br><br>
 
-<a href="${pageContext.request.contextPath }/blandBagInit.action">ブランドバッグ一覧</a>
-<br>
 
-<a href="${pageContext.request.contextPath }/foodInit.action">料理一覧</a>
-<br>
-
-<a href="${pageContext.request.contextPath }/carInit.action">車一覧</a>
-<br>
-
-<a href="${pageContext.request.contextPath }/ballTeamInit.action">ボールチーム一覧</a>
-<br>
-
-<a href="${pageContext.request.contextPath }/animalInit.action">動物一覧</a>
-<br>
-<a href="${pageContext.request.contextPath }/teacherInit.action">老师</a>
-<br>
-<a href="${pageContext.request.contextPath }/items/initItems.action">商品</a>
-<br>
-<a href="${pageContext.request.contextPath }/initUserLst.action">用户一览</a>
-<br>
-<a href="${pageContext.request.contextPath }/teacherInit0514.action">老师0514</a>
-<br>
-<a href="${pageContext.request.contextPath }/jleague.action">jleague</a>
+<a href="${pageContext.request.contextPath }/kyarakutaInit.action">キャラクター</a>
 
 </body>
 

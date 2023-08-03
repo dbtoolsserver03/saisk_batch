@@ -57,7 +57,7 @@ public class LoginController {
 
 		    model.addAttribute("usraaa", username);
 
-		    ErrorInfo e = new ErrorInfo("E", "10001", "用户名和密码不一致");
+		    ErrorInfo e = new ErrorInfo("E", "10001", "パスワードが誤っています。");
 			errorLst.add(e);
 
 		     // 清除session
@@ -65,7 +65,7 @@ public class LoginController {
 		}
 
 		if(loginBean.getValidateWord() == null || loginBean.getValidateWord().length()==0) {
-			errorLst.add(new ErrorInfo("E", "10002", "请输入验证码"));
+			errorLst.add(new ErrorInfo("E", "10002", "暗証番号を入力してください。"));
 		}
 
 		if (!errorLst.isEmpty()) {
@@ -102,7 +102,7 @@ public class LoginController {
 
 	    if (dbRec!=null) {
 
-	        model.addAttribute("errorMsgId", "数据库里有相同的 USER ID");
+	        model.addAttribute("errorMsgId", "存在している USER ID");
 	        if (tUser.getBirthday() == null) {
 	        	model.addAttribute("errorMsgId", "birthday can not null");
 	        	return "/login/register";

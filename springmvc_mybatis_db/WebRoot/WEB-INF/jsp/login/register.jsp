@@ -20,7 +20,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>
-        用户注册
+        キャラクター新規
 </title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/register.css" type="text/css">
 </head>
@@ -36,11 +36,13 @@
 	<form id="registForm"
         	action="${pageContext.request.contextPath }/registSubmit.action"
 		method="post">
-    注册用户：
-
-		<table width="100%" border=1>
+<div align="center">
+        <br><br><br>
+    新規：
+ 
+		<table width="150%" border=1>
 			<tr>
-				<td>用户ID</td>
+				<td align="center">新規ID</td>
 				<td>
 				<input  type="text" name="id" value="${tUser.id}"/>
 
@@ -52,39 +54,41 @@
 			</tr>
 
 			<tr>
-				<td>用户姓名</td>
+				<td align="center">名前</td>
 				<td><input type="text" name="username" value="${tUser.username}"/>
 			</tr>
 			<tr>
-				<td>用户性别</td>
+				<td align="center">性別</td>
 				<td><input type="radio" name="sex" <c:if test="${tUser.sex==1 }">checked="checked"</c:if> value="1" >men</input>
 				<input type="radio" name="sex" <c:if test="${tUser.sex==0 }">checked="checked"</c:if> value="0" >women</input>
 				 </td>
 			</tr>
 
-				<td>生日</td>
+				<td align="center">誕生日</td>
 				<td>
 
 <%-- 	不建议的写法			<input type="date"  name="birthday" value="${birthdayStr}"/> --%>
 				<input type="date"  name="birthday" value="${tUser.birthdayStr}"/>
 					</td>
 			<tr>
-				<td>用户密码</td>
+				<td align="center">パスワード</td>
 				<td><input type="password" name="password"
 					 /></td>
 			</tr>
 
 
 			<tr>
-				<td align="center"><input type="submit" value="提交"/>
+				<td align="center"><input type="submit" value="提出"/>
 				</td>
-				<td align="center">
+				<td >
 					<!--<input type="submit" value="返回" onclick="returnToLogin();"/> -->
-					<input type="button" id="id_return_to_login" value="返回" onclick="returnToLoginById();"/>
+					<input type="button" id="id_return_to_login" value="キャンセル" onclick="returnToLoginById();"/>
 				</td>
 			</tr>
 
 		</table>
+		
+		</div>
 
 	</form>
 </body>

@@ -3,6 +3,7 @@ $(document).ready(function() {
 	$("#id_btn_clear").click(function() {
 		$("#id_username").val("");
 		$("#id_password").val("");
+		$("#validateWord").val("");
 	});
 
 });
@@ -10,6 +11,7 @@ $(document).ready(function() {
 function fnclear() {
 	document.getElementsByName("username")[0].value="";
 	document.getElementById('id_password').value="";
+	document.getElementByName('validateWord').value="";
 }
 
 $(document).ready(
