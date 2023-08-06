@@ -53,9 +53,19 @@ public class TeacherController {
 	}
 
 	@RequestMapping("teacherinsert")
-	public String teacherInsert(@ModelAttribute TeacherTable teacher)
+	public String teacherInsert(Model model,@ModelAttribute TeacherTable teacher)
 			throws Exception {
-		teacherService.inserTeacher(teacher);
+		
+		try {
+			teacherService.inserTeacher(teacher);
+		} catch (Exception e) {
+			
+			model.addAttribute("errorInfo", e.getCause().getMessage());
+			model.addAttribute("teacher", teacher);
+
+			return "teacherinfo/teacherInsert";
+		}
+		
 	    return "redirect:/queryTeachers.action";
 	}
 //
