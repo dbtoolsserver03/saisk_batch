@@ -131,8 +131,8 @@ public class LoginController {
 		// 清除session
 		session.invalidate();
 
-		// 重定向到商品列表页面
-		return "redirect:/items/queryItems.action";
+		// 重定向到登陆页面
+		return "redirect:/login.action";
 	}
 
 }

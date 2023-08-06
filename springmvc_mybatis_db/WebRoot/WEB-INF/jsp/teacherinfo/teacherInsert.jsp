@@ -17,14 +17,23 @@
 <body>
 add teacher info
 <form  action="${pageContext.request.contextPath }/teacherinsert.action" method="post">
-先生ID	<input type="text" name="teacherId"><br>
-先生姓名<input type="text" name="teacherName"><br>	
-性別  
-		<input type="radio" name="teacherSex" value="1">man
-       <label><input type="radio" name="teacherSex" value="0">women</label>
-        <br>
-生日<input type="date" name="teacherAge"><br>
 
+<!-- 显示错误信息 -->
+<c:if test="${errorInfo!=null}">
+	<div style="background-color:pink">
+			${errorInfo}<br>
+	</div>
+</c:if>
+
+
+	先生ID	<input type="text" name="teacherId" value="${teacher.teacherId}" ><br>
+	先生姓名<input type="text" name="teacherName" value="${teacher.teacherName}">
+	<br>
+	性別 <label><input type="radio" name="teacherSex" value="1" <c:if test="${teacher.teacherSex==1}" > checked </c:if>>man</label>
+		 <label><input type="radio" name="teacherSex" value="0" <c:if test="${teacher.teacherSex==0}" > checked </c:if>>women</label>
+	<br>
+	生日<input type="date" name="teacherAge" value="<fmt:formatDate value='${teacher.teacherAge}' pattern='yyyy-MM-dd'/>" />
+	<br>
 <input type="submit" value="提交">
 </form>
     
