@@ -17,5 +17,6 @@
 <!-- 用户的service -->
 <bean id="userService" class="cn.itcast.ssm.service.impl.UserServiceImpl"/>
 <bean id="teacherService" class="cn.itcast.ssm.service.impl.TeacherServiceImpl"/>
+<bean id="saiBloodService" class="cn.itcast.ssm.service.impl.SaiBloodServiceImpl"/>
 
 </beans>
